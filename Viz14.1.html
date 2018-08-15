@@ -8,11 +8,21 @@
 </style>
 
 <body>
+        <form>
+                <label><input type="radio" name="dataset" value="apples" checked> Religion</label>
+                <label><input type="radio" name="dataset" value="oranges"> Generation</label>
+              </form>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script>
+    //  <form>
+    // <label><input type="radio" name="dataset" value="apples" checked> Apples</label>
+    // <label><input type="radio" name="dataset" value="oranges"> Oranges</label>
+    // </form>
         // Define the data as a two-dimensional array of numbers. If you had other
         // data to associate with each number, replace each number with an object, e.g.,
         // `{key: "value"}`.
+    var Religion = {};
+    var Generation = {};
 
         function loadData(fileName) {
             return d3.csv(fileName);
@@ -23,8 +33,11 @@
         //  	    [ 0.5826, 0.4174],
         // 	    [ 0.6974,0.3026]
 
+        function cleanupContent() {
+            svg.remove();
+        }
 
-        var dataPromise = loadData('VIZual14.csv');
+        var dataPromise = loadData(data);
         dataPromise.then(function (data) {
             console.log(data);
             data.forEach(function (d) {
@@ -97,4 +110,6 @@
                     return z(i);
                 });
         })
+    Religion.addEventListener("click", function() { loadData("VIZual14.csv"); });
+    Generation.addEventListener("click", function() { loadData("Vizual14.1.csv"); });
     </script>
