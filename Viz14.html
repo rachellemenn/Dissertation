@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lan="en">
+<head>
+    <meta charset="UTF-8">
+    <script src= "https://d3js.org/d3.v4.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+<style>
+        
+        body, * {
+            background-color: #bfb3b2;
+
+        }
+        #viz {
+            position: fixed;
+            align-items: center;
+            margin-left: 50px;
+            margin-top: 60px; 
+            background-color: #bfb3b2;
+
+
+        }
+
+        #header {
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        h1 {
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 25px;
+            color:	#f2f2f2;
+            text-transform:uppercase;
+            font-weight: 100;
+            
+            
+        }
+
+        input {
+            float: right;
+            padding-right: 10px;
+    
+        }
+
+     
+
+        .link{
+            text-decoration:none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            color: #f2f2f2;
+            background-color: #bfb3b2;
+            border-color:none;
+            margin: 10px;
+            justify-content: right;
+            text-anchor: end;
+            box-shadow: none;
+            border-radius: 8px;
+        }
+
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #f2f2f2;
+            shape-rendering: crispEdges;
+            stroke-width: 2px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            color: #f2f2f2;
+        }
+
+        .axis text {
+            fill: #f2f2f2;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            margin: 30px;
+        }
+
+        .link:hover {
+            cursor: pointer;
+            color: #cb181d;
+        }
+    </style>
+<body>
+    <div id ="header">
+        <h1 id = "title">“Can the Success of Bachelors and Bachelorettes be Predicted?” </h1> 
+        <input type="button" class="link" id="R1" value="First Impression Roses">
+        <input type="button" class="link" id="D1" value="One-on-One Dates">
+    </div>
+    
+    <svg id="viz" width="960" height="500">
+    </svg>
+    <script>
+
+        var svg = d3.select("#viz"), 
+        margin = {top: 20, right: 20, bottom: 30, left: 40}, 
+        width = +svg.attr("width") - margin.left - margin.right, 
+        height = +svg.attr("height") - margin.top - margin.bottom;
+    
+        var scale = d3.scaleLinear()
+                      .domain([0, 100]); 
+        var axis = d3.axisBottom(scale.range([0, width]))
+                     .tickFormat(function (d) { return ''; });
+        var axisGroup = svg.append("g")
+                           .attr("transform", "translate(" + margin.left + "," + (height + margin.top) + ")")
+                           .attr("class", "axis").call(axis); 
+        axis = d3.axisLeft(scale.range([0, height]))
+                 .ticks(null, "s");
+        axisGroup = svg.append("g")
+                       .attr("transform", "translate(" + margin.left + ",0" + margin.top + ")")
+                       .attr("class", "axis")
+                       .call(axis);
+    
+    var r1Div = document.getElementById("R1");
+    var d1Div = document.getElementById("D1");
+    var title = document.getElementById("title");
+    var subTitle = document.getElementById("subTitle");
+    var x0 = d3.scaleBand()
+        .rangeRound([0, width])
+        .paddingInner(0.1);
+    var x1 = d3.scaleBand()
+        .padding(0.05);
+    var y = d3.scaleLinear()
+        .rangeRound([height, 0]);
+    
+  
+
+    function cleanupContent() {
+        svg.remove();
+
+    }
+
+
+    function show(titleText, fileName) {
+    title.textContent = titleText;
+    d3.selectAll("svg > *").remove();
+    svg = d3.select("#viz");
+
+    var margin = {top: 20, right: 20, bottom: 30, left: 40},
+        width = +svg.attr("width") - margin.left - margin.right,
+        height = +svg.attr("height") - margin.top - margin.bottom,
+        g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    d3.csv(fileName, function(d, columns, i) {
+        for (var key in d)
+        {
+            if (d.hasOwnProperty(key))
+            {
+                var value = +d[key];
+                if (!isNaN(value))
+                {
+                    d[key] = value;
+                }
+            }
+        }
+        return d;
+    }, function(error, data) {
+        if (error) throw error;
+
+        var z = [
+            d3.scaleOrdinal()
+            .range(['#cb181d','#fb6a4a','#fcae91', '#fee5d9']),
+            d3.scaleOrdinal()
+            .range(['#ce1256','#df65b0', '#d7b5d8', '#f1eef6'])
+        ];
+        
+        var keys = data.columns.slice(1);
+
+         x0.domain(data.map(function(d) {return d.Show;}));
+         x1.domain(keys).rangeRound([0, x0.bandwidth()]);
+         y.domain([0, d3.max(data, function(d) {return d3.max(keys, function(key) {return d[key]; });})]).nice();
+
+         var colorSet = -1;
+
+         g.append("g")
+         .selectAll("g")
+         .data(data)
+         .enter().append("g")
+            .attr("transform", function(d) {return "translate(" + x0(d.Show) + ",0)"; })
+        .selectAll("rect")
+        .data(function(d) { return keys.map(function(key) { return {key: key, value: d[key]}; }); })
+        .enter().append("rect")
+            .attr("x", function(d) { return x1(d.key); })
+            .attr("y", function(d) {return y(d.value); })
+            .attr("width", x1.bandwidth())
+            .attr("height", function(d) {return height - y(d.value); })
+            .attr("fill", function(d) {console.log(d); if (d.key == "Total") colorSet++; return z[colorSet](d.key);})
+            .style('opacity', 0)
+            .transition()
+            .delay(function(d, i) { return i * 800 })
+            .duration(2000)
+            .ease(d3.easeBounce) 
+            .style('height', function(d) { return (d * 150) + 'px'; })
+            .style('opacity', 1);
+
+        g.append("g")
+            .attr("class", "axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(x0));
+
+        g.selectAll(".axis text")
+            .attr("dy", "1em");
+
+        g.append("g")
+            .attr("class", "axis")
+            .call(d3.axisLeft(y).ticks(null, "s"));
+
+        g.selectAll(".axis text")
+            .attr("dx", "-0.5em");
+
+
+        var legend = g.append("g")
+            .attr("font-family", "sans-serif")
+            .attr("font-size", 10)
+            .attr("text-anchor", "end")
+            .selectAll("g")
+            .data(keys.slice().reverse())
+            .enter().append("g")
+             .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+        legend.append("rect")
+            .attr("x", width - 19)
+            .attr("transform", function(d) {console.log(d);return "translate(" + (-width/2) + ",0)"; })
+            .attr("width", 19)
+            .attr("height", 19)
+            .attr("fill", z[0]);
+
+        legend.append("text")
+            .attr("fill", "#f2f2f2")
+            .attr("font-family", "Montserrat")
+            .attr("x", width - 24)
+            .attr("y", 9.5)
+            .attr("transform", function(d) {console.log(d);return "translate(" + (-width/2) + ",0)"; })
+            .attr("dy", "0.32em")
+            .text(function(d) { return d; });
+
+        legend = g.append("g")
+            .attr("font-family", "sans-serif")
+            .attr("font-size", 10)
+            .attr("text-anchor", "end")
+            .selectAll("g")
+            .data(keys.slice().reverse())
+            .enter().append("g")
+             .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+        legend.append("rect")
+            .attr("x", width - 19)
+            .attr("width", 19)
+            .attr("height", 19)
+            .attr("fill", z[1]);
+
+        legend.append("text")
+            .attr("font-family", "Montserrat")
+            .attr("fill", "#f2f2f2")
+            .attr("x", width - 24)
+            .attr("y", 9.5)
+            .attr("dy", "0.32em")
+            .text(function(d) { return d; });
+    });
+    }
+    console.log("loaded show");
+
+
+
+    console.log("adding click listener for data");
+
+   r1Div.addEventListener("click", function(){  show("First Impression Roses", "Viz14.1"); }); 
+   d1Div.addEventListener("click", function(){  show("One-on-One Dates in The First Four Weeks", "Viz14.1.csv"); });
+
+    </script>
+</body>
+</html>
