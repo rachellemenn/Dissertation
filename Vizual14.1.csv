@@ -1,5 +1,5 @@
-Religious	WithJew	Value
-R	Yes	0.8552
-R	No	0.3755
-NR	Yes	0.1448
-NR	No	0.6245
+WithJew,Religious,Value,
+Yes,	R,	0.8552,
+No,	R,	0.3755,
+Yes,   	NR,	0.1448,
+No,	NR,	0.6245,
