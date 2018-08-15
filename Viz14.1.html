@@ -24,18 +24,21 @@
     var Religion = {};
     var Generation = {};
 
+    function cleanupContent() {
+            svg.remove();
+        }
+
         function loadData(fileName) {
             return d3.csv(fileName);
         }
+        
         // var data = [
         //       [0.5298, 0.4708],
         //       [ 0.5321, 0.4679],
         //  	    [ 0.5826, 0.4174],
         // 	    [ 0.6974,0.3026]
 
-        function cleanupContent() {
-            svg.remove();
-        }
+        
 
         var dataPromise = loadData(data);
         dataPromise.then(function (data) {

@@ -8,11 +8,29 @@
 </style>
 <svg width="960" height="500"></svg>
 <script src="https://d3js.org/d3.v5.min.js"></script>
+
+<form>
+        <label><input type="radio" name="dataset" value="yk" checked> Yom Kippur</label>
+        <label><input type="radio" name="dataset" value="shabbat"> Shabbat Candles</label>
+        <label><input type="radio" name="dataset" value="seder" checked> Passover Seder</label>
+        <label><input type="radio" name="dataset" value="barbat"> Bar and Bat Mitzvahs</label>
+</form>
+
 <script>
+
+var YK = {};
+var Shabbat = {};
+var Seder = {};
+var BarBat = {};
+
 
 function loadData(fileName)
 {
     return d3.csv(fileName);
+}
+
+function cleanupContent() {
+    svg.remove();
 }
 
 var svg = d3.select("svg"),
@@ -104,5 +122,10 @@ dataPromise.then(function(data){
       .attr("dy", "0.32em")
       .text(function(d) { return d; });
 });
+
+yk.addEventListener("click", function() { loadData("Viz13.1.csv"); });
+shabbat.addEventListener("click", function() { loadData("Viz13.2.csv"); });
+seder.addEventListener("click", function() { loadData("Viz13.3.csv"); });
+barbat.addEventListener("click", function() { loadData("Vizual13.csv"); });
 
 </script>
