@@ -33,7 +33,7 @@
 
             console.log(data);
 
-            var rel = [
+            var WithJew = [
                 [],
                 []
             ];
@@ -47,7 +47,7 @@
             });*/
 
             data.forEach((d) => {
-                var index = d.WithJew == 'R' ? 0 : 1;
+                var index = d.WithJew == 'Y' ? 0 : 1;
                 rel[index].push(d.Value);
             });
 
