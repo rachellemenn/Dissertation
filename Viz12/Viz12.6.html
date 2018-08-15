@@ -22,6 +22,8 @@
         // data to associate with each number, replace each number with an object, e.g.,
         // `{key: "value"}`.
     var Religion = {};
+    var Ideology = {};
+    var Nationality = {};
     var Generation = {};
 
     function cleanupContent() {
@@ -63,7 +65,7 @@
             });*/
 
             data.forEach((d) => {
-                var index = d.WithJew == 'Yes' ? 0 : 1;
+                var index = d.Attached == 'V' ? 0 : 1;
                 rel[index].push(d.Value);
             });
 
@@ -113,6 +115,8 @@
                     return z(i);
                 });
         })
-    Religion.addEventListener("click", function() { loadData("VIZual14.csv"); });
-    Generation.addEventListener("click", function() { loadData("Vizual14.1.csv"); });
+    Religion.addEventListener("click", function() { loadData("Viz12.csv"); });
+    Generation.addEventListener("click", function() { loadData("Viz12.1.csv"); });
+    Religion.addEventListener("click", function() { loadData("Viz12.2.csv"); });
+    Generation.addEventListener("click", function() { loadData("Viz12.3.csv"); });
     </script>

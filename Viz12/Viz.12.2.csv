@@ -1,13 +1,13 @@
-Attached, National,"	value",
-very,"	  American","	29.15%","					"
-very,"	  Soviet","	38.81%","					"
-very,"	  Other","	46.68%","					"
-a little, American,"	39.55%","				"
-a little, Soviet,"	39.09%","					"
-a little, Other,"	31.04%","					"
-not really,American,"	19.88%","					"
-not really,Soviet,"	13.31%","					"
-not really,Other,"	12.09%","					"
-not,"	   American","	11.42%","					"
-not,"	   Soviet","	8.78%","					"
-not,"	   Other","	10.19%","					"
+Attached, National,	value,
+V,	  American,	0.2915,
+V,	  Soviet,	0.3881,
+V,	  Other,	0.4668,
+Lil, 	  American,	0.3955,
+Lil, 	  Soviet,	0.3909,
+Lil, 	  Other,	0.3104,
+NR,	  American,	0.1988,
+NR,	  Soviet,	0.1331,
+NR,	  Other,	0.1209,
+N,	  American,	0.1142,
+N,	  Soviet,	0.0878,
+N,	  Other,	0.1019,

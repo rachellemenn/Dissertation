@@ -9,8 +9,8 @@
 
 <body>
         <form>
-                <label><input type="radio" name="dataset" value="Religion" checked> Religion</label>
-                <label><input type="radio" name="dataset" value="Generation"> Generation</label>
+                <label><input type="radio" name="dataset" value="apples" checked> Religion</label>
+                <label><input type="radio" name="dataset" value="oranges"> Generation</label>
               </form>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script>
@@ -21,8 +21,8 @@
         // Define the data as a two-dimensional array of numbers. If you had other
         // data to associate with each number, replace each number with an object, e.g.,
         // `{key: "value"}`.
-    var Religion = {};
-    var Generation = {};
+    var Parents = {};
+    var Marriages = {};
 
     function cleanupContent() {
             svg.remove();
@@ -63,7 +63,7 @@
             });*/
 
             data.forEach((d) => {
-                var index = d.WithJew == 'Yes' ? 0 : 1;
+                var index = d.ChildJew == 'J' ? 0 : 1;
                 rel[index].push(d.Value);
             });
 
@@ -113,6 +113,6 @@
                     return z(i);
                 });
         })
-    Religion.addEventListener("click", function() { loadData("VIZual14.csv"); });
-    Generation.addEventListener("click", function() { loadData("Vizual14.1.csv"); });
+    Parents.addEventListener("click", function() { loadData("Viz16.1.csv"); });
+    Marriages.addEventListener("click", function() { loadData("Viz16.csv"); });
     </script>
