@@ -1,0 +1,5 @@
+﻿Child Raised,Parent Raised,Value
+Jewish,Jewish,0.9273
+Jewish,Not Jewish,0.727
+Not Jewish,Jewish,0.00
+Not Jewish,Not Jewish,0.9971

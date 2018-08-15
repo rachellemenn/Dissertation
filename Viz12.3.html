@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<canvas width="600" height="520" margin = {top: 0, left: 20, bottom: 40, right: 10}></canvas>
+<!-- <script src="//d3js.org/d3.v4.0.0-alpha.4.min.js"></script> -->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<style>
+    body{
+        background-color:#ecf2f8; 
+    }
+</style>
+<body>
+<script>
+
+//Rachelle's comment: changed the canvas settings. Also cheated and put in my data below instead of loading csv
+// function loadGenerations(fileName)
+// {
+    var data = [.2517, .1338, .3102, .3003];
+    // d3.csv(fileName, function(rows){
+    //     data = rows.filter(function(row){
+    //         var str = row["Generation"];
+    //         var index = str.indexOf('\\');
+    //         return index == -1;
+    //     });
+    // });
+
+//     return data;
+
+// }
+
+// function displayVizThree(data)
+// {
+
+var canvas = document.querySelector("canvas"),
+    context = canvas.getContext("2d");
+
+var width = canvas.width,
+    height = canvas.height,
+    radius = Math.min(width, height) / 2;
+
+var colors = [
+"#0077b3","#0099e6","#1ab2ff","#66ccff",
+];
+//Rachelle's comment: changed colors. Also increased the inner radios from 0 to 5 and increased pad angle.
+
+var arc = d3.arc()
+    .outerRadius(radius - 10)
+    .innerRadius(5)
+    .padAngle(0.09)
+    .context(context);
+
+var pie = d3.pie();
+
+var arcs = pie(data);
+
+context.translate(width / 2, height / 2);
+
+//Rachelle's comment: removed globalAlpha so the colours weren't muted.
+// context.globalAlpha = 0.5;
+arcs.forEach(function(d, i) {
+  context.beginPath();
+  arc(d);
+  context.fillStyle = colors[i];
+  context.fill();
+});
+
+//Rachelle's comment: removed the border around each pie
+
+// context.globalAlpha = 1;
+// context.beginPath();
+// arcs.forEach(arc);
+// context.lineWidth = 1.5;
+// context.stroke();
+
+// }
+
+// var sectionDescriptors = [
+//     {Loader: function() {this.data = loadGenerations(this.file); console.log("File: " + this.file); console.log(this.data);}, Activate: function() {displayVizThree(this.data);}, data: null, file: "https://Viz3.csv"},
+//     {Loader: function() {console.log("File: " + this.file)}, Activate: null, data: null, file: "File2"}
+// ];
+
+// sectionDescriptors.forEach(function(i) {
+//     i.Loader();
+// });
+
+// sectionDescriptors[0].Activate();
+</script>
+
+<!-- <script src="js/scroller.js"></script>
+<script src="js/sections.js"></script> -->
+</body>
+</html>

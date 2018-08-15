@@ -1,0 +1,111 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  
+  /* HTML5 display-role reset for older browsers */
+  
+  article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+  
+  body {
+    line-height: 1;
+  }
+  
+  ol, ul {
+    list-style: none;
+  }
+  
+  blockquote, q {
+    quotes: none;
+  }
+  
+  blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+  }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  /*Above is the CSS reset taken from an online source*/
+
+  body {
+    background-color: #6f8290;
+  }
+  
+  .container {
+      width: 890px;
+  }
+
+  /* .title-container {
+      width: 890px;
+  } */
+
+  #graphic {
+      padding-top: 60px;
+  }
+
+  #sections {
+      position: relative;
+      display: inline-block;
+      width: 400px;
+      top: 0px;
+      z-index: 90;
+      padding-bottom: 200px;
+      margin-right: 20px;
+      margin-left: 15px;
+  }
+
+  .step {
+      margin-bottom: 200px;
+      font-family:'Goudy Bookletter 1911', serif;
+      font-size: 16px;
+      line-height: 23px;
+      color: #e6eeff;
+  }
+
+  #sections .title{
+      font-family: 'Goudy Bookletter 1911', serif;
+      font-size: 40px;
+      margin-bottom: 2px;
+      line-height: 1.2em;
+      color:  #e6eeff;
+  }
+
+  #extra-space {
+      height: 300px;
+  }
+
+  /* #free-space {
+    height: 100vw;
+} */
+
+  #vis {
+      display: inline-block;
+      position: fixed;
+      top: 60px;
+      z-index: 1;
+      margin-left: 0;
+
+      height: 650px;
+      width: 650px;
+      background-color: #0040ff;
+  }
+
+  #vis .title {
+     font-size: 120px;
+     text-anchor middle; 
+  }

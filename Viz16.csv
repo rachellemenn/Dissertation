@@ -1,0 +1,7 @@
+﻿child Jew,marriage,value
+not,both Jew,0.05137
+not,interfaith,0.4863
+partially,both Jew,0.2129
+partially,interfaith,0.7871
+totally,both Jew,0.8815
+totally,interfaith,0.1185
