@@ -167,7 +167,7 @@
         
         var keys = data.columns.slice(1);
 
-         x0.domain(data.map(function(d) {return d.Show;}));
+         x0.domain(data.map(function(d) {return d.WithJew;}));
          x1.domain(keys).rangeRound([0, x0.bandwidth()]);
          y.domain([0, d3.max(data, function(d) {return d3.max(keys, function(key) {return d[key]; });})]).nice();
 
@@ -177,7 +177,7 @@
          .selectAll("g")
          .data(data)
          .enter().append("g")
-            .attr("transform", function(d) {return "translate(" + x0(d.Show) + ",0)"; })
+            .attr("transform", function(d) {return "translate(" + x0(d.WithJew) + ",0)"; })
         .selectAll("rect")
         .data(function(d) { return keys.map(function(key) { return {key: key, value: d[key]}; }); })
         .enter().append("rect")
