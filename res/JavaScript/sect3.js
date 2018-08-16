@@ -222,6 +222,71 @@ function Visualization(fileName) {
             .call(d3.axisLeft(y));
     }
 
+    this.Viz3 = function (data) {
+
+        var ndata = d3.nest()
+            .key(function (d) {
+                return d[data.columns[0]]
+            })
+            .entries(data)
+
+        var svg = clearSvgContainer();
+        container.selectAll("*").remove();
+        var gx = container.selectAll('svg').data(ndata)
+            .enter().append('svg')
+            .attr("width", width/*(r + m) * 2*/)
+            .attr("height", height/*(r + m) * 2*/)
+            .append('g')
+            .attr("transform", function(d, i) {
+                var offset = 2 * i * (r + m);
+                return "translate(" + (r + m + offset) + "," + (r + m) + ")";});
+
+        function Draw() {
+            var canvas = document.querySelector("canvas"),
+                context = canvas.getContext("2d");
+            
+            var width = canvas.width,
+                height = canvas.height,
+                radius = Math.min(width, height) / 2;
+            
+            var colors = [
+            "#0077b3","#0099e6","#1ab2ff","#66ccff",
+            ];
+            //Rachelle's comment: changed colors. Also increased the inner radios from 0 to 5 and increased pad angle.
+            
+            var arc = d3.arc()
+                .outerRadius(radius - 10)
+                .innerRadius(5)
+                .padAngle(0.09)
+                .context(context);
+            
+            var pie = d3.pie().value(function(d){return d.Percent});
+            
+            // var dataPromise = loadData('Vizual3.csv');
+            // dataPromise.then(function(data){
+            //     console.log(data);
+            //     data.forEach(function(d){
+            //         d.Percent = parseFloat(d.Percent);
+            //     });
+            //     console.log(data);
+                var arcs = pie(data);
+                
+            
+                context.translate(width / 2, height / 2);
+            
+                //Rachelle's comment: removed globalAlpha so the colours weren't muted.
+                // context.globalAlpha = 0.5;
+                arcs.forEach(function(d, i) {
+                    context.beginPath();
+                    arc(d)
+                    context.fillStyle = colors[i];
+                    context.fill();
+                });
+            });
+            
+            }
+    }
+
     this.Viz4 = function (data) {
 
     }
@@ -1074,6 +1139,7 @@ function Visualization(fileName) {
             new Loader("Assets/Data/Vizual3.csv", this.DrawSimpleChart),
             new Loader("Assets/Data/Viz4.csv", this.DrawSimpleChart),
             new Loader("Assets/Data/Viz5.csv", this.DrawSimpleChart),
+            new Loader("Assets/Data/Vizual3.csv", this.Viz3),
             new Loader("Assets/Data/Viz4.csv", this.Viz4),
             new Loader("Assets/Data/Viz5.csv", this.Viz5),
             new Loader("Assets/Data/Viz6.csv", this.Viz6),
