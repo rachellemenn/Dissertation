@@ -222,6 +222,14 @@ function Visualization(fileName) {
             .call(d3.axisLeft(y));
     }
 
+    this.Viz4 = function (data) {
+
+    }
+
+    this.Viz5 = function (data) {
+
+    }
+
     this.Viz6 = function (data) {
         data.forEach(function (d) {
             d.Value = parseFloat(d.Value);
@@ -532,6 +540,18 @@ function Visualization(fileName) {
             });
     }
 
+    this.Viz10 = function (data) {
+        
+    }
+
+    this.Viz11 = function (data) {
+
+    }
+
+    this.Viz111 = function (data) {
+
+    }
+
     this.Viz122 = function (data) {
 
         // var groupBy = function(xs, key) {
@@ -772,6 +792,52 @@ function Visualization(fileName) {
         
     }
 
+    this.Viz123 = function (data) {
+
+    }
+
+    this.Viz12 = function (data) {
+
+    }
+
+    this.Viz13 = function (data) {
+
+    }
+
+    this.Viz133 = function (data) {
+
+    }
+
+    this.Viz132 = function (data) {
+
+    }
+
+    this.Viz131 = function (data) {
+
+    }
+
+    this. Viz15 = function (data) {
+        
+    }
+
+    this.Viz14 = function (data) {
+
+    }
+
+    this.Viz141 = function (data) {
+
+    }
+
+    this.Viz161 = function (data) {
+
+    }
+
+    this.Viz16 = function (data) {
+
+    }
+
+
+
     function Init() {
         loaders = [
             new Loader("Assets/Data/Viz1.csv", this.DrawCircleHierarchy),
@@ -779,19 +845,27 @@ function Visualization(fileName) {
             new Loader("Assets/Data/Vizual3.csv", this.DrawSimpleChart),
             new Loader("Assets/Data/Viz4.csv", this.DrawSimpleChart),
             new Loader("Assets/Data/Viz5.csv", this.DrawSimpleChart),
+            new Loader("Assets/Data/Viz4.csv", this.Viz4),
+            new Loader("Assets/Data/Viz5.csv", this.Viz5),
             new Loader("Assets/Data/Viz6.csv", this.Viz6),
             new Loader("", this.Viz7),
             new Loader("Assets/Data/Viz8.csv", this.Viz8),
+            new Loader("Assets/Data/Viz10.csv", this.Viz10),
+            new Loader("Assets/Data/Viz11.csv", this.Viz11),
+            new Loader("Assets/Data/Viz11.1.csv", this.Viz111),
             new Loader("Assets/Data/Viz12.2.csv", this.Viz122),
             new Loader("Assets/Data/Viz12.1.csv", this.Viz121),
-            new Loader("Assets/Data/Viz9.csv", this.DrawSimpleChart),
-            new Loader("Assets/Data/Viz10.csv", this.DrawSimpleChart),
-            new Loader("Assets/Data/Viz11.csv", this.DrawSimpleChart),
-            new Loader("Assets/Data/Viz12.csv", this.DrawSimpleChart),
-            new Loader("Assets/Data/Viz13.csv", this.DrawSimpleChart),
-            new Loader("Assets/Data/Viz14.csv", this.DrawSimpleChart),
-            new Loader("Assets/Data/Viz15.csv", this.DrawSimpleChart),
-            new Loader("Assets/Data/Viz16.csv", this.DrawSimpleChart)
+            new Loader("Assets/Data/Viz12.3.csv", this.Viz123),
+            new Loader("Assets/Data/Viz12.csv", this.Viz12),
+            new Loader("Assets/Data/Viz13.csv", this.Viz13),
+            new Loader("Assets/Data/Viz13.3.csv", this.Viz133),
+            new Loader("Assets/Data/Viz13.2.csv", this.Viz132),
+            new Loader("Assets/Data/Viz13.1.csv", this.Viz131),
+            new Loader("Assets/Data/Viz15.csv", this.Viz15),
+            new Loader("Assets/Data/Viz14.csv", this.Viz14),
+            new Loader("Assets/Data/Viz14.1.csv", this.Viz141),
+            new Loader("Assets/Data/Viz16.1.csv", this.Viz161),
+            new Loader("Assets/Data/Viz16.csv", this.Viz16),
         ];
 
         // Start loading, no callbacks
