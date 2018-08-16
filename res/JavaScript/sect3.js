@@ -258,7 +258,7 @@ function Visualization(fileName) {
             //Rachelle's comment: changed colors. Also increased the inner radios from 0 to 5 and increased pad angle.
             
             var arc = d3.arc()
-                .outerRadius(radius - 10)
+                .outerRadius(r - 10)
                 .innerRadius(5)
                 .padAngle(0.09)
                 .context(context);
@@ -272,14 +272,14 @@ function Visualization(fileName) {
             //         d.Percent = parseFloat(d.Percent);
             //     });
             //     console.log(data);
-                var arcs = pie(data);
+                var arc = pie(data);
                 
             
                 context.translate(width / 2, height / 2);
             
                 //Rachelle's comment: removed globalAlpha so the colours weren't muted.
                 // context.globalAlpha = 0.5;
-                arcs.forEach(function(d, i) {
+                arc.forEach(function(d, i) {
                     context.beginPath();
                     arc(d)
                     context.fillStyle = colors[i];
