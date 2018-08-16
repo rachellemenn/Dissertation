@@ -43,7 +43,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   /*Above is the CSS reset taken from an online source*/
 
   body {
-    background-color: #6f8290;
+    background-color: #ecf2f8;
   }
   
   .container {
@@ -74,7 +74,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
       font-family:'Goudy Bookletter 1911', serif;
       font-size: 16px;
       line-height: 23px;
-      color: #e6eeff;
+      color: #363D4F;
   }
 
   #sections .title{
@@ -82,7 +82,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
       font-size: 40px;
       margin-bottom: 2px;
       line-height: 1.2em;
-      color:  #e6eeff;
+      color:  #363D4F;
   }
 
   #extra-space {
@@ -102,7 +102,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
       height: 650px;
       width: 650px;
-      background-color: #0040ff;
+      border-style: dashed;
+      border-width: 4px;
+      border-color: #363D4F;
   }
 
   #vis .title {
