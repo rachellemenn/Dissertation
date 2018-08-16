@@ -380,9 +380,13 @@ function Visualization(fileName) {
                     
         // Get the SVG container, and apply a transform such that the origin is the
         // center of the canvas. This way, we don’t need to position arcs individually.
-        var svg = clearSvgContainer(),
-            height = +svg.attr("height"),
+
+    container.selectAll("*").remove();
+       var svg = d3.select("svg"),
             g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+        // var svg = clearSvgContainer(),
+        //     height = +svg.attr("height"),
+        //     g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
             
             
                     
