@@ -230,6 +230,9 @@ function Visualization(fileName) {
             })
             .entries(data)
 
+        var m = Math.floor(width / (22 * ndata.length));
+        var r = 10 * m;
+
         var svg = clearSvgContainer();
         container.selectAll("*").remove();
         var gx = container.selectAll('svg').data(ndata)
