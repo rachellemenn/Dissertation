@@ -778,7 +778,7 @@ function Visualization(fileName) {
             });
 
             // Define an arc generator. Note the radius is specified here, not the layout.
-            var arc = d3.svg.arc()
+            var arc = d3.arc()
                 .innerRadius(r / 2)
                 .outerRadius(r);
 
