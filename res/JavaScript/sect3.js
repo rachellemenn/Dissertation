@@ -366,6 +366,10 @@ function Visualization(fileName) {
     }
 
     this.Viz7 = function () {
+
+        var svg = clearSvgContainer();
+        container.selectAll("*").remove();
+        
         var tau = 2 * Math.PI; // http://tauday.com/tau-manifesto
                     
         // An arc function with all values bound except the endAngle. So, to compute an
