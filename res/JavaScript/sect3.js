@@ -285,7 +285,7 @@ function Visualization(fileName) {
             // });
             
             }
-    }
+    
 
     this.Viz4 = function (data) {
 
