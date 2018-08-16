@@ -793,10 +793,226 @@ function Visualization(fileName) {
     }
 
     this.Viz123 = function (data) {
+        var groupByArray = function (xs, key) {
+            return xs.reduce(function (rv, x) {
+                let v = key instanceof Function ? key(x) : x[key];
+                let el = rv.find((r) => r && r.key === v);
+                if (el) {
+                    el.values.push({name: x[data.columns[1]], value:  x[data.columns[2]]});
+                }
+                else {
+                    rv.push({key: v, values: [{name: x[data.columns[1]], value:  x[data.columns[2]]}]});
+                }
+                return rv;
+            }, []);
+        }
+        
+        var rel1 = groupByArray(data, data.columns[0]);
+        console.log(groupByArray(data, data.columns[0]));
+
+        var ndata = d3.nest()
+            .key(function(d) {return d[data.columns[0]]})
+            .entries(data)
+        console.log(ndata);
+
+        var rel = [
+            [],
+            []
+        ];
+
+        /*data.forEach((d) => {
+            var index = d.Religion == 'R' ? 0 : 1;
+            rel[index].push({
+                name: d.Generation,
+                value: d.Value * 100
+            });
+        });*/
+
+        data.forEach((d) => {
+            var index = d.Attached == 'V' ? 0 : 1;
+            rel[index].push(d.Value);
+        });
+
+        console.log(rel);
+
+        //var arcs = pie(data);
+
+        //Rachelle's comment: changed the data
+
+        // Define the margin, radius, and color scale. The color scale will be
+        // assigned by index, but if you define your data using objects, you could pass
+        // in a named field from the data object instead, such as `d.name`. Colors
+        // are assigned lazily, so if you want deterministic behavior, define a domain
+        // for the color scale.
+        var m = 10,
+            r = 100,
+            //z = d3.scaleOrdinal()
+            //    .range(["#0077b3", "#66ccff",]);
+            z = d3.scaleOrdinal()
+            .range([
+                "#0077b3", "#0099e6", "#1ab2ff", "#66ccff",
+            ]);
+        //Rachelle's comment: changed colors and scaleOrdinal for v5 
+
+        // Insert an svg element (with margin) for each row in our dataset. A child g
+        // element translates the origin to the pie center.
+        var svg = d3.select("body").selectAll("svg")
+            .data(ndata)
+            .enter().append("svg")
+            .attr("width", (r + m) * 2)
+            .attr("height", (r + m) * 2)
+            .append("g")
+            .attr("transform", "translate(" + (r + m) + "," + (r + m) + ")");
+
+        console.log("drawing");
+        svg.append("text")
+          .attr("dy", ".35em")
+            .attr("text-anchor", "middle")
+            .text(function(d) { return d.key; });
+
+
+        // The data for each svg element is a row of numbers (an array). We pass that to
+        // d3.layout.pie to compute the angles for each arc. These start and end angles
+        // are passed to d3.svg.arc to draw arcs! Note that the arc radius is specified
+        // on the arc, not the layout.
+        //Rachelle's comment: updated d3.pie and d3.arc to v5
+        var g = svg.selectAll("path")
+            .data(function(d) {return d3.pie().value(function(d) {
+                return d[data.columns[2]];
+            })(d.values);})
+            .enter().append("path");
+
+            g.attr("d", d3.arc()
+                .innerRadius(r / 2)
+                .outerRadius(r))
+            .style("fill", function (d, i) {
+                return z(i);
+            });
+
+            // Define an arc generator. Note the radius is specified here, not the layout.
+            var arc = d3.arc()
+                .innerRadius(r / 2)
+                .outerRadius(r);
+
+
+            // Add a label to the larger arcs, translated to the arc centroid and rotated.
+            g.filter(function(d) { return d.endAngle - d.startAngle > .2; }).append("text")
+                .attr("dy", ".35em")
+                .attr("text-anchor", "middle")
+                .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+                .text(function(d) { return d[data.columns[1]]; });
 
     }
 
     this.Viz12 = function (data) {
+        var groupByArray = function (xs, key) {
+            return xs.reduce(function (rv, x) {
+                let v = key instanceof Function ? key(x) : x[key];
+                let el = rv.find((r) => r && r.key === v);
+                if (el) {
+                    el.values.push({name: x[data.columns[1]], value:  x[data.columns[2]]});
+                }
+                else {
+                    rv.push({key: v, values: [{name: x[data.columns[1]], value:  x[data.columns[2]]}]});
+                }
+                return rv;
+            }, []);
+        }
+        
+        var rel1 = groupByArray(data, data.columns[0]);
+        console.log(groupByArray(data, data.columns[0]));
+
+        var ndata = d3.nest()
+            .key(function(d) {return d[data.columns[0]]})
+            .entries(data)
+        console.log(ndata);
+
+        var rel = [
+            [],
+            []
+        ];
+
+        /*data.forEach((d) => {
+            var index = d.Religion == 'R' ? 0 : 1;
+            rel[index].push({
+                name: d.Generation,
+                value: d.Value * 100
+            });
+        });*/
+
+        data.forEach((d) => {
+            var index = d.Attached == 'V' ? 0 : 1;
+            rel[index].push(d.Value);
+        });
+
+        console.log(rel);
+
+        //var arcs = pie(data);
+
+        //Rachelle's comment: changed the data
+
+        // Define the margin, radius, and color scale. The color scale will be
+        // assigned by index, but if you define your data using objects, you could pass
+        // in a named field from the data object instead, such as `d.name`. Colors
+        // are assigned lazily, so if you want deterministic behavior, define a domain
+        // for the color scale.
+        var m = 10,
+            r = 100,
+            //z = d3.scaleOrdinal()
+            //    .range(["#0077b3", "#66ccff",]);
+            z = d3.scaleOrdinal()
+            .range([
+                "#0077b3", "#0099e6", "#1ab2ff", "#66ccff",
+            ]);
+        //Rachelle's comment: changed colors and scaleOrdinal for v5 
+
+        // Insert an svg element (with margin) for each row in our dataset. A child g
+        // element translates the origin to the pie center.
+        var svg = d3.select("body").selectAll("svg")
+            .data(ndata)
+            .enter().append("svg")
+            .attr("width", (r + m) * 2)
+            .attr("height", (r + m) * 2)
+            .append("g")
+            .attr("transform", "translate(" + (r + m) + "," + (r + m) + ")");
+
+        console.log("drawing");
+        svg.append("text")
+          .attr("dy", ".35em")
+            .attr("text-anchor", "middle")
+            .text(function(d) { return d.key; });
+
+
+        // The data for each svg element is a row of numbers (an array). We pass that to
+        // d3.layout.pie to compute the angles for each arc. These start and end angles
+        // are passed to d3.svg.arc to draw arcs! Note that the arc radius is specified
+        // on the arc, not the layout.
+        //Rachelle's comment: updated d3.pie and d3.arc to v5
+        var g = svg.selectAll("path")
+            .data(function(d) {return d3.pie().value(function(d) {
+                return d[data.columns[2]];
+            })(d.values);})
+            .enter().append("path");
+
+            g.attr("d", d3.arc()
+                .innerRadius(r / 2)
+                .outerRadius(r))
+            .style("fill", function (d, i) {
+                return z(i);
+            });
+
+            // Define an arc generator. Note the radius is specified here, not the layout.
+            var arc = d3.arc()
+                .innerRadius(r / 2)
+                .outerRadius(r);
+
+
+            // Add a label to the larger arcs, translated to the arc centroid and rotated.
+            g.filter(function(d) { return d.endAngle - d.startAngle > .2; }).append("text")
+                .attr("dy", ".35em")
+                .attr("text-anchor", "middle")
+                .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+                .text(function(d) { return d[data.columns[1]]; });
 
     }
 
@@ -850,7 +1066,7 @@ function Visualization(fileName) {
             new Loader("Assets/Data/Viz6.csv", this.Viz6),
             new Loader("", this.Viz7),
             new Loader("Assets/Data/Viz8.csv", this.Viz8),
-            new Loader("Assets/Data/Viz10.csv", this.Viz10),
+            new Loader("Assets/Data/Viz10.csv", this.DrawSimpleChart),
             new Loader("Assets/Data/Viz11.csv", this.Viz11),
             new Loader("Assets/Data/Viz11.1.csv", this.Viz111),
             new Loader("Assets/Data/Viz12.2.csv", this.Viz122),
