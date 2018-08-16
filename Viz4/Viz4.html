@@ -21,9 +21,9 @@ var width = 960,
     height = 500;
 
 var svg = d3.select("body").append("svg")
-    // .attr("dy", 5)
-    // .attr("x", function(d) {return d.children ? -7 : 7; })
-    // .style("text-anchor", function(d) {return d.chilren ? "end" : "start"; })
+    .attr("dy", 5)
+    .attr("x", function(d) {return d.children ? -7 : 7; })
+    .style("text-anchor", function(d) {return d.chilren ? "end" : "start"; })
     .attr("width", width)
     .attr("height", height);
 
