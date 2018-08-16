@@ -780,7 +780,7 @@ function Visualization(fileName) {
             new Loader("Assets/Data/Viz4.csv", this.DrawSimpleChart),
             new Loader("Assets/Data/Viz5.csv", this.DrawSimpleChart),
             new Loader("Assets/Data/Viz6.csv", this.Viz6),
-            new Loader(), this.Viz7,
+            new Loader("", this.Viz7),
             new Loader("Assets/Data/Viz8.csv", this.Viz8),
             new Loader("Assets/Data/Viz12.2.csv", this.Viz122),
             new Loader("Assets/Data/Viz12.1.csv", this.Viz121),
