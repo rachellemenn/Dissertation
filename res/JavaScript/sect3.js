@@ -367,8 +367,6 @@ function Visualization(fileName) {
 
     this.Viz7 = function () {
 
-        var svg = clearSvgContainer();
-        container.selectAll("*").remove();
         
         var tau = 2 * Math.PI; // http://tauday.com/tau-manifesto
                     
@@ -382,10 +380,11 @@ function Visualization(fileName) {
                     
         // Get the SVG container, and apply a transform such that the origin is the
         // center of the canvas. This way, we don’t need to position arcs individually.
-        var svg = d3.select("svg"),
-            width = +svg.attr("width"),
+        var svg = clearSvgContainer(),
             height = +svg.attr("height"),
             g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+            
+            
                     
         // Add the background arc, from 0 to 100% (tau).
          var background = g.append("path")
