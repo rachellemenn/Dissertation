@@ -1,13 +1,13 @@
-Attached,	Ideology,	value,		
-V,		Conserv,	45.86%,		
-V,		Liberal,	21.07%,		
-V,		Moderate,	31.29%,		
-Lil,		Conserv,	34.25%,		
-Lil,		Liberal,	33.62%,		
-Lil,		Moderate,	42.41%,		
-NR,		Conserv,	11.89%,		
-NR,		Liberal,	27.99%,		
-NR,		Moderate,	16.69%,		
-N,		Conserv,	7.99%,		
-N,		Liberal,	17.32%,		
-N,		Moderate,	9.61%,
+Attached,Ideology,Value
+V,Conserv,0.4586
+V,Liberal,0.2107
+V,Moderate,0.3129
+Lil,Conserv,0.3425
+Lil,Liberal,0.3362
+Lil,Moderate,0.4241
+NR,Conserv,0.1189
+NR,Liberal,0.2799
+NR,Moderate,0.1669
+N,Conserv,0.0799
+N,Liberal,0.1732
+N,Moderate,0.0961

@@ -1,3 +1,10 @@
-﻿,Conservative,Liberal,Moderate,
-Soviet,59.35%,50.07%,62.01%,58.48%
-American,40.65%,49.93%,37.99%,41.52%
+Ideo,National,Value					
+Conserv,Other,0.3880,
+Conserv,American,0.328
+Conserv,Soviet,0.3447
+Liberal,Other,0.1973
+Liberal,American,0.2397
+Liberal,Soviet,0.0383	
+Moderate,Other,0.4147	
+Moderate,American,0.4319
+Moderate,Soviet,0.617		

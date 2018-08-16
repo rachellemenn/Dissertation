@@ -1,7 +1,7 @@
-﻿childJ, marriage, value,
-NJ,	both,	  0.05137,
-NJ,	mix,	  0.4863,
-PJ,	both,	  0.2129,
-PJ,	mix,	  0.7871,
-J,	both,	  0.8815,
-J,	mix,	  0.1185,
+﻿ChildJ,Marriage,Value
+NJ,both,0.5137
+NJ,mix,0.4863
+PJ,both,0.2129
+PJ,mix,0.7871
+J,both,0.8815
+J,mix,0.1185
