@@ -276,15 +276,34 @@ function Visualization(fileName) {
                 
             
                 context.translate(width / 2, height / 2);
+
+                console.log('creating paths');
+            var g = gx.selectAll("g")
+                 .data(function (d) {
+                    return d3.pie().value(function (d) {
+                    return d[data.columns[2]];
+                })(d.values);
+            })
+            .enter().append("g");
+
+        /*.data((d) => {
+            pie(d.values)
+        })*/
+        // Fill the arc
+        console.log('filling arcs');
+        g.append("path").attr("d", arc)
+            .style("fill", function (d, i) {
+                return z(i);
+            });
             
                 //Rachelle's comment: removed globalAlpha so the colours weren't muted.
                 // context.globalAlpha = 0.5;
-                arc.forEach(function(d, i) {
-                    context.beginPath();
-                    arc(d)
-                    context.fillStyle = colors[i];
-                    context.fill();
-                });
+                // arc.forEach(function(d, i) {
+                //     context.beginPath();
+                //     arc(d)
+                //     context.fillStyle = colors[i];
+                //     context.fill();
+                // });
             // });
             
             }
