@@ -241,13 +241,13 @@ function Visualization(fileName) {
                 var offset = 2 * i * (r + m);
                 return "translate(" + (r + m + offset) + "," + (r + m) + ")";});
 
-        function Draw() {
-            var canvas = document.querySelector("canvas"),
-                context = canvas.getContext("2d");
+        // function Draw() {
+        //     var canvas = document.querySelector("canvas"),
+        //         context = canvas.getContext("2d");
             
-            var width = canvas.width,
-                height = canvas.height,
-                radius = Math.min(width, height) / 2;
+        //     var width = canvas.width,
+        //         height = canvas.height,
+        //         radius = Math.min(width, height) / 2;
             
             var colors = [
             "#0077b3","#0099e6","#1ab2ff","#66ccff",
@@ -282,7 +282,7 @@ function Visualization(fileName) {
                     context.fillStyle = colors[i];
                     context.fill();
                 });
-            });
+            // });
             
             }
     }
