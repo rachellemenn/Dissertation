@@ -23,7 +23,7 @@ function Loader(fileName, callbackFunction) {
     function SimpleCSVLoader(doCallback) {
         console.log("SimpleCSVLoader " + fileName);
         d3.csv(fileName, (rows) => {
-            console.log("Loaded ", rows.length);
+            // console.log("Loaded ", rows.length);
             console.log(rows);
             rows.forEach((row) => {
                 // Go through properties and convert strings to numbers
