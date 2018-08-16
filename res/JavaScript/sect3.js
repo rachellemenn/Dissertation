@@ -261,7 +261,7 @@ function Visualization(fileName) {
                 .outerRadius(r - 10)
                 .innerRadius(5)
                 .padAngle(0.09)
-                .context(context);
+                // .context(context);
             
             var pie = d3.pie().value(function(d){return d.Percent});
             
