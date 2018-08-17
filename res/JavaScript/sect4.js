@@ -432,86 +432,86 @@ function Visualization(fileName) {
     }
 
 
-    this.Viz4 = function (data) {
-        function loadData(fileName)
-        {
-        return d3.csv(fileName);
-        }
-        const svg   = d3.select("svg"),
-  		    width = +svg.attr("width"),
-  		    height= +svg.attr("height"),
-            color = [
-        "#0077b3","#0099e6","#1ab2ff","#66ccff", 
-        ]; 
-        // chroma
-    		// 		.scale(['#ED9367','#FAE8CB'])
-    		// 		.mode('lch')
-    		// 		.colors(3)
+//     this.Viz4 = function (data) {
+//         function loadData(fileName)
+//         {
+//         return d3.csv(fileName);
+//         }
+//         const svg   = d3.select("svg"),
+//   		    width = +svg.attr("width"),
+//   		    height= +svg.attr("height"),
+//             color = [
+//         "#0077b3","#0099e6","#1ab2ff","#66ccff", 
+//         ]; 
+//         // chroma
+//     		// 		.scale(['#ED9367','#FAE8CB'])
+//     		// 		.mode('lch')
+//     		// 		.colors(3)
 
-        const g = svg.append("g")
+//         const g = svg.append("g")
 
-        const layout = d3.pack()
-  			.size([width - 2, height - 2])
-				.padding(6)
+//         const layout = d3.pack()
+//   			.size([width - 2, height - 2])
+// 				.padding(6)
     
 
-        // Get the data from our CSV file
+//         // Get the data from our CSV file
 
-        var dataPromise = loadData('Viz4.csv');
-            dataPromise.then(function(data){
-            data.forEach(function(d){
-                d.value = parseFloat(d.value);
-            });
-            console.log(data);
-//     var arcs = pie(data);
+//         var dataPromise = loadData('Viz4.csv');
+//             dataPromise.then(function(data){
+//             data.forEach(function(d){
+//                 d.value = parseFloat(d.value);
+//             });
+//             console.log(data);
+// //     var arcs = pie(data);
 
-// d3.csv('viz1.csv', function(error, data) {
+// // d3.csv('viz1.csv', function(error, data) {
   
-//   data.sort(function(x, y){ return d3.ascending(x.size, y.size) })
-// 	if (error) throw error;
+// //   data.sort(function(x, y){ return d3.ascending(x.size, y.size) })
+// // 	if (error) throw error;
 	
-        var stratData = d3.stratify()
-            .parentId(function(d) {return d["I1"];})
-            .id(function(d){return d.id;});
-        var root = stratData(data);
-        console.log(root);
-        root          
-            .sum(function (d) { return d.value })
-            .sort(function(a, b, c) { return b.value + a.value + c.value });
+//         var stratData = d3.stratify()
+//             .parentId(function(d) {return d["I1"];})
+//             .id(function(d){return d.id;});
+//         var root = stratData(data);
+//         console.log(root);
+//         root          
+//             .sum(function (d) { return d.value })
+//             .sort(function(a, b, c) { return b.value + a.value + c.value });
 
-        var nodes = root.descendants();
+//         var nodes = root.descendants();
   
-        console.log(nodes);
+//         console.log(nodes);
   	
-        layout(root);
+//         layout(root);
   
-        g.selectAll('circle').append("text")
-            .attr("dy", 5)
-            .attr("x", function(d) { return d.children ? -7 : 7; })
-            .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
-            .attr("fill", "#000")
-            .style("font", "10px sans-serif")
-            .text(function(d) { return d.id; });
+//         g.selectAll('circle').append("text")
+//             .attr("dy", 5)
+//             .attr("x", function(d) { return d.children ? -7 : 7; })
+//             .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
+//             .attr("fill", "#000")
+//             .style("font", "10px sans-serif")
+//             .text(function(d) { return d.id; });
 
-        const slices = g.selectAll('circle')
-  	        .data(nodes)
-  	        .enter()
-  	        .append('circle')
-  	        .attr('cx', function (d) { return d.x; })
-            .attr('cy', function (d) { return d.y; })
-            .attr('r', function (d) { return d.r; })
-            .style("fill", function(d) { return color[d.depth]; }).append("text")
-            .attr("dy", 5)
-            .attr("x", function(d) { return d.children ? -7 : 7; })
-            .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
-            .attr("fill", "#000")
-            .style("font", "10px sans-serif")
-            .text(function(d) { return d.id; });
+//         const slices = g.selectAll('circle')
+//   	        .data(nodes)
+//   	        .enter()
+//   	        .append('circle')
+//   	        .attr('cx', function (d) { return d.x; })
+//             .attr('cy', function (d) { return d.y; })
+//             .attr('r', function (d) { return d.r; })
+//             .style("fill", function(d) { return color[d.depth]; }).append("text")
+//             .attr("dy", 5)
+//             .attr("x", function(d) { return d.children ? -7 : 7; })
+//             .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
+//             .attr("fill", "#000")
+//             .style("font", "10px sans-serif")
+//             .text(function(d) { return d.id; });
     
 
-        });
+//         });
 
-    }
+    // }
 
     this.Viz5 = function (data) {
 
