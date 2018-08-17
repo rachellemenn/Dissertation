@@ -100,6 +100,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
       z-index: 1;
       margin-left: 0;
       margin-top: 20px;
+      margin-bottom: 20px;
 
       height: 650px;
       width: 650px;
