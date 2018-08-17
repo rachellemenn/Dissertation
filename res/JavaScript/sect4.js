@@ -833,8 +833,8 @@ function Visualization(fileName) {
         new Loader("Assets/Data/Viz13.2.csv", this.Viz132),
         new Loader("Assets/Data/Viz13.1.csv", this.Viz131),
         new Loader("Assets/Data/Viz15.csv", this.Viz15),
-        new Loader("Assets/Data/VIZual14.csv", this.Viz14),
-        new Loader("Assets/Data/Vizual14.1.csv", this.Viz141),
+        new Loader("Assets/Data/VIZual14.csv", this.Viz8),
+        new Loader("Assets/Data/Vizual14.1.csv", this.Viz8),
         new Loader("Assets/Data/Viz16.1.csv", this.Viz8),
         new Loader("Assets/Data/Viz16.csv", this.Viz8),
     ];
