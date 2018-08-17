@@ -41,12 +41,13 @@
             });
             
         var stratData = d3.stratify()
-            .parentId(function(d) {return d["Religion"];})
-            .id(function(d){return d.religion;});
-        var root = stratData(data);
-        console.log(root);
-        root          
             .sum(function (d) { return d.Value; });
+        //     .parentId(function(d) {return d["Religion"];})
+        //     .id(function(d){return d.religion;});
+        // var root = stratData(data);
+        // console.log(root);
+        // root          
+            
             // .sort(function(a, b) { return b.Value - a.Value });
 
         var nodes = root.descendants();
