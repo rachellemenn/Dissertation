@@ -1103,7 +1103,7 @@ function Visualization(fileName) {
         new Loader("Assets/Data/Viz2.csv", this.DrawSimpleChart),
         new Loader("Assets/Data/Vizual3.csv", this.DrawSimpleChart),
         new Loader("Assets/DataViz4.csv", this.DrawSimpleChart),
-        new Loader("Assets/Data/Viz5.csv", this.DrawSimpleChart),
+        new Loader("Assets/DataViz5.csv", this.DrawSimpleChart),
         new Loader("Assets/Data/Vizual3.csv", this.DrawPie),
         new Loader("Assets/Data/Viz4.csv", this.Viz4),
         new Loader("Assets/Data/Viz5.csv", this.Viz5),
