@@ -41,6 +41,7 @@
             });
             
         var stratData = d3.stratify()
+        var root = stratData(data)
             .sum(function (d) { return d.Value; });
         //     .parentId(function(d) {return d["Religion"];})
         //     .id(function(d){return d.religion;});

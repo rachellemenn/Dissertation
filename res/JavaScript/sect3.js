@@ -641,6 +641,11 @@ function Visualization(fileName) {
     }
 
     this.Viz11 = function (data) {
+        if (data != null) {
+            console.log(data);
+            data.length === 1 || data.columns.length === 2 ? DrawBar(data) : DrawBar(data);
+            draw = false;
+        }
 
     }
 

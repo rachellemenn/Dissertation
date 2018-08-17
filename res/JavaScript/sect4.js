@@ -1284,7 +1284,7 @@ function Visualization(fileName) {
         new Loader("Assets/Data/Viz5.csv", this.Viz5),
         new Loader("Assets/Data/Viz6.csv", this.Viz6),
         new Loader("Assets/Data/Viz7.csv", this.Viz7),
-        new Loader("Assets/Data/Viz8.csv", this.DrawDonutsMultiple),
+        new Loader("Assets/Data/Viz8.csv", this.Viz8),
         new Loader("Assets/Data/Viz10.csv", this.DrawSimpleChart),
         new Loader("Assets/Data/Viz11.csv", this.Viz11),
         new Loader("Assets/Data/Viz11.1.csv", this.Viz111),
