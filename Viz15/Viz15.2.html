@@ -39,9 +39,23 @@
             data.forEach(function(d){
                 d.value = parseFloat(d.value);
             });
+            
+        var stratData = d3.stratify()
+            .parentId(function(d) {return d["Religion"];})
+            .id(function(d){return d.religion;});
+        var root = stratData(data);
+        console.log(root);
+        root          
+            .sum(function (d) { return d.Value; });
+            // .sort(function(a, b) { return b.Value - a.Value });
 
-        var nodes = d3.hierarchy()
-            .sum(function(d) { return d.Count; });
+        var nodes = root.descendants();
+        console.log(nodes);
+  	
+        layout(root);
+
+        // var nodes = d3.stratify()
+        //     .sum(function(d) { return d.Count; });
 
         var node = svg.selectAll(".node")
             .data(bubble(nodes).descendants())
