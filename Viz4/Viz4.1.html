@@ -55,7 +55,7 @@ dataPromise.then(function(data){
 // 	if (error) throw error;
 	
     var stratData = d3.stratify()
-      .parentId(function(d) {return d["parent id"];})
+      .parentId(function(d) {return d["I1"];})
       .id(function(d){return d.id;});
     var root = stratData(data);
     console.log(root);
