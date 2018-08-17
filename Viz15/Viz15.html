@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+<script src="//d3js.org/d3.v5.min.js"></script>
+<script>
+
+function loadData(fileName)
+{
+    return d3.csv(fileName);
+}
+
+console.log(data);
+
+var diameter = 500,
+    color = ["#0077b3","#0099e6","#1ab2ff","#66ccff"];
+
+var bubble = d3.pack()
+    .sort(null)
+    .size([diameter, diamteter])
+    .padding(1.5);
+
+var svg = d3.select("body")
+    .append("svg")
+    .attr("width", diameter)
+    .attr("height", diameter)
+    .attr("class", "bubble");
+
+var dataPromise = loadData('Viz15.csv');
+dataPromise.then(function(data){
+    data.forEach(function(d){
+        d.value = parseFloat(d.value);
+
+data = data.map(function(d){ d.value = +d["Value"]; return d})
+; });
+
+var nodes = bubbles.nodes({children:data}).filter(function(d) {return !d.children; });
+
+var bubbles = svg.append("g")
+    .attr("transform", "translate(0,0)")
+    .selectAll(".bubble")
+    .data(nodes)
+    .enter();
+
+bubbles.append("circle")
+    .attr("r", function(d){ return d.r; })
+    .attr("cx", function(d){ return d.x; })
+    .attr("cy", function(d){ return d.y; })
+    .style("fill", function(d) { return color(d.value); });
+
+bubble.append("text")
+    .attr("x", function(d) {return d.x; })
+    .attr("y", function(d){ return d.y +5; })
+    .attr("text-anchor", "middle")
+    .text(function(d) { return d["Religion"]; })
+    .style({
+        "fill":"white",
+    });
+
+});
+</script>
+</html>
+
+// var data = d3.map()
+//       .parentId(function(d) {return d["parent id"];})
+//       .id(function(d){return d.id;});
+//     var root = stratData(data);
+//     console.log(root);
+//     root          
+//       .sum(function (d) { return d.value })
+//       .sort(function(a, b) { return b.value - a.value });
+
+//   var nodes = root.descendants();
+  
+//   console.log(nodes);
+  	
+//   layout(root);
+  
+//   g.selectAll('circle').append("text")
+//         .attr("dy", 5)
+//         .attr("x", function(d) { return d.children ? -7 : 7; })
+//         .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
+//         .attr("fill", "#000")
+//         .style("font", "10px sans-serif")
+//         .text(function(d) { return d.id; });
+
+//   const slices = g.selectAll('circle')
+//   	.data(nodes)
+//   	.enter()
+//   	.append('circle')
+//   	.attr('cx', function (d) { return d.x; })
+//     .attr('cy', function (d) { return d.y; })
+//     .attr('r', function (d) { return d.r; })
+//     .style("fill", function(d) { return color[d.depth]; }).append("text")
+//         .attr("dy", 5)
+//         .attr("x", function(d) { return d.children ? -7 : 7; })
+//         .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
+//         .attr("fill", "#000")
+//         .style("font", "10px sans-serif")
+//         .text(function(d) { return d.id; });
+    
+
+// });
