@@ -38,6 +38,7 @@
         dataPromise.then(function(data){
             data.forEach(function(d){
                 d.value = parseFloat(d.value);
+                console.log(data)
             });
             
         var stratData = d3.stratify()
