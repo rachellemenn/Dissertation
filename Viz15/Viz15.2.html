@@ -20,7 +20,7 @@
     
 
         var diameter = 600;
-        var color = color = [
+        var color = [
             "#0077b3","#0099e6","#1ab2ff","#66ccff", 
         ]; 
 
@@ -41,8 +41,8 @@
                 console.log(data)
             });
             
-        var stratData = d3.stratify()
-        var nodes = stratData(data)
+        // var stratData = d3.stratify()
+        var nodes = d3.stratify(data)
             .sum(function (d) { return d.Value; });
         //     .parentId(function(d) {return d["Religion"];})
         //     .id(function(d){return d.religion;});
