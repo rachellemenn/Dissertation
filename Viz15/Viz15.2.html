@@ -34,7 +34,7 @@
             .attr("height", diameter)
             .attr("class", "bubble");
 
-        var dataPromise = loadData('Vizual1.csv');
+        var dataPromise = loadData('Viz15.csv');
         dataPromise.then(function(data){
             data.forEach(function(d){
                 d.value = parseFloat(d.value);
