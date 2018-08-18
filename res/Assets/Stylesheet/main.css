@@ -72,9 +72,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   .step {
       margin-bottom: 200px;
       font-family:'Inconsolata', monospace;
-      font-size: 20px;
+      font-size: 15px;
       /* font-weight: bold; */
-      line-height: 23px;
+      line-height: 30px;
       color: #363D4F;
   }
 
