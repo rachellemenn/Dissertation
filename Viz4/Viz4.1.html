@@ -41,7 +41,7 @@ const layout = d3.pack()
 
 // Get the data from our CSV file
 
-var dataPromise = loadData('Viz4.csv');
+var dataPromise = loadData('Viz4.1.csv');
 dataPromise.then(function(data){
     data.forEach(function(d){
          d.value = parseFloat(d.value);
