@@ -183,8 +183,9 @@ function Visualization(fileName) {
         var nodes = root.descendants();
 
         colors = [
-            "#0077b3", "#0099e6", "#1ab2ff", "#66ccff",
+            "#00e0ff","#00b2ff","#0000ff","#000086", 
         ];
+        // offical colors ^
 
         layout(root);
 
@@ -248,7 +249,10 @@ function Visualization(fileName) {
         })]);
 
         // Colors for now
-        var colors = d3.scaleOrdinal(d3.schemeCategory20);
+        var colors = [
+            "#00e0ff","#00b2ff","#0000ff","#000086"
+        ];
+        // ] d3.scaleOrdinal(d3.schemeCategory20);
 
         // append the rectangles for the bar chart
         svg.selectAll(".bar")
@@ -301,7 +305,7 @@ function Visualization(fileName) {
         //         radius = Math.min(width, height) / 2;
 
         var colors = [
-            "#0077b3", "#0099e6", "#1ab2ff", "#66ccff",
+            "#00e0ff","#00b2ff","#0000ff","#000086",
         ];
         radius = Math.min(width, height) / 2;
 
@@ -337,7 +341,7 @@ function Visualization(fileName) {
 
         var diameter = 600;
         var color = [
-                "#0077b3","#0099e6","#1ab2ff","#66ccff", 
+            "#00e0ff","#00b2ff","#0000ff","#000086", 
         ]; 
     
         var bubble = d3.pack()
@@ -787,7 +791,7 @@ function Visualization(fileName) {
         // for the color scale.
         z = d3.scaleOrdinal()
             .range([
-                "#0077b3", "#0099e6", "#1ab2ff", "#66ccff",
+                "#00e0ff","#00b2ff","#0000ff","#000086",
             ]);
 
         // Define the pie layout. Column 2 (the third column) is the value.
