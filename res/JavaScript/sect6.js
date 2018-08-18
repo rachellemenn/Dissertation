@@ -531,7 +531,7 @@ function Visualization(fileName) {
         var y1 = d3.scaleBand()
 
         var z = d3.scaleOrdinal()
-            .range(["#082A4C", "#113D6C"]);
+            .range(["#000086", "#00e0ff"]);
 
         var stack = d3.stack()
             .offset(d3.stackOffsetExpand);
