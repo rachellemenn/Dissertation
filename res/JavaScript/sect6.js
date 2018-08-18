@@ -531,7 +531,7 @@ function Visualization(fileName) {
         var y1 = d3.scaleBand()
 
         var z = d3.scaleOrdinal()
-            .range(["#00e0ff","#000086"]);
+            .range(["#00e0ff","#000086", ]);
 
         var stack = d3.stack()
             .offset(d3.stackOffsetExpand);
@@ -935,11 +935,138 @@ function Visualization(fileName) {
     }
 
     this.Viz10 = function (data) {
-        if (data != null) {
-            console.log(data);
-            data.length === 1 || data.columns.length === 3 ? DrawBar(data) : DrawBar(data);
-            draw = false;
-        }
+        data.forEach(function (d) {
+            d.Value = parseFloat(d.Value);
+        });
+
+        var x = d3.scaleBand()
+            .rangeRound([0, width])
+            .paddingInner(0.1)
+        // var x1 = d3.scaleBand()
+            .padding(0.05);
+
+        var y = d3.scaleLinear()
+            .rangeRound([height, 0]);
+        var y1 = d3.scaleBand()
+
+        var z = d3.scaleOrdinal()
+            .range(["#00e0ff","#000086", ]);
+
+        var stack = d3.stack()
+            .offset(d3.stackOffsetExpand);
+
+        x.domain(data.map(function (d) {
+            return d.Identity;
+        }))
+        // x1.domain(data.map(function (d) {
+        //         return d.Imp;
+        //     }))
+            .rangeRound([0, x0.bandwidth()])
+            .padding(0.2);
+
+        z.domain(data.map(function (d) {
+            return d.Religion;
+        }));
+
+        var keys = z.domain()
+
+        var groupData = d3.nest()
+            .key(function (d) {
+                return d.Imp + d.Identity;
+            })
+            .rollup(function (d, i) {
+                var d2 = {
+                    // Imp: d[0].Imp,
+                    Identity: d[0].Identity
+                }
+                d.forEach(function (d) {
+                    d2[d.Religion] = d.Value
+                })
+                return d2;
+            })
+            .entries(data)
+            .map(function (d) {
+                return d.value;
+            });
+
+        var stackData = stack
+            .keys(keys)(groupData)
+
+        var graphHeight = d3.max(data, function (d) {
+            return d.Value;
+        });
+
+        y.domain([0, graphHeight]).nice();
+
+        // Get the parent
+        var svg = clearSvgContainer();
+        g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        var serie = g.selectAll(".serie")
+            .data(stackData)
+            .enter().append("g")
+            .attr("class", "serie")
+            .attr("fill", function (d) {
+                return z(d.key);
+            });
+
+        serie.selectAll("rect")
+            .data(function (d) {
+                return d;
+            })
+            .enter().append("rect")
+            .attr("class", "serie-rect")
+            .attr("transform", function (d) {
+                return "translate(" + x(d.data.Identity) + ",0)";
+            })
+            // .attr("x", function (d) {
+            //     return x1(d.data.Imp);
+            // })
+            .attr("y", function (d) {
+                return 1 - d[0];
+            })
+            .attr("height", function (d) {
+                return y(d[0]) - y(d[1]);
+            })
+            .attr("width", x1.bandwidth());
+
+        g.append("g")
+            .attr("class", "axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(x));
+
+        g.append("g")
+            .attr("class", "axis")
+            .call(d3.axisLeft(y).ticks(null, "s"))
+            .append("text")
+            .attr("x", 2)
+            .attr("y", y(y.ticks().pop()) + 0.5)
+            .attr("dy", "0.32em")
+            .attr("fill", "#000")
+            .attr("font-weight", "bold")
+            .attr("text-anchor", "start")
+            .text("Population");
+
+        var legend = serie.append("g")
+            .attr("class", "legend")
+            .attr("transform", function (d) {
+                var d = d[d.length - 1];
+                return "translate(" + (x0(d.data.Identity) + x1(d.data.Imp) + x1.bandwidth()) + "," + ((y(d[0]) + y(d[1])) / 2) + ")";
+            });
+
+        legend.append("line")
+            .attr("x1", -6)
+            .attr("x2", 6)
+            .attr("stroke", "#000");
+
+        legend.append("text")
+            .attr("x", 9)
+            .attr("dy", "0.35em")
+            .attr("fill", "#000")
+            .style("font", "10px sans-serif")
+            .text(function (d) {
+                return d.key;
+            });
     }
 
     this.Viz11 = function (data) {
