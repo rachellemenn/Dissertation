@@ -75,7 +75,7 @@ dataPromise.then(function(data){
         .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
         .attr("fill", "#000")
         .style("font", "10px sans-serif")
-        .text(function(d) { return d.id; });
+        .text(function(d) { return d.ID; });
 
   const slices = g.selectAll('circle')
   	.data(nodes)
@@ -90,7 +90,7 @@ dataPromise.then(function(data){
         .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
         .attr("fill", "#000")
         .style("font", "10px sans-serif")
-        .text(function(d) { return d.id; });
+        .text(function(d) { return d.ID; });
     
 
 });
