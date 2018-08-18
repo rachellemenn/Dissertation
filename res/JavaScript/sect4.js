@@ -84,9 +84,9 @@ function Visualization(fileName) {
     var width = 600;
     var height = 520;
     var margin = {
-        top: 10,
+        top: 25,
         left: 20,
-        bottom: 40,
+        bottom: 25,
         right: 10
     };
 
