@@ -80,9 +80,9 @@ function Visualization(fileName) {
     var width = 600;
     var height = 520;
     var margin = {
-        top: 10,
+        top: 30,
         left: 20,
-        bottom: 40,
+        bottom: 20,
         right: 10
     };
 
