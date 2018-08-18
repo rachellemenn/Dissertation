@@ -961,7 +961,7 @@ function Visualization(fileName) {
         // x1.domain(data.map(function (d) {
         //         return d.Imp;
         //     }))
-            .rangeRound([0, x0.bandwidth()])
+            .rangeRound([0, x.bandwidth()])
             .padding(0.2);
 
         z.domain(data.map(function (d) {
@@ -1051,7 +1051,7 @@ function Visualization(fileName) {
             .attr("class", "legend")
             .attr("transform", function (d) {
                 var d = d[d.length - 1];
-                return "translate(" + (x0(d.data.Identity) + x1(d.data.Imp) + x1.bandwidth()) + "," + ((y(d[0]) + y(d[1])) / 2) + ")";
+                return "translate(" + (x(d.data.Identity) + x.bandwidth()) + "," + ((y(d[0]) + y(d[1])) / 2) + ")";
             });
 
         legend.append("line")
