@@ -78,6 +78,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
       color: #363D4F;
   }
 
+  .subtitle {
+    font-size: 40px;
+    font-family:'Goudy+Bookletter+1911', serif;
+    line-height: 30px;
+    color: #363D4F;
+  }
+
   #sections .title{
       font-family: 'Goudy Bookletter 1911', serif;
       font-size: 40px;
