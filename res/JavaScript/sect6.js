@@ -688,7 +688,7 @@ function Visualization(fileName) {
             .datum({
                 endAngle: 0 * tau
             })
-            .style("fill", "#3333ff")
+            .style("fill", "#0000ff")
             .attr("d", arc);
         //Rachelle's comment: changed the colors, the sizings.Removed math.random from the function below and replaced
         //with the number 0.6962. This was preiviously in the above var. That now says 0. this way, the viz starts 
