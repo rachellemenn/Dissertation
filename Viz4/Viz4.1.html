@@ -61,7 +61,7 @@ dataPromise.then(function(data){
     console.log(root);
     root          
       .sum(function (d) { return d.value })
-      .sort(function(a, b, c) { return b.value + a.value + c.value });
+      .sort(function(a, b) { return b.value - a.value});
 
   var nodes = root.descendants();
   
