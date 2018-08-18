@@ -179,7 +179,7 @@ function Visualization(fileName) {
         var nodes = root.descendants();
 
         colors = [
-            "#00e0ff","#00b2ff","#0000ff","#000086", 
+            "#000086","#0000ff","#0f57e2","#00e0ff",
         ];
         // official colours ^
 
@@ -245,7 +245,7 @@ function Visualization(fileName) {
 
         // Colors for now
         var colors = [
-            "#00e0ff","#00b2ff","#0000ff","#000086",
+            "#00e0ff","#0f57e2","#0000ff","#000086",
         ];   
 
         // append the rectangles for the bar chart
@@ -298,7 +298,7 @@ function Visualization(fileName) {
         //         radius = Math.min(width, height) / 2;
 
         var colors = [
-            "#00e0ff","#00b2ff","#0000ff","#000086",
+            "#00e0ff","#0f57e2","#0000ff","#000086",
         ];
         radius = Math.min(width, height) / 2;
 
@@ -333,7 +333,7 @@ function Visualization(fileName) {
 
         var diameter = 600;
         var color = [
-            "#00e0ff","#00b2ff","#0000ff","#000086",
+            "#00e0ff","#0f57e2","#0000ff","#000086",
         ];
 
         var bubble = d3.pack()
@@ -785,7 +785,7 @@ function Visualization(fileName) {
         // for the color scale.
         z = d3.scaleOrdinal()
             .range([
-                "#00e0ff","#00b2ff","#0000ff","#000086",
+                "#00e0ff","#0f57e2","#0000ff","#000086",
             ]);
 
         // Define the pie layout. Column 2 (the third column) is the value.
@@ -871,7 +871,7 @@ function Visualization(fileName) {
         // for the color scale.
         z = d3.scaleOrdinal()
             .range([
-                "#00e0ff","#00b2ff","#0000ff","#000086",
+                "#00e0ff","#0f57e2","#0000ff","#000086",
             ]);
 
         // Define the pie layout. Column 2 (the third column) is the value.
