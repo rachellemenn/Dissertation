@@ -54,20 +54,20 @@ dataPromise.then(function(data){
 //   data.sort(function(x, y){ return d3.ascending(x.size, y.size) })
 // 	if (error) throw error;
 	
-    var stratData = d3.stratify()
-      .parentId(function(d) {return d["Parent ID"];})
-      .id(function(d){return d.ID;});
-    var root = stratData(data);
-    console.log(root);
-    root          
-      .sum(function (d) { return d.value })
-      .sort(function(a, b) { return b.value - a.value});
+  //   var stratData = d3.stratify()
+  //     .parentId(function(d) {return d["Parent ID"];})
+  //     .id(function(d){return d.ID;});
+  //   var root = stratData(data);
+  //   console.log(root);
+  //   root          
+  //     .sum(function (d) { return d.value })
+  //     .sort(function(a, b) { return b.value - a.value});
 
-  var nodes = root.descendants();
+  // var nodes = root.descendants();
   
-  console.log(nodes);
+  // console.log(nodes);
   	
-  layout(root);
+  // layout(root);
   
   g.selectAll('circle').append("text")
         .attr("dy", 5)
