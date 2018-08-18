@@ -179,7 +179,7 @@ function Visualization(fileName) {
         var nodes = root.descendants();
 
         colors = [
-            "#000086","#0000ff","#0f57e2","#00e0ff",
+            "#000086","#0f57e2","#00e0ff",
         ];
         // official colours ^
 
