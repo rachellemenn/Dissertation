@@ -288,7 +288,7 @@ function Visualization(fileName) {
             .enter()
             .append("text")
             .attr("class","label")
-            .attr("x", (function(d) { return x(d.name) + x.rangeBand() / 2 ; }  ))
+            .attr("x", (function(d) { return x(d.name) + x.scaleBand() / 2 ; }  ))
             .attr("y", function(d) { return y(d.value) + 1; })
             .attr("dy", ".75em")
             .text(function(d) { return d.value; });   	  
