@@ -34,9 +34,9 @@ var sets = [
 var chart = venn.VennDiagram()
 d3.select("#venn").datum(sets).call(chart);
 d3.selectAll("#inverted .venn-circle path")
-                .style("fill-opacity", .8);
+    .style("fill-opacity", .8);
             
-d3.selectAll("#inverted text").style("fill", "white");
+d3.selectAll("#inverted text").style("fill", "green");
 
 var first = data.columns[0];
 var second = data.columns[1];
