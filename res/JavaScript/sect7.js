@@ -1159,6 +1159,8 @@ function Visualization(fileName) {
         var svg = clearSvgContainer();
         g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
         });
+
+        print(data);
     }
 
     var loaders = [
@@ -1167,7 +1169,7 @@ function Visualization(fileName) {
         /*  1 */
         new Loader("Assets/Data/Viz1.csv", this.DrawCircleHierarchy, "Religious Makeup of the USA"),
         /*  2 */
-        null,
+        new Loader("Assets/Data/Quote2.txt", this.LoadQuotes),
         /*  3 */
         null,
         /*  4 */
