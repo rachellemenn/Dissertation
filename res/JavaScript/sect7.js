@@ -228,6 +228,7 @@ function Visualization(fileName) {
         return container.append("g")
             .attr("transform",
                 "translate(" + margin.left + "," + margin.top + ")");
+        document.getElementById("svgTitle").innerHTML = "";
     }
 
     this.DrawBar = function (data) {
