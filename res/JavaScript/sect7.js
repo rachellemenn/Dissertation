@@ -156,7 +156,7 @@ function Visualization(fileName) {
 
     // Public functions
 
-    this.LoadTitle = function (textToDraw) {
+    var LoadTitle = function (textToDraw) {
         document.getElementById("svgTitle").innerHTML = textToDraw;
 
     }
