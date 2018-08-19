@@ -208,6 +208,7 @@ function Visualization(fileName) {
             .style("fill", function (d) {
                 return colors[d.depth];
             });
+
     }
 
 
@@ -282,6 +283,16 @@ function Visualization(fileName) {
         // add the y Axis
         svg.append("g")
             .call(d3.axisLeft(y));
+
+        svgContainer.selectAll(".text")  		
+            .data(data)
+            .enter()
+            .append("text")
+            .attr("class","label")
+            .attr("x", (function(d) { return xScale(d.name) + xScale.rangeBand() / 2 ; }  ))
+            .attr("y", function(d) { return yScale(d.value) + 1; })
+            .attr("dy", ".75em")
+            .text(function(d) { return d.value; });   	  
     }
 
     this.DrawPie = function (data) {
