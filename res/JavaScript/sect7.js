@@ -10,7 +10,7 @@ function Loader(fileName, callbackFunction, callbackContent) {
     var failed = false;
     var Loader = SimpleCSVLoader;
     var CallbackContent = content;
-        this.CallbackContent = () => {
+        this.callbackContent = () => {
             return callbackContent;
         }
 
