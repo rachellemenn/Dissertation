@@ -87,9 +87,9 @@ function Loader(fileName, callbackFunction, callbackContent) {
 }
 
 // A class to load viz title
-function LoadTitle(callbackContent) {
-    var callbackContent = document.getElementById("content");
-}
+// function LoadTitle(callbackContent) {
+//     var callbackContent = document.getElementById("content");
+// }
 
 // A class to view vizualizations
 function Visualization(fileName) {
