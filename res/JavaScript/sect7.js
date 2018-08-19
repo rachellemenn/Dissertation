@@ -1160,13 +1160,10 @@ function Visualization(fileName) {
     }
 
     this.LoadQuotes = function (data) {
-        data.forEach(function (d) {
-            d.Value = parseFloat(d.Value);
-        
-        var svg = clearSvgContainer();
-        g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-        });
+        clearSvgContainer();
+        document.getElementById("svgTitle").innerHTML = data.quote;
     }
+       
 
     var loaders = [
         /*  0 */
