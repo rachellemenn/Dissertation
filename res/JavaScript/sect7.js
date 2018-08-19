@@ -1191,7 +1191,7 @@ function Visualization(fileName) {
         /* 11 */
         null,
         /* 12 */
-        new Loader("Assets/Data/Viz5.csv", this.DrawBar),
+        new Loader("Assets/Data/Viz5.csv", this.DrawPie),
         /* 13 */
         null,
         /* 14 */
@@ -1203,9 +1203,9 @@ function Visualization(fileName) {
         /* 17 */
         new Loader("Assets/Data/Viz10.csv", this.Viz10),
         /* 18 */
-        new Loader("Assets/Data/Viz11.csv", this.DrawBar),
+        new Loader("Assets/Data/Viz11.csv", this.DrawPie),
         /* 19 */
-        new Loader("Assets/Data/Viz11.1.csv", this.DrawBar),
+        new Loader("Assets/Data/Viz11.1.csv", this.DrawPie),
         /* 20 */
         null,
         /* 21 */
@@ -1225,21 +1225,21 @@ function Visualization(fileName) {
         /* 28 */
         new Loader("Assets/Data/Vizual13.csv", this.DrawDonutsMultiple),
         /* 29 */
-        new Loader("Assets/Data/Viz13.3.csv", this.DrawPie),
+        new Loader("Assets/Data/Viz13.3.csv", this.DrawDonutsMultiple),
         /* 30 */
-        new Loader("Assets/Data/Viz13.2.csv", this.DrawPie),
+        new Loader("Assets/Data/Viz13.2.csv", this.DrawDonutsMultiple),
         /* 31 */
-        new Loader("Assets/Data/Viz13.1.csv", this.DrawPie),
+        new Loader("Assets/Data/Viz13.1.csv", this.DrawDonutsMultiple),
         /* 32 */
         null,
         /* 33 */
         null,
         /* 34 */
-        new Loader("Assets/Data/Viz15.csv", this.Viz15),
+        new Loader("Assets/Data/Viz15.csv", this.DrawBar),
         /* 35 */
         null,
         /* 36 */
-        new Loader("Assets/Data/Viz15.3.csv", this.Viz15),
+        new Loader("Assets/Data/Viz15.3.csv", this.DrawBar),
         /* 37 */
         new Loader("Assets/Data/Viz15.1.csv", this.DrawPie),
         /* 38 */
