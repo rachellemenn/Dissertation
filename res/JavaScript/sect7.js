@@ -1,6 +1,6 @@
 // Simple class that loads a CSV file and 
 // optionally calls a callback function
-function Loader(fileName, callbackFunction) {
+function Loader(fileName, callbackFunction, context) {
     // Privates
     var fileName = fileName;
     var data = null;
@@ -9,10 +9,8 @@ function Loader(fileName, callbackFunction) {
     var busy = false;
     var failed = false;
     var Loader = SimpleCSVLoader;
-    // var CallbackContent = callbackContent;
-    //     this.callbackContent = () => {
-    //         return callbackContent;
-    //     }
+    var callbackContext = context;
+        
 
     // Private functions
     var SimpleCSVLoader = (callback) => {
@@ -67,6 +65,10 @@ function Loader(fileName, callbackFunction) {
 
     this.FileName = () => {
         return fileName;
+    }
+
+    this.CallbackContext = () => {
+        return callbackContext;
     }
 
     this.Activate = (callback) => {
@@ -153,6 +155,11 @@ function Visualization(fileName) {
     }
 
     // Public functions
+
+    this.LoadTitle = function (textToDraw) {
+        document.getElementById("svgTitle").innerHTML = textToDraw;
+
+    }
 
     this.DrawCircleHierarchy = function (data) {
         // Get the parent
@@ -1316,15 +1323,15 @@ function Visualization(fileName) {
                     // If processing redrew the item, change the index
                     if (willDraw) {
                         lastDrawnIndex = indexToDraw;
+                        if (processItem.CallbackContext() !== undefined) {
+                            LoadTitle(processItem.CallbackContext());
+                       }
                     }
                 }
             } finally {
                 Process.processing = false;
             }
         }
-        // if (processItem.callbackContent() === undefined) {
-        //     LoadTitle(processItem.callbackContent());
-        // }
     }
 
     // Set low opacity to non-active sections.
@@ -1370,7 +1377,7 @@ function Visualization(fileName) {
         // HTML is loaded, we can start
 
         // Create the container in element that has #vis
-        container = d3.select("#vis")
+        container = d3.select("#svgContainer")
             .append("svg:svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom);
