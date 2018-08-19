@@ -1187,7 +1187,7 @@ function Visualization(fileName) {
         /* 16 */
         null,
         /* 17 */
-        new Loader("Assets/Data/Viz10.csv", this.Viz10),
+        new Loader("Assets/Data/Viz10.csv", this.DrawBar),
         /* 18 */
         new Loader("Assets/Data/Viz11.csv", this.DrawPie),
         /* 19 */
