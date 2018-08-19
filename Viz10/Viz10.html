@@ -68,7 +68,7 @@ dataPromise.then(function(data){
   
 	// console.log("data", data);
   
-  x.domain(data.map(function(d) { return d.Identity; }))
+  x.domain(data.map(function(d) { return d.National; }))
 //   x1.domain(data.map(function(d) { return d.Imp; }))
     .rangeRound([0, x.bandwidth()])
   	.padding(0.2);
@@ -77,10 +77,10 @@ dataPromise.then(function(data){
   var keys = z.domain()
   
   var groupData = d3.nest()
-    .key(function(d) { return d.Identity; })
+    .key(function(d) { return d.National; })
   	.rollup(function(d, i){
       
-      var d2 = {Identity: d[0].Identity}
+      var d2 = {Identity: d[0].National}
       d.forEach(function(d){
         d2[d.Religion] = d.Value
       })
@@ -112,7 +112,7 @@ dataPromise.then(function(data){
     .data(function(d) { return d; })
     .enter().append("rect")
   		.attr("class", "serie-rect")
-  		.attr("transform", function(d) { return "translate(" + x(d.data.Identity) + ",0)"; })
+  		.attr("transform", function(d) { return "translate(" + x(d.data.National) + ",0)"; })
     //   .attr("x", function(d) { return x1(d.data.Imp); })
       .attr("y", function(d) { return y(d[1]) - y(d[1]); })
       .attr("height", function(d) { return y(d[0]) - y(d[1]); })
@@ -161,7 +161,7 @@ dataPromise.then(function(data){
   
   var legend = serie.append("g")
       .attr("class", "legend")
-      .attr("transform", function(d) { var d = d[d.length - 1]; return "translate(" + (x(d.data.Identity)) + "," + ((y(d[0]) + y(d[1])) / 2) + ")"; });
+      .attr("transform", function(d) { var d = d[d.length - 1]; return "translate(" + (x(d.data.National)) + "," + ((y(d[0]) + y(d[1])) / 2) + ")"; });
 
   legend.append("line")
       .attr("x1", -6)

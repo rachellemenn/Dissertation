@@ -509,8 +509,56 @@ function Visualization(fileName) {
 
     // }
 
-    this.Viz5 = function (data) {
-
+    this.Viz4 = function (data) {
+        var sets = [
+            {sets:['A'], size: 0},
+            {sets:['R'], size: 0},
+            {sets:['C'], size: 0},
+            {sets:['A', 'C'], size: 0},
+            {sets:['A', 'R'], size: 0},
+            {sets:['R', 'C'], size: 0},
+            {sets:['A','R','C'], size: 0},
+        ]
+        
+        var chart = venn.VennDiagram()
+        d3.select("#venn").datum(sets).call(chart);
+        d3.selectAll("#inverted .venn-circle path")
+            .style("fill-opacity", .8);
+                    
+        d3.selectAll("#inverted text").style("fill", "green");
+        
+        var first = data.columns[0];
+        var second = data.columns[1];
+        var third = data.columns[2];
+        
+        var dataPromise = loadData('Viz4final.csv');
+        dataPromise.then(function(data){
+            console.log(data);
+            data.forEach(function(d){   
+            if (d[first] ===1) {
+                sets[0] += d.value;
+            }
+            if (d[second] === 1) {
+                sets[3] += d.value;
+            }
+            if (d[third] === 1) {
+                sets[6] += d.value;
+            }
+            else if (d[third] === 1) {
+                sets[4] += d.value;
+            }
+            else if (d[second] === 1) {
+                sets[1] += d.value;
+            }
+            if (d[third] === 1) {
+                sets[5] += d.value;
+            }
+            else if (d[third] === 1) {
+                sets[2] += d.value; 
+            }
+            }
+        
+        )});
     }
 
     this.Viz6 = function (data) {

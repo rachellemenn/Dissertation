@@ -16,16 +16,20 @@ body{
 </style>
 <body>
 <script>
-function loadData(fileName)
-{
-    return d3.csv(fileName);
-}
-console.clear()
-var svg = d3.select("svg"),
-    margin = {top: 40, right: 100, bottom: 60, left: 60},
-    width = +svg.attr("width") - margin.left - margin.right,
-    height = +svg.attr("height") - margin.top - margin.bottom,
-    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+// function loadData(fileName)
+// {
+//     return d3.csv(fileName);
+// }
+// console.clear()
+
+// var svg = d3.select("svg"),
+//     margin = {top: 40, right: 100, bottom: 60, left: 60},
+//     width = +svg.attr("width") - margin.left - margin.right,
+//     height = +svg.attr("height") - margin.top - margin.bottom,
+//     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+data.forEach(function(d){
+        d.Value = parseFloat(d.Value);
+    });
 
 var x = d3.scaleBand()
     .rangeRound([0, width])
@@ -46,27 +50,13 @@ var z = d3.scaleOrdinal()
 var stack = d3.stack()
     .offset(d3.stackOffsetExpand);
 
-var dataPromise = loadData('Viz10.csv');
-dataPromise.then(function(data){
-    console.log(data);
-    data.forEach(function(d){
-        d.Value = parseFloat(d.Value);
-    });
-    console.log("data", data);
-//     data.forEach(function(d){
-//         d.Percent = parseFloat(d.Percent);
-//     });
+// var dataPromise = loadData('Viz10.csv');
+// dataPromise.then(function(data){
 //     console.log(data);
-//     var arcs = pie(data);
-  
-// d3.csv("https://Vizual6.csv", function(error, data) {
-//   if (error) throw error;
-  
-//   data.forEach(function(d){
-//     d.Value = +d.Value;
-//   })
-  
-	// console.log("data", data);
+//     data.forEach(function(d){
+//         d.Value = parseFloat(d.Value);
+//     });
+//     console.log("data", data);
   
   x.domain(data.map(function(d) { return d.National; }));
   x1.domain(data.map(function(d) { return d.Religious; }))
@@ -81,24 +71,27 @@ dataPromise.then(function(data){
     .entries(data);
   	//.map(function(d){ return d.value; });
   
-  console.log("groupData", groupData)
+//   console.log("groupData", groupData)
   
   var stackData = stack
   	.keys(keys)(groupData)
   
-  console.log("stackData", stackData)
+//   console.log("stackData", stackData)
   
-  //y.domain([0, d3.max(data, function(d) { return d.Value; })]).nice();
+  
   y.domain([0, 100]).nice();
 
   console.log("keys", keys)
+
+  var svg = clearSvgContainer();
+  g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
   
   var serie = g.selectAll(".serie")
     .data(groupData)
     .enter().append("g")
       .attr("class", "serie")
       .attr("fill", function(d) { return z(d.key); });
-      //.attr("transform", function(d) { return "translate(" + x(d.National) + ",0)"; })
+      
   
   serie.selectAll("rect")
     .data(function(d) {  console.log("rect: ", d.values); return d.values; })
@@ -127,30 +120,7 @@ dataPromise.then(function(data){
       .attr("font-weight", "bold")
       .attr("text-anchor", "start")
       .text(" % Population");
-/*
-  var legend = g.append("g")
-      .attr("font-family", "sans-serif")
-      .attr("font-size", 10)
-      .attr("text-anchor", "end")
-    .selectAll("g")
-    .data(keys.slice().reverse())
-    .enter().append("g")
-      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
-  legend.append("rect")
-      .attr("x", width - 19)
-      .attr("width", 19)
-      .attr("height", 19)
-      .attr("fill", z);
-
-  legend.append("text")
-      .attr("x", width - 24)
-      .attr("y", 9.5)
-      .attr("dy", "0.32em")
-      .text(function(d) { return d; });
-      
-      */
-  
   var legend = serie.append("g")
       .attr("class", "legend")
       .attr("transform", function(d) { var d = d[d.length - 1]; return "translate(" + (x(d.data.Identity)) + "," + ((y(d[0]) + y(d[1])) / 2) + ")"; });
@@ -167,7 +137,7 @@ dataPromise.then(function(data){
       .style("font", "10px sans-serif")
       .text(function(d) { return d.key; });
   
-});
+
 
 </script>
 </body>
