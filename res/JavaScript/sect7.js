@@ -87,7 +87,7 @@ function Loader(fileName, callbackFunction, callbackContent) {
 }
 
 // A class to load viz title
-function LoadTitleFunction(callbackContent) {
+function LoadTitle(callbackContent) {
     var callbackContent = document.getElementById("content");
 }
 
@@ -1326,8 +1326,8 @@ function Visualization(fileName) {
                 Process.processing = false;
             }
         }
-        if (processItem.callbackContext() === undefined) {
-            LoadTitle(processItem.callbackContext());
+        if (processItem.callbackContent() === undefined) {
+            LoadTitle(processItem.callbackContent());
         }
     }
 
