@@ -326,108 +326,108 @@ function Visualization(fileName) {
             });
     }
 
-    this.DrawBubble = function (data) {
-        function loadData(fileName) {
-            return d3.csv(fileName);
-        }
+    // this.DrawBubble = function (data) {
+    //     function loadData(fileName) {
+    //         return d3.csv(fileName);
+    //     }
 
-        var diameter = 600;
-        var color = [
-            "#00e0ff","#0f57e2","#0000ff","#000086",
-        ];
+    //     var diameter = 600;
+    //     var color = [
+    //         "#00e0ff","#0f57e2","#0000ff","#000086",
+    //     ];
 
-        var bubble = d3.pack()
-            .size([diameter, diameter])
-            .padding(1.5);
+    //     var bubble = d3.pack()
+    //         .size([diameter, diameter])
+    //         .padding(1.5);
 
-        var svg = d3.select("body")
-            .append("svg")
-            .attr("width", diameter)
-            .attr("height", diameter)
-            .attr("class", "bubble");
+    //     var svg = d3.select("body")
+    //         .append("svg")
+    //         .attr("width", diameter)
+    //         .attr("height", diameter)
+    //         .attr("class", "bubble");
 
-        var dataPromise = loadData('Viz15.csv');
-        dataPromise.then(function (data) {
-            data.forEach(function (d) {
-                d.value = parseFloat(d.value);
-                console.log(data)
-            });
+    //     var dataPromise = loadData('Viz15.csv');
+    //     dataPromise.then(function (data) {
+    //         data.forEach(function (d) {
+    //             d.value = parseFloat(d.value);
+    //             console.log(data)
+    //         });
 
-            var stratData = d3.stratify()
-            var nodes = stratData(data)
-                .sum(function (d) {
-                    return d.Value;
-                });
-            //     .parentId(function(d) {return d["Religion"];})
-            //     .id(function(d){return d.religion;});
-            // var root = stratData(data);
-            // console.log(root);
-            // root          
+    //         var stratData = d3.stratify()
+    //         var nodes = stratData(data)
+    //             .sum(function (d) {
+    //                 return d.Value;
+    //             });
+    //         //     .parentId(function(d) {return d["Religion"];})
+    //         //     .id(function(d){return d.religion;});
+    //         // var root = stratData(data);
+    //         // console.log(root);
+    //         // root          
 
-            // .sort(function(a, b) { return b.Value - a.Value });
+    //         // .sort(function(a, b) { return b.Value - a.Value });
 
-            // var nodes = root.descendants();
-            // console.log(nodes);
+    //         // var nodes = root.descendants();
+    //         // console.log(nodes);
 
-            // layout(root);
+    //         // layout(root);
 
-            // var nodes = d3.stratify()
-            //     .sum(function(d) { return d.Count; });
+    //         // var nodes = d3.stratify()
+    //         //     .sum(function(d) { return d.Count; });
 
-            var node = svg.selectAll(".node")
-                .data(bubble(nodes).descendants())
-                .enter()
-                .filter(function (d) {
-                    return !d.children
-                })
-                .append("g")
-                .attr("class", "node")
-                .attr("transform", function (d) {
-                    return "translate(" + d.x + "," + d.y + ")";
-                });
+    //         var node = svg.selectAll(".node")
+    //             .data(bubble(nodes).descendants())
+    //             .enter()
+    //             .filter(function (d) {
+    //                 return !d.children
+    //             })
+    //             .append("g")
+    //             .attr("class", "node")
+    //             .attr("transform", function (d) {
+    //                 return "translate(" + d.x + "," + d.y + ")";
+    //             });
 
-            node.append("title")
-                .text(function (d) {
-                    return d.Religion + ": " + d.Value;
-                });
+    //         node.append("title")
+    //             .text(function (d) {
+    //                 return d.Religion + ": " + d.Value;
+    //             });
 
-            node.append("circle")
-                .attr("r", function (d) {
-                    return d.r;
-                })
-                .style("fill", function (d, i) {
-                    return color(i);
-                });
+    //         node.append("circle")
+    //             .attr("r", function (d) {
+    //                 return d.r;
+    //             })
+    //             .style("fill", function (d, i) {
+    //                 return color(i);
+    //             });
 
-            node.append("text")
-                .attr("dy", ".2em")
-                .style("text-anchor", "middle")
-                .text(function (d) {
-                    return d.data.Religion.substring(0, d.r / 3);
-                })
-                .attr("font-family", "sans-serif")
-                .attr("font-size", function (d) {
-                    return d.r / 5;
-                })
-                .attr("fill", "white");
+    //         node.append("text")
+    //             .attr("dy", ".2em")
+    //             .style("text-anchor", "middle")
+    //             .text(function (d) {
+    //                 return d.data.Religion.substring(0, d.r / 3);
+    //             })
+    //             .attr("font-family", "sans-serif")
+    //             .attr("font-size", function (d) {
+    //                 return d.r / 5;
+    //             })
+    //             .attr("fill", "white");
 
-            node.append("text")
-                .attr("dy", "1.3em")
-                .style("text-anchor", "middle")
-                .text(function (d) {
-                    return d.data.Count;
-                })
-                .attr("font-family", "Gill Sans", "Gill Sans MT")
-                .attr("font-size", function (d) {
-                    return d.r / 5;
-                })
-                .attr("fill", "white");
+    //         node.append("text")
+    //             .attr("dy", "1.3em")
+    //             .style("text-anchor", "middle")
+    //             .text(function (d) {
+    //                 return d.data.Count;
+    //             })
+    //             .attr("font-family", "Gill Sans", "Gill Sans MT")
+    //             .attr("font-size", function (d) {
+    //                 return d.r / 5;
+    //             })
+    //             .attr("fill", "white");
 
-            d3.select(self.frameElement)
-                .style("height", diameter + "px");
+    //         d3.select(self.frameElement)
+    //             .style("height", diameter + "px");
 
-        });
-    }
+    //     });
+    // }
 
 
     //     this.Viz4 = function (data) {
@@ -1073,7 +1073,52 @@ function Visualization(fileName) {
     }
 
     this.Viz15 = function (data) {
-        // bubble chart for 15.3.csv and 15.csv
+                // Convert data to a list of pairs name, value
+                var items = mapToNameValue(data);
+
+                if (items === null || items.length === 0) {
+                    console.log("Nothing to draw");
+                    return;
+                }
+        
+                //var gx = svg.append('gx')
+                //    .attr("transform", "translate(" + (width / 2) + "," + (height / 2) + ")");
+        
+                // function Draw() {
+                //     var canvas = document.querySelector("canvas"),
+                //         context = canvas.getContext("2d");
+        
+                //     var width = canvas.width,
+                //         height = canvas.height,
+                //         radius = Math.min(width, height) / 2;
+        
+                var colors = [
+                    "#00e0ff","#0f57e2","#0000ff","#000086",
+                ];
+                radius = Math.min(width, height) / 2;
+        
+                var arc = d3.arc()
+                    .outerRadius(r)
+                    .innerRadius(r/2)
+                    .padAngle(0.09);
+        
+                var pie = d3.pie().value(function (d) {
+                    return d.value
+                });
+        
+                var arcs = pie(items);
+        
+                console.log('creating paths');
+        
+                var svg = clearSvgContainer();
+                var g = svg.selectAll("path")
+                    .data(arcs)
+                    .enter()
+                    .append("path").attr("d", arc)
+                    .attr("transform", "translate(" + (width / 2) + "," + (height / 2) + ")")
+                    .attr("fill", function (d, i) {
+                        return colors[i];
+                    });
     }
 
     this.Viz151 = function (data) {
