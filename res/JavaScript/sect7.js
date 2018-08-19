@@ -1159,8 +1159,6 @@ function Visualization(fileName) {
         var svg = clearSvgContainer();
         g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
         });
-
-        print(data);
     }
 
     var loaders = [
