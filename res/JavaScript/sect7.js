@@ -288,8 +288,8 @@ function Visualization(fileName) {
             .enter()
             .append("text")
             .attr("class","label")
-            .attr("x", (function(d) { return xScale(d.name) + xScale.rangeBand() / 2 ; }  ))
-            .attr("y", function(d) { return yScale(d.value) + 1; })
+            .attr("x", (function(d) { return x(d.name) + xScale.rangeBand() / 2 ; }  ))
+            .attr("y", function(d) { return y(d.value) + 1; })
             .attr("dy", ".75em")
             .text(function(d) { return d.value; });   	  
     }
