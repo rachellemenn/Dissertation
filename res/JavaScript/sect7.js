@@ -1,6 +1,6 @@
 // Simple class that loads a CSV file and 
 // optionally calls a callback function
-function Loader(fileName, callbackFunction) {
+function Loader(fileName, callbackFunction, callbackContent) {
     // Privates
     var fileName = fileName;
     var data = null;
@@ -9,6 +9,10 @@ function Loader(fileName, callbackFunction) {
     var busy = false;
     var failed = false;
     var Loader = SimpleCSVLoader;
+    var CallbackContent = content;
+        this.CallbackContent = () => {
+            return callbackContent;
+        }
 
     // Private functions
     var SimpleCSVLoader = (callback) => {
@@ -80,6 +84,11 @@ function Loader(fileName, callbackFunction) {
         }
     };
 
+}
+
+// A class to load viz title
+function LoadTitleFunction(callbackContent) {
+    var callbackContent = document.getElementById("content");
 }
 
 // A class to view vizualizations
@@ -1160,7 +1169,7 @@ function Visualization(fileName) {
         /*  0 */
         null,
         /*  1 */
-        new Loader("Assets/Data/Viz1.csv", this.DrawCircleHierarchy),
+        new Loader("Assets/Data/Viz1.csv", this.DrawCircleHierarchy, "Religious Makeup of the USA"),
         /*  2 */
         null,
         /*  3 */
@@ -1316,6 +1325,9 @@ function Visualization(fileName) {
             } finally {
                 Process.processing = false;
             }
+        }
+        if (processItem.callbackContext() === undefined) {
+            LoadTitle(processItem.callbackContext());
         }
     }
 
