@@ -982,138 +982,115 @@ function Visualization(fileName) {
     }
 
     this.Viz10 = function (data) {
-        data.forEach(function (d) {
+        data.forEach(function(d){
             d.Value = parseFloat(d.Value);
         });
-
-        var x = d3.scaleBand()
-            .rangeRound([0, width])
-            .paddingInner(0.1)
-            // var x1 = d3.scaleBand()
-            .padding(0.05);
-
-        var y = d3.scaleLinear()
-            .rangeRound([height, 0]);
-        var y1 = d3.scaleBand()
-
-        var z = d3.scaleOrdinal()
-            .range(["#00e0ff", "#000086", ]);
-
-        var stack = d3.stack()
-            .offset(d3.stackOffsetExpand);
-
-        x.domain(data.map(function (d) {
-                return d.Identity;
-            }))
-            // x1.domain(data.map(function (d) {
-            //         return d.Imp;
-            //     }))
-            .rangeRound([0, x.bandwidth()])
-            .padding(0.2);
-
-        z.domain(data.map(function (d) {
-            return d.Religion;
-        }));
-
-        var keys = z.domain()
-
-        var groupData = d3.nest()
-            .key(function (d) {
-                return d.Imp + d.Identity;
-            })
-            .rollup(function (d, i) {
-                var d2 = {
-                    // Imp: d[0].Imp,
-                    Identity: d[0].Identity
-                }
-                d.forEach(function (d) {
-                    d2[d.Religion] = d.Value
-                })
-                return d2;
-            })
-            .entries(data)
-            .map(function (d) {
-                return d.value;
-            });
-
-        var stackData = stack
-            .keys(keys)(groupData)
-
-        var graphHeight = d3.max(data, function (d) {
-            return d.Value;
-        });
-
-        y.domain([0, graphHeight]).nice();
-
-        // Get the parent
-        var svg = clearSvgContainer();
-        g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-        var serie = g.selectAll(".serie")
-            .data(stackData)
-            .enter().append("g")
-            .attr("class", "serie")
-            .attr("fill", function (d) {
-                return z(d.key);
-            });
-
-        serie.selectAll("rect")
-            .data(function (d) {
-                return d;
-            })
-            .enter().append("rect")
-            .attr("class", "serie-rect")
-            .attr("transform", function (d) {
-                return "translate(" + x(d.data.Identity) + ",0)";
-            })
-            // .attr("x", function (d) {
-            //     return x1(d.data.Imp);
-            // })
-            .attr("y", function (d) {
-                return 1 - d[0];
-            })
-            .attr("height", function (d) {
-                return y(d[0]) - y(d[1]);
-            })
-            .attr("width", x.bandwidth());
-
-        g.append("g")
-            .attr("class", "axis")
-            .attr("transform", "translate(0," + height + ")")
-            .call(d3.axisBottom(x));
-
-        g.append("g")
-            .attr("class", "axis")
-            .call(d3.axisLeft(y).ticks(null, "s"))
-            .append("text")
-            .attr("x", 2)
-            .attr("y", y(y.ticks().pop()) + 0.5)
-            .attr("dy", "0.32em")
-            .attr("fill", "#000")
-            .attr("font-weight", "bold")
-            .attr("text-anchor", "start")
-            .text("Population");
-
-        var legend = serie.append("g")
-            .attr("class", "legend")
-            .attr("transform", function (d) {
-                var d = d[d.length - 1];
-                return "translate(" + (x(d.data.Identity) + x.bandwidth()) + "," + ((y(d[0]) + y(d[1])) / 2) + ")";
-            });
-
-        legend.append("line")
-            .attr("x1", -6)
-            .attr("x2", 6)
-            .attr("stroke", "#000");
-
-        legend.append("text")
-            .attr("x", 9)
-            .attr("dy", "0.35em")
-            .attr("fill", "#000")
-            .style("font", "10px sans-serif")
-            .text(function (d) {
-                return d.key;
-            });
+    
+    var x = d3.scaleBand()
+        .rangeRound([0, width])
+        .paddingInner(0.1)
+        .padding(0.05);
+    
+     var x1 = d3.scaleBand()
+         .padding(0.05);
+    
+    var y = d3.scaleLinear()
+        .rangeRound([height, 0]);
+    
+    var y1 = d3.scaleBand()
+      
+    var z = d3.scaleOrdinal()
+        .range(["#00e0ff","#000086"]);
+    
+    var stack = d3.stack()
+        .offset(d3.stackOffsetExpand);
+    
+    // var dataPromise = loadData('Viz10.csv');
+    // dataPromise.then(function(data){
+    //     console.log(data);
+    //     data.forEach(function(d){
+    //         d.Value = parseFloat(d.Value);
+    //     });
+    //     console.log("data", data);
+      
+      x.domain(data.map(function(d) { return d.National; }));
+      x1.domain(data.map(function(d) { return d.Religious; }))
+        .rangeRound([0, x.bandwidth()])
+          .padding(0.2);
+      
+      z.domain(data.map(function(d) { return d.Religious; }))
+      var keys = z.domain()
+      
+      var groupData = d3.nest()
+        .key(function(d) { return d.Religious; })
+        .entries(data);
+          //.map(function(d){ return d.value; });
+      
+    //   console.log("groupData", groupData)
+      
+      var stackData = stack
+          .keys(keys)(groupData)
+      
+    //   console.log("stackData", stackData)
+      
+      
+      y.domain([0, 100]).nice();
+    
+      console.log("keys", keys)
+    
+      var svg = clearSvgContainer();
+      g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      
+      var serie = g.selectAll(".serie")
+        .data(groupData)
+        .enter().append("g")
+          .attr("class", "serie")
+          .attr("fill", function(d) { return z(d.key); });
+          
+      
+      serie.selectAll("rect")
+        .data(function(d) {  console.log("rect: ", d.values); return d.values; })
+        .enter().append("rect")
+              .attr("class", "serie-rect")
+              .attr("transform", function(d) { return "translate(" + x(d.National) + ",0)"; })
+            .attr("x", function(d) { return x1(d.Religious); })
+          .attr("y", function(d) { return y(100 - 100 * d.Value); })
+          .attr("height", function(d) { return y(100 * d.Value); })
+          .attr("width", x1.bandwidth())
+              .on("click", function(d, i){ console.log("serie-rect click d", i, d); });
+      
+      g.append("g")
+          .attr("class", "axis")
+          .attr("transform", "translate(0," + height + ")")
+          .call(d3.axisBottom(x));
+    
+      g.append("g")
+          .attr("class", "axis")
+          .call(d3.axisLeft(y).ticks(null, "s"))
+        .append("text")
+          .attr("x", 2)
+          .attr("y", y(y.ticks().pop()) + 0.5)
+          .attr("dy", "0.32em")
+          .attr("fill", "#000")
+          .attr("font-weight", "bold")
+          .attr("text-anchor", "start")
+          .text(" % Population");
+    
+      var legend = serie.append("g")
+          .attr("class", "legend")
+          .attr("transform", function(d) { var d = d[d.length - 1]; return "translate(" + (x(d.data.Identity)) + "," + ((y(d[0]) + y(d[1])) / 2) + ")"; });
+    
+      legend.append("line")
+          .attr("x1", -6)
+          .attr("x2", 6)
+          .attr("stroke", "#000");
+    
+      legend.append("text")
+          .attr("x", 9)
+          .attr("dy", "0.35em")
+          .attr("fill", "#000")
+          .style("font", "10px sans-serif")
+          .text(function(d) { return d.key; });
     }
 
     this.Viz11 = function (data) {
@@ -1163,6 +1140,15 @@ function Visualization(fileName) {
 
     this.Viz16 = function (data) {
 
+    }
+
+    this.LoadQuotes = function (data) {
+        data.forEach(function (d) {
+            d.Value = parseFloat(d.Value);
+        
+        var svg = clearSvgContainer();
+        g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        });
     }
 
     var loaders = [
