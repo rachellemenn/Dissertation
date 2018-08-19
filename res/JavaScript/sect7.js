@@ -1177,7 +1177,7 @@ function Visualization(fileName) {
         /*  4 */
         new Loader("Assets/Data/Viz2.csv", this.DrawBar),
         /*  5 */
-        new Loader("Assets/Data/Vizual3.csv", this.DrawBar),
+        new Loader("Assets/Data/Vizual3.csv", this.DrawPie),
         /*  6 */
         null,
         /*  7 */
