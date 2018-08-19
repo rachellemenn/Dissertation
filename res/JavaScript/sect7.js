@@ -283,7 +283,7 @@ function Visualization(fileName) {
         svg.append("g")
             .call(d3.axisLeft(y));
 
-        svgContainer.selectAll(".text")  		
+        svg.selectAll(".text")  		
             .data(data)
             .enter()
             .append("text")
