@@ -1161,7 +1161,7 @@ function Visualization(fileName) {
 
     this.LoadQuotes = function (data) {
         clearSvgContainer();
-        document.getElementById("svgTitle").innerHTML = data.Quote;
+        document.getElementById("svgTitle").innerHTML = data[0].Quote;
     }
        
 
