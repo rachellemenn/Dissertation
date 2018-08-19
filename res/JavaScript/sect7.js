@@ -1,6 +1,6 @@
 // Simple class that loads a CSV file and 
 // optionally calls a callback function
-function Loader(fileName, callbackFunction, callbackContent) {
+function Loader(fileName, callbackFunction) {
     // Privates
     var fileName = fileName;
     var data = null;
@@ -9,10 +9,10 @@ function Loader(fileName, callbackFunction, callbackContent) {
     var busy = false;
     var failed = false;
     var Loader = SimpleCSVLoader;
-    var CallbackContent = callbackContent;
-        this.callbackContent = () => {
-            return callbackContent;
-        }
+    // var CallbackContent = callbackContent;
+    //     this.callbackContent = () => {
+    //         return callbackContent;
+    //     }
 
     // Private functions
     var SimpleCSVLoader = (callback) => {
@@ -1326,9 +1326,9 @@ function Visualization(fileName) {
                 Process.processing = false;
             }
         }
-        if (processItem.callbackContent() === undefined) {
-            LoadTitle(processItem.callbackContent());
-        }
+        // if (processItem.callbackContent() === undefined) {
+        //     LoadTitle(processItem.callbackContent());
+        // }
     }
 
     // Set low opacity to non-active sections.
