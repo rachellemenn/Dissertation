@@ -1,3 +1,2 @@
 ﻿Title
-<p>The Jewish American Identity</p>
-<p class=subMtitle>& The Millennial Generation"</p>
+<p>The Jewish American Identity</p> <p class=subMtitle>& The Millennial Generation"</p>
