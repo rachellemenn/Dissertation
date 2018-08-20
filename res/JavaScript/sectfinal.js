@@ -225,10 +225,10 @@ function Visualization(fileName) {
     // the g child and set the transform
     function clearSvgContainer() {
         container.selectAll("*").remove();
+        document.getElementById("svgTitle").innerHTML = "";
         return container.append("g")
             .attr("transform",
                 "translate(" + margin.left + "," + margin.top + ")");
-        document.getElementById("svgTitle").innerHTML = "";
     }
 
     this.DrawBar = function (data) {
