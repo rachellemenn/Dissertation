@@ -1116,7 +1116,7 @@ function Visualization(fileName) {
         /*  6 */
         null,
         /*  7 */
-        new Loader("Assets/Data/Viz4.csv", this.Viz4),
+        new Loader("Assets/Data/Viz4final.csv", this.Viz4),
         /*  8 */
         new Loader("Assets/Data/Viz6.csv", this.Viz6),
         /*  9 */
