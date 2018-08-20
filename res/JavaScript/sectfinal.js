@@ -157,7 +157,7 @@ function Visualization(fileName) {
     // Public functions
 
     var LoadTitle = function (textToDraw) {
-        document.getElementById("svgTitle").innerHTML = textToDraw;
+        document.getElementById("svgTitle").innerHTML = "<div class='VizTitle'>" + textToDraw + "</div>";
 
     }
 
@@ -1096,12 +1096,12 @@ function Visualization(fileName) {
 
     this.LoadQuotes = function (data) {
         clearSvgContainer();
-        document.getElementById("svgTitle").innerHTML = "<div class='quote'>" + data[0].Quote + "</div.";
+        document.getElementById("svgTitle").innerHTML = "<div class='quote'>" + data[0].Quote + "</div>";
     }
 
     this.LoadMainTitle = function (data) {
         clearSvgContainer();
-        document.getElementById("svgTitle").innerHTML = "<div class='MainTitle'>" + data[0].Title + "</div.";
+        document.getElementById("svgTitle").innerHTML = "<div class='MainTitle'>" + data[0].Title + "</div>";
     }
 
 
