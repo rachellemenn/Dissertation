@@ -302,7 +302,7 @@ function Visualization(fileName) {
             .text(function (d) { return [d.value]; })
             .style("font", "30px Lekton, sans-serif")
             .style("stroke", "#ECE8E8")
-            .style("text-align", "middle");
+            .style("text-anchor", "middle");
 
         // svg.selectAll(".text")
         //     .data(data)
