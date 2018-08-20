@@ -165,7 +165,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     top: 20px;
     left: 50%;
     margin-left: -400px;
-    color: rgba(255, 255, 255, 0.5);
+    color:rgba(15,87,226);
     text-shadow: 0 1px 1px rgba(255,255,255,0.1);
   }
 
@@ -178,7 +178,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     border-radius: 50%;
     border-left: 5px solid rgba(15,87,226);
     /* position: absolute; */
-    top: 0px;
+    top: 20px;
     left: 30px;
     z-index: -1;
   }
