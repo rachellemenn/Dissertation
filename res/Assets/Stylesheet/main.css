@@ -66,27 +66,27 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
       z-index: 90;
       padding-bottom: 200px;
       margin-right: 40px;
-      margin-left: 40px;
+      margin-left: 150px;
   }
 
   .step {
       margin-bottom: 200px;
       font-family:"Lekton", sans-serif;
-      font-size: 15px;
+      font-size: 20px;
       /* font-weight: bold; */
-      line-height: 1.3;
+      line-height: 1.5;
       color: #363D4F;
   }
 
   .subtitle {
     font-size: 40px;
-    font-family:'Source Code Pro', monospace;
+    font-family:"Molengo", sans-serif;
     line-height: 30px;
     color: #363D4F;
   }
 
   #sections .title{
-      font-family: 'Source Code Pro', monospace;
+      font-family: "Molengo", sans-serif;
       font-size: 40px;
       margin-bottom: 2px;
       line-height: 1.2em;
@@ -106,14 +106,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
       position: fixed;
       top: 60px;
       z-index: 1;
-      margin-left: 0;
+      margin-left: 150px;
       margin-top: 20px;
       margin-bottom: 20px;
       height: 650px;
       width: 650px;
-      border-style: dashed;
+      /* border-style: dashed;
       border-width: 4px;
-      border-color: black;
+      border-color: black; */
   }
 
   /* #svgTitle{
