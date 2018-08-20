@@ -292,14 +292,24 @@ function Visualization(fileName) {
             .call(d3.axisLeft(y));
 
         svg.selectAll(".text")
-            .data(data)
+            .data(items)
             .enter()
             .append("text")
             .attr("class", "label")
-            .attr("x", (function (d) { return x(d.name) + x.scaleBand() / 2; }))
+            .attr("x", (function (d) { return x(d.name) + x.bandwidth(); }))
             .attr("y", function (d) { return y(d.value) + 1; })
             .attr("dy", ".75em")
             .text(function (d) { return d.value; });
+
+        // svg.selectAll(".text")
+        //     .data(data)
+        //     .enter()
+        //     .append("text")
+        //     .attr("class", "label")
+        //     .attr("x", (function (d) { return x(d.name) + x.scaleBand() / 2; }))
+        //     .attr("y", function (d) { return y(d.value) + 1; })
+        //     .attr("dy", ".75em")
+        //     .text(function (d) { return d.value; });
     }
 
     this.DrawPie = function (data) {
