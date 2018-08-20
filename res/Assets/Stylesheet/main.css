@@ -207,15 +207,20 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     margin-right: 0.3em;
     font-family: "Source Code Pro", monospace;
     font-size: 40px;
+    text-align: center;
+    margin-top: 40px;
   }
   .MainTitle .moving {
     float: left;
     overflow: hidden;
     position: relative;
     height: 50px;
+    text-align: center;
+    margin-top: 40px;
   }
   span {
     font-family: "Source Code Pro", monospace;
+    font-size: 40px;
     display: inline-block;
     color: rgba(15,87,226);
     position: relative;
@@ -234,9 +239,19 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   75% { top: -150px; }
   }
 
-  /* .subMtitle {
-    
-  } */
+  .subMtitle {
+    font-family: "Source Code Pro", monospace;
+     font-size: 25px;
+     opacity: 0;
+     animation: fadeIn 3s;
+     animation-delay: 7s;
+     animation-fill-mode: forwards;
+  } 
+
+@keyframes fadeIn {
+  from {Opacity: 0; }
+  to {Opacity: 1;}
+}
 
 
   /* .step img {
