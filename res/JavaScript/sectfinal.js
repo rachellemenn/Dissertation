@@ -299,7 +299,9 @@ function Visualization(fileName) {
             .attr("x", (function (d) { return x(d.name) + x.bandwidth() / 2; }))
             .attr("y", function (d) { return y(d.value) + 1; })
             .attr("dy", ".75em")
-            .text(function (d) { return d.value; });
+            .text(function (d) { return d.value; })
+            .style("font", "10px Lekton, sans-serif",) 
+            .style("color", "#ECE8E8");
 
         // svg.selectAll(".text")
         //     .data(data)
