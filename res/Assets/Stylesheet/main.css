@@ -80,13 +80,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
   .subtitle {
     font-size: 40px;
-    font-family:'Goudy+Bookletter+1911', serif;
+    font-family:'Source Code Pro', monospace;
     line-height: 30px;
     color: #363D4F;
   }
 
   #sections .title{
-      font-family: 'Goudy Bookletter 1911', serif;
+      font-family: 'Source Code Pro', monospace;
       font-size: 40px;
       margin-bottom: 2px;
       line-height: 1.2em;
@@ -127,14 +127,18 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   }
 
   .VizTitle {
-    font-family: "Source Code Pro";
+    font-family: "Source Code Pro", monospace;
     color: #363D4F;
-    font-size: 20px;
+    font-size: 40px;
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-left: 10px;
     display: inline-block;
+    text-anchor: middle;
 
   }
+
+
 
   /* .step img {
     height: 660;
