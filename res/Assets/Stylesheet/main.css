@@ -156,7 +156,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     background: #363D4F;
     width: 130px;
     height:130px;
-    border: 50%;
+    border-radius: 50%;
     content: '\275D';
     position: fixed;
     font-size: 100px;
@@ -175,7 +175,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     content: '';
     width: 500px;
     height: 500px;
-    border-radius: 50%;
+    border: 50%;
     border-left: 5px solid rgba(15,87,226);
     /* position: absolute; */
     top: 20px;
