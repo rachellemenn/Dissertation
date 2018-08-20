@@ -515,7 +515,7 @@ function Visualization(fileName) {
         // Get the parent
         var svg = clearSvgContainer();
 
-        var chart = venn.VennDiagram().colours(colors);
+        var chart = venn.VennDiagram().colors(colors);
         svg.datum(fullSets).call(chart);
         svg.selectAll("#svgContainer .venn-circle path")
             ;//.style("fill-opacity", .8);
