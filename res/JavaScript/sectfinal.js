@@ -300,9 +300,9 @@ function Visualization(fileName) {
             .attr("y", function (d) { return y(d.value) + 1; })
             .attr("dy", ".75em")
             .text(function (d) { return [d.value]; })
-            .style("font", "30px Lekton, sans-serif")
+            .style("font", "25px Lekton, sans-serif")
             .style("stroke", "#ECE8E8")
-            .style("text-anchor", "middle");
+            .style("margin-top", "20px");
 
         // svg.selectAll(".text")
         //     .data(data)
