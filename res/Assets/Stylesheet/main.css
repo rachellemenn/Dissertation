@@ -141,17 +141,18 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
   blockquote {
     padding-top: 150px;
+    position: fixed;
   }
 
   blockquote:after {
     font-family: "Source code Pro", monospace;
     background: grey;
-    width: 400px;
-    height:400px;
+    width: 130px;
+    height:130px;
     border-radius: 50%;
-    content: '\275e';
+    content: '\275D';
     position: absolute;
-    font-size: 70px;
+    font-size: 100px;
     line-height: 130px;
     text-align: center;
     top: 0px;
@@ -161,7 +162,19 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     text-shadow: 0 1px 1px rgba(255,255,255,0.1);
   }
 
-  .quotes{
+  blockquote:before{
+    content: '';
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border-left: 5px solid rgba(235,150,108,0.1);
+    position: absolute;
+    top: 0px;
+    left: -50px;
+    z-index: -1;
+  }
+
+  .quote{
     font-family: Baskerville, Georgia, serif;
     font-size: 28px;
     font-style: italic;
