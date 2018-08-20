@@ -144,37 +144,40 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     display: inline-block;
     position: fixed;
     top: 60px;
-    z-index: 1;
+    /* z-index: 1; */
     margin-left: 0;
     margin-top: 20px;
     margin-bottom: 20px;
   }
 
   blockquote:after {
+    display: inline-block;
     font-family: "Source Code Pro", monospace;
     background: #363D4F;
     width: 130px;
     height:130px;
     border-radius: 50%;
     content: '\275D';
-    position: absolute;
+    position: fixed;
     font-size: 100px;
     line-height: 130px;
     text-align: center;
     top: 0px;
     left: 50%;
-    margin-left: -200px;
+    margin-left: -65px;
     color: rgba(255, 255, 255, 0.5);
     text-shadow: 0 1px 1px rgba(255,255,255,0.1);
   }
 
   blockquote:before{
+    display: inline-block;
+    position: fixed;
     content: '';
     width: 500px;
     height: 500px;
     border-radius: 50%;
     border-left: 5px solid rgba(15,87,226);
-    position: absolute;
+    /* position: absolute; */
     top: 0px;
     left: -50px;
     z-index: -1;
@@ -192,8 +195,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     display: inline;
     color: #363D4F;
     text-shadow: 0 1px 1px #363D4F;
-    line-height: 1;
+    line-height: 1.3;
     box-shadow: 0 -6px 0 rgba(15,87,226);
+    align-content: center;
   }
 
 
