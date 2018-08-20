@@ -299,9 +299,10 @@ function Visualization(fileName) {
             .attr("x", (function (d) { return x(d.name) + x.bandwidth() / 2; }))
             .attr("y", function (d) { return y(d.value) + 1; })
             .attr("dy", ".75em")
-            .text(function (d) { return d.value; })
-            .style("font", "20px Lekton, sans-serif")
-            .style("stroke", "#ECE8E8");
+            .text(function (d) { return [d.value]; })
+            .style("font", "30px Lekton, sans-serif")
+            .style("stroke", "#ECE8E8")
+            .style("text-align", "middle");
 
         // svg.selectAll(".text")
         //     .data(data)
