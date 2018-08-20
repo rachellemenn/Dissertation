@@ -139,6 +139,39 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
   }
 
+  blockquote {
+    padding-top: 150px;
+  }
+
+  blockquote:after {
+    font-family: "Source code Pro", monospace;
+    background: grey;
+    width: 400px;
+    height:400px;
+    border-radius: 50%;
+    content: '\275e';
+    position: absolute;
+    font-size: 70px;
+    line-height: 130px;
+    text-align: center;
+    top: 0px;
+    left: 50%;
+    margin-left: -200px;
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow: 0 1px 1px rgba(255,255,255,0.1);
+  }
+
+  .quotes{
+    font-family: Baskerville, Georgia, serif;
+    font-size: 28px;
+    font-style: italic;
+    background: rgba(255,255,255,0.5);
+    display: inline;
+    color: rgba(235,150,108,0.8);
+    text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+    line-height: 46px;
+    box-shadow: 0 -6px 0 rgba(235,150,108,0.2);
+  }
 
 
   /* .step img {
