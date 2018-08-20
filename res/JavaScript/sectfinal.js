@@ -1111,7 +1111,7 @@ function Visualization(fileName) {
         /*  1 */
         new Loader("Assets/Data/Viz1.csv", this.DrawCircleHierarchy, "Religious Makeup of the USA"),
         /*  2 */
-        null,
+        new Loader("Assets/Data/Viz1.csv", this.DrawCircleHierarchy, "Religious Makeup of the USA"), 
         /*  3 */
         new Loader("Assets/Data/Quote1.txt", this.LoadQuotes),
         /*  4 */
