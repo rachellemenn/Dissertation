@@ -259,8 +259,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     overflow: hidden;
     position: relative;
     height: 50px;
-    text-align: center;
+    /* text-align: center; */
     margin-top: 60px;
+    margin-right: 60px;
   }
   span {
     font-family: "Source Code Pro", monospace;
@@ -279,9 +280,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   
   @keyframes move {
   0%  { top: 0px; }
-  25% { top: -50px; }
-  50% { top: -100px; }
-  75% { top: -150px; }
+  80% { top: -50px; }
+  80% { top: -100px; }
+  85% { top: -150px; }
   }
 
   .subMtitle {
