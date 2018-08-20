@@ -1,2 +1,2 @@
 ﻿Title
-<p class="stationed">This is...</p><p><span> Ancestry <br /> Religion <br /> Culture <br /> The Jewish American Identity<span></p> <p class=subMtitle>Exploring The Millennial Generation"</p>
+<p class="stationed">This is...</p><b class="moving"><span> Ancestry <br /> Religion <br /> Culture <br /> The Jewish American Identity<span></b> <p>class=subMtitle>Exploring The Millennial Generation"</p>

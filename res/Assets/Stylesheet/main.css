@@ -215,8 +215,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     height: 50px;
   }
   span {
+    font-family: "Source Code Pro", monospace;
     display: inline-block;
-    color: #e74c3c;
+    color: rgba(15,87,226);
     position: relative;
     white-space: nowrap;
     top: 0;
