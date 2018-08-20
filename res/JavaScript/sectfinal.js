@@ -1151,11 +1151,11 @@ function Visualization(fileName) {
         /* 16 */
         new Loader("Assets/Data/Quote5.txt", this.LoadQuotes),
         /* 17 */
-        new Loader("Assets/Data/Viz10.csv", this.DrawBar, "Nationalities of Jewish Americans: By Identity"),
+        new Loader("Assets/Data/Viz10.csv", this.DrawDonutsMultiple, "Nationalities of Jewish Americans: By Identity"),
         /* 18 */
-        new Loader("Assets/Data/Viz11.csv", this.DrawPie, "Political Ideology of Jewish Americans: By Identity"),
+        new Loader("Assets/Data/Viz11.csv", this.DrawDonutsMultiple, "Political Ideology of Jewish Americans: By Identity"),
         /* 19 */
-        new Loader("Assets/Data/Viz11.1.csv", this.DrawPie, "Political Ideology of Jewish Americans: By Nationality"),
+        new Loader("Assets/Data/Viz11.1.csv", this.DrawDonutsMultiple, "Political Ideology of Jewish Americans: By Nationality"),
         /* 20 */
         new Loader("Assets/Data/Quote6.txt", this.LoadQuotes),
         /* 21 */
