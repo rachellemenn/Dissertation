@@ -1314,7 +1314,7 @@ function Visualization(fileName) {
     // Start the load
     Process();
 
-    window.onload = () => {
+    window.setTimeout = (() => {
         // HTML is loaded, we can start
 
         // Create the container in element that has #vis
@@ -1338,7 +1338,7 @@ function Visualization(fileName) {
             indexToDraw = index;
             dispatch.call("processChart", this);
         });
-    }
+    }, 1000);
 }
 
 
