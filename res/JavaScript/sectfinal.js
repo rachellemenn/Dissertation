@@ -517,7 +517,7 @@ function Visualization(fileName) {
 
         var chart = venn.VennDiagram().colours(colors);
         svg.datum(fullSets).call(chart);
-        svg.selectAll("#svgContainer .venn-circle path")
+        // svg.selectAll("#svgContainer .venn-circle path")
             ;//.style("fill-opacity", .8);
 
         //svg.selectAll("#svgContainer text").style("fill", "green");
