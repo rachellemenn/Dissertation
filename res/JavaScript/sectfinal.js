@@ -296,7 +296,7 @@ function Visualization(fileName) {
             .enter()
             .append("text")
             .attr("class", "label")
-            .attr("x", (function (d) { return x(d.name) + x.bandwidth(); }))
+            .attr("x", (function (d) { return x(d.name) + x.bandwidth() / 2; }))
             .attr("y", function (d) { return y(d.value) + 1; })
             .attr("dy", ".75em")
             .text(function (d) { return d.value; });
