@@ -201,6 +201,42 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     margin-top: 40px;
   }
 
+  .MainTitle .stationed {
+    height: 50px;
+    float: left;
+    margin-right: 0.3em;
+    font-family: "Source Code Pro", monospace;
+    font-size: 40px;
+  }
+  .MainTitle .moving {
+    float: left;
+    overflow: hidden;
+    position: relative;
+    height: 50px;
+  }
+  span {
+    display: inline-block;
+    color: #e74c3c;
+    position: relative;
+    white-space: nowrap;
+    top: 0;
+    left: 0;
+    animation: move 5s;
+    animation-iteration-count: once; 
+    animation-delay: 1s;
+  }
+  
+  @keyframes move {
+  0%  { top: 0px; }
+  25% { top: -50px; }
+  50% { top: -100px; }
+  75% { top: -150px; }
+  }
+
+  /* .subMtitle {
+    
+  } */
+
 
   /* .step img {
     height: 660;
