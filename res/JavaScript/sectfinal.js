@@ -1096,101 +1096,110 @@ function Visualization(fileName) {
 
     this.LoadQuotes = function (data) {
         clearSvgContainer();
-        document.getElementById("svgTitle").innerHTML = data[0].Quote;
+        document.getElementById("svgTitle").innerHTML = "<div class='quote'>" + data[0].Quote + "</div.";
+    }
+
+    this.LoadMainTitle = function (data) {
+        clearSvgContainer();
+        document.getElementById("svgTitle").innerHTML = "<div class='MainTitle'>" + data[0].Title + "</div.";
     }
 
 
     var loaders = [
         /*  0 */
-        null,
+        new Loader("Assets/Data/Title.txt", this.LoadMainTitle),
         /*  1 */
         new Loader("Assets/Data/Viz1.csv", this.DrawCircleHierarchy, "Religious Makeup of the USA"),
         /*  2 */
-        new Loader("Assets/Data/Quote2.txt", this.LoadQuotes),
-        /*  3 */
         null,
+        /*  3 */
+        new Loader("Assets/Data/Quote1.txt", this.LoadQuotes),
         /*  4 */
         new Loader("Assets/Data/Viz2.csv", this.DrawBar),
         /*  5 */
-        new Loader("Assets/Data/Vizual3.csv", this.DrawPie),
+        new Loader("Assets/Data/Vizual3.csv", this.DrawPie, "Generational Breakdown of Jewish Americans"),
         /*  6 */
-        null,
+        new Loader("Assets/Data/Quote2.txt", this.LoadQuotes),
         /*  7 */
-        new Loader("Assets/Data/Viz4final.csv", this.Viz4),
+        new Loader("Assets/Data/Viz4final.csv", this.Viz4, "Components of a Jewish Identity"),
         /*  8 */
-        new Loader("Assets/Data/Viz6.csv", this.Viz6),
+        new Loader("Assets/Data/Viz6.csv", this.Viz6, "Components of a Jewish Identity: Specifics"),
         /*  9 */
-        new Loader("Assets/Data/Viz7.csv", this.Viz7),
+        new Loader("Assets/Data/Viz7.csv", this.Viz7, "Components of a Jewish Identity: Education"),
         /* 10 */
-        new Loader("Assets/Data/Viz6.csv", this.Viz6),
+        new Loader("Assets/Data/Viz6.csv", this.Viz6, "Components of a Jewish Identity"),
         /* 11 */
-        null,
+        new Loader("Assets/Data/Quote3.txt", this.LoadQuotes),
         /* 12 */
-        new Loader("Assets/Data/Viz5.csv", this.DrawPie),
+        new Loader("Assets/Data/Viz5.csv", this.DrawPie, "Identifying as Jewish By Religion and Jewish Not By Religion"),
         /* 13 */
-        null,
+        new Loader("Assets/Data/Quote4.txt", this.LoadQuotes),
         /* 14 */
-        new Loader("Assets/Data/Viz8.csv", this.DrawDonutsMultiple),
+        new Loader("Assets/Data/Viz8.csv", this.DrawDonutsMultiple, "Generational Breakdown of Jewish Americans: By Identity"),
         /* 15 */
         null, //new Loader("Assets/Data/Viz9.csv", this.Viz8),
         /* 16 */
-        null,
+        new Loader("Assets/Data/Quote5.txt", this.LoadQuotes),
         /* 17 */
-        new Loader("Assets/Data/Viz10.csv", this.DrawBar),
+        new Loader("Assets/Data/Viz10.csv", this.DrawBar, "Nationalities of Jewish Americans: By Identity"),
         /* 18 */
-        new Loader("Assets/Data/Viz11.csv", this.DrawPie),
+        new Loader("Assets/Data/Viz11.csv", this.DrawPie, "Political Ideology of Jewish Americans: By Identity"),
         /* 19 */
-        new Loader("Assets/Data/Viz11.1.csv", this.DrawPie),
+        new Loader("Assets/Data/Viz11.1.csv", this.DrawPie, "Political Ideology of Jewish Americans: By Nationality"),
         /* 20 */
-        null,
+        new Loader("Assets/Data/Quote6.txt", this.LoadQuotes),
         /* 21 */
-        new Loader("Assets/Data/Viz.12.2.csv", this.DrawDonutsMultiple),
+        new Loader("Assets/Data/Viz.12.2.csv", this.DrawDonutsMultiple, "Jewish Americans And Israel: By Nationality"),
         /* 22 */
-        new Loader("Assets/Data/Viz12.1.csv", this.DrawDonutsMultiple),
+        new Loader("Assets/Data/Viz12.1.csv", this.DrawDonutsMultiple, "Jewish Americans And Israel: By Ideology"),
         /* 23 */
-        null,
+        new Loader("Assets/Data/Quote7.txt", this.LoadQuotes),
         /* 24 */
-        new Loader("Assets/Data/Viz.12.3.csv", this.DrawDonutsMultiple),
+        new Loader("Assets/Data/Viz.12.3.csv", this.DrawDonutsMultiple, "Jewish Americans and Israel: By Generation"),
         /* 25 */
-        new Loader("Assets/Data/Viz12.csv", this.DrawDonutsMultiple),
+        new Loader("Assets/Data/Viz12.csv", this.DrawDonutsMultiple, "Jewish Americans and Israel: By Religion"),
         /* 26 */
-        null,
+        new Loader("Assets/Data/Quote8.txt", this.LoadQuotes),
         /* 27 */
         null,
         /* 28 */
-        new Loader("Assets/Data/Vizual13.csv", this.DrawDonutsMultiple),
+        new Loader("Assets/Data/Vizual13.csv", this.DrawDonutsMultiple, "Secularization of Jewish Traditions: Bar and Bat Mitzvahs"),
         /* 29 */
-        new Loader("Assets/Data/Viz13.3.csv", this.DrawDonutsMultiple),
+        new Loader("Assets/Data/Viz13.3.csv", this.DrawDonutsMultiple, "Secularization of Jewish Traditions: Attending Passover Seders"),
         /* 30 */
-        new Loader("Assets/Data/Viz13.2.csv", this.DrawDonutsMultiple),
+        new Loader("Assets/Data/Viz13.2.csv", this.DrawDonutsMultiple, "Secularization of Jewish Traditions: Lighting Shabbat Candles"),
         /* 31 */
-        new Loader("Assets/Data/Viz13.1.csv", this.DrawDonutsMultiple),
+        new Loader("Assets/Data/Viz13.1.csv", this.DrawDonutsMultiple,"Secularization of Jewish Traditions: Fasting on Yom Kippur"),
         /* 32 */
-        null,
+        new Loader("Assets/Data/Quote9.txt", this.LoadQuotes),
         /* 33 */
         null,
         /* 34 */
-        new Loader("Assets/Data/Viz15.csv", this.DrawBar),
+        new Loader("Assets/Data/Viz15.csv", this.DrawBar, "Participation in Jewish Organizations: By Identity"),
         /* 35 */
-        null,
+        new Loader("Assets/Data/Quote10.txt", this.LoadQuotes),
         /* 36 */
-        new Loader("Assets/Data/Viz15.3.csv", this.DrawBar),
+        new Loader("Assets/Data/Viz15.3.csv", this.DrawBar, "Participation in Jewish Organizations: By Generation"),
         /* 37 */
-        new Loader("Assets/Data/Viz15.1.csv", this.DrawPie),
+        new Loader("Assets/Data/Viz15.1.csv", this.DrawPie, "Participation in Jewish Organizations: Jewish Friends"),
         /* 38 */
-        new Loader("Assets/Data/Viz15.2.csv", this.Viz7),
+        new Loader("Assets/Data/Viz15.2.csv", this.Viz7, "Participation in Jewish Organizations: Marriage to a Jew"),
         /* 39 */
-        null,
+        new Loader("Assets/Data/Quote11.txt", this.LoadQuotes),
         /* 40 */
-        new Loader("Assets/Data/VIZual14.csv", this.DrawDonutsMultiple),
+        new Loader("Assets/Data/VIZual14.csv", this.DrawDonutsMultiple, "Marriage: By Generation"),
         /* 41 */
-        new Loader("Assets/Data/Vizual14.1.csv", this.DrawDonutsMultiple),
+        new Loader("Assets/Data/Vizual14.1.csv", this.DrawDonutsMultiple, "Marriage: By Religion"),
         /* 42 */
-        null,
+        new Loader("Assets/Data/Quote12.txt", this.LoadQuotes),
         /* 43 */
-        new Loader("Assets/Data/Viz16.1.csv", this.DrawDonutsMultiple),
+        new Loader("Assets/Data/Viz16.1.csv", this.DrawDonutsMultiple, "Raising Children: Parents' Religion"),
         /* 44 */
-        new Loader("Assets/Data/Viz16.csv", this.DrawDonutsMultiple),
+        new Loader("Assets/Data/Viz16.csv", this.DrawDonutsMultiple, "Raising Children: Compared Parents' Upbringing"),
+        /* 45 */
+        new Loader("Assets/Data/Viz4final.csv", this.Viz4),
+        /* 46 */
+        new Loader("Assets/Data/Quote13.txt", this.LoadQuotes),
     ];
 
     var lastDrawnIndex = -1;
