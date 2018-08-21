@@ -61,7 +61,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   #sections {
       position: relative;
       display: inline-block;
-      width: 400px;
+      width: 100%;
       top: 0px;
       z-index: 90;
       padding-bottom: 200px;

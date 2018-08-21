@@ -301,8 +301,9 @@ function Visualization(fileName) {
             .attr("dy", ".75em")
             .text(function (d) { return [d.value]; })
             .style("font", "25px Lekton, sans-serif")
-            .style("stroke", "#ECE8E8")
-            .style("margin-top", "20px");
+            .style("fill", "#ECE8E8")
+            // .style("fill")
+            .style("margin-top", "60px");
 
         // svg.selectAll(".text")
         //     .data(data)
@@ -1124,9 +1125,9 @@ function Visualization(fileName) {
         /*  1 */
         new Loader("Assets/Data/Viz1.csv", this.DrawCircleHierarchy, "Religious Makeup of the USA"),
         /*  2 */
-        new Loader("Assets/Data/Viz1.csv", this.DrawCircleHierarchy, "Religious Makeup of the USA"), 
+        new Loader("Assets/Data/Quote1.txt", this.LoadQuotes), 
         /*  3 */
-        new Loader("Assets/Data/Quote1.txt", this.LoadQuotes),
+        new Loader("Assets/Data/Viz1.csv", this.DrawCircleHierarchy,"Religious Makeup of the USA"),
         /*  4 */
         new Loader("Assets/Data/Viz2.csv", this.DrawBar),
         /*  5 */
