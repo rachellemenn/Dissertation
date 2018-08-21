@@ -1390,7 +1390,7 @@ function Visualization(fileName) {
     var indexToDraw = -1;
     var processing = false;
     var dispatch = d3.dispatch("processChart");
-    var button = document.getElementById("button");
+    var button = document.getElementById("button1");
 
     button.addEventListener("click", Process);
 
