@@ -374,7 +374,7 @@ function WrittenContent(fileName) {
         // Start the load
         Process();
     
-        button.onclick = () => {
+        button.click = () => {
             // HTML is loaded, we can start
     
             // Create the container in element that has #vis
@@ -1639,7 +1639,7 @@ function Visualization(fileName) {
     // Start the load
     Process();
 
-    button.onclick = () => {
+    button.click = () => {
         // HTML is loaded, we can start
 
         // Create the container in element that has #vis
