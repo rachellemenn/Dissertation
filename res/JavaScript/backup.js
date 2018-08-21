@@ -1396,102 +1396,102 @@ function Visualization(fileName) {
 
     // // Process one element that needs processing, but only if this function
     // // is not processing something at this time
-    // function Process() {
-    //     // Skip if already processing
-    //     if (!Process.processing) {
-    //         // Mark that we're processing
-    //         Process.processing = true;
-    //         var processItem = null;
-    //         var willDraw = false;
-    //         try {
-    //             // Check if need to redraw something
-    //             if (indexToDraw != -1 && indexToDraw != lastDrawnIndex) {
-    //                 if (loaders[indexToDraw] == null) {
-    //                     SetOpacityAndFixDom([indexToDraw,
-    //                         lastDrawnIndex == -1 ? indexToDraw + 1 : lastDrawnIndex
-    //                     ]);
-    //                     indexToDraw = lastDrawnIndex;
-    //                 } else {
-    //                     SetOpacityAndFixDom([indexToDraw]);
+    function Process() {
+        // Skip if already processing
+        if (!Process.processing) {
+        // Mark that we're processing
+        Process.processing = true;
+        var processItem = null;
+        var willDraw = false;
+            try {
+            // Check if need to redraw something
+            if (indexToDraw != -1 && indexToDraw != lastDrawnIndex) {
+                    if (loaders[indexToDraw] == null) {
+                        SetOpacityAndFixDom([indexToDraw,
+                            lastDrawnIndex == -1 ? indexToDraw + 1 : lastDrawnIndex
+                        ]);
+                        indexToDraw = lastDrawnIndex;
+                    } else {
+                        SetOpacityAndFixDom([indexToDraw]);
 
-    //                     console.log("Activate index " + indexToDraw + " file " + loaders[indexToDraw].FileName() +
-    //                         (loaders[indexToDraw].IsLoaded() ? ", loaded" : ", not loaded") +
-    //                         (loaders[indexToDraw].IsBusy() ? ", busy" : ", not busy") +
-    //                         (loaders[indexToDraw].IsFailed() ? ", failed" : ", not failed"));
+                         console.log("Activate index " + indexToDraw + " file " + loaders[indexToDraw].FileName() +
+                           (loaders[indexToDraw].IsLoaded() ? ", loaded" : ", not loaded") +
+                             (loaders[indexToDraw].IsBusy() ? ", busy" : ", not busy") +
+                             (loaders[indexToDraw].IsFailed() ? ", failed" : ", not failed"));
 
-    //                     if (loaders[indexToDraw].IsFailed()) {
-    //                         console.log("Skipping " + indexToDraw + " since it failed");
-    //                     } else if (!loaders[indexToDraw].IsBusy()) {
-    //                         processItem = loaders[indexToDraw];
-    //                         willDraw = processItem.IsLoaded();
-    //                     }
-    //                 }
-    //             }
+                        if (loaders[indexToDraw].IsFailed()) {
+                             console.log("Skipping " + indexToDraw + " since it failed");
+                         } else if (!loaders[indexToDraw].IsBusy()) {
+                             processItem = loaders[indexToDraw];
+                             willDraw = processItem.IsLoaded();
+                        }
+                     }
+                 }
 
-    //             // There is nothing to draw. Dispatch a load
-    //             if (processItem == null) {
-    //                 // Look for an item that's not loaded yet
-    //                 loaders.some((l) => {
-    //                     if (l != null && !l.IsLoaded() && !l.IsBusy() && !l.IsFailed()) {
-    //                         processItem = l;
-    //                         return true;
-    //                     }
+                // There is nothing to draw. Dispatch a load
+                if (processItem == null) {
+                    // Look for an item that's not loaded yet
+                    loaders.some((l) => {
+                        if (l != null && !l.IsLoaded() && !l.IsBusy() && !l.IsFailed()) {
+                            processItem = l;
+                            return true;
+                        }
 
-    //                     return false;
-    //                 });
-    //             }
+                        return false;
+                    });
+                }
 
-    //             // Process
-    //             if (processItem != null) {
-    //                 processItem.Activate(() => {
-    //                     dispatch.call("processChart", this);
-    //                 });
+                // Process
+                if (processItem != null) {
+                    processItem.Activate(() => {
+                        dispatch.call("processChart", this);
+                    });
 
-    //                 // If processing redrew the item, change the index
-    //                 if (willDraw) {
-    //                     lastDrawnIndex = indexToDraw;
-    //                     if (processItem.CallbackContext() !== undefined) {
-    //                         LoadTitle(processItem.CallbackContext());
-    //                     }
-    //                 }
-    //             }
-    //         } finally {
-    //             Process.processing = false;
-    //         }
-    //     }
-    // }
+                    // If processing redrew the item, change the index
+                    if (willDraw) {
+                        lastDrawnIndex = indexToDraw;
+                        if (processItem.CallbackContext() !== undefined) {
+                            LoadTitle(processItem.CallbackContext());
+                        }
+                    }
+                }
+            } finally {
+                Process.processing = false;
+            }
+        }
+    }
 
-    // // Set low opacity to non-active sections.
-    // // Play tricks to make sure the browser
-    // // knows the extent of each section
-    // function SetOpacityAndFixDom(indexList) {
-    //     // Set opacity for all elements of class step
-    //     d3.selectAll('.step')
-    //         .style('opacity', function (d, i) {
-    //             return indexList.indexOf(i) == -1 ? 0.1 : 1;
-    //         });
+    // Set low opacity to non-active sections.
+    // Play tricks to make sure the browser
+    // knows the extent of each section
+    function SetOpacityAndFixDom(indexList) {
+        // Set opacity for all elements of class step
+        d3.selectAll('.step')
+            .style('opacity', function (d, i) {
+                return indexList.indexOf(i) == -1 ? 0.1 : 1;
+            });
 
-    //     // Add an empty div to the end of the
-    //     // element with id #sections (the one
-    //     // containing all sections)
-    //     var div = d3.select("#graphic")
-    //         .append("div")
-    //         .style("width", "100%")
-    //         .attr("id", "__dummy__");
+        // Add an empty div to the end of the
+        // element with id #sections (the one
+        // containing all sections)
+        var div = d3.select("#graphic")
+            .append("div")
+            .style("width", "100%")
+            .attr("id", "__dummy__");
 
-    //     // Get the element and find its computed width
-    //     div = d3.select("#__dummy__");
-    //     var divWidth = +div.style("width");
+        // Get the element and find its computed width
+        div = d3.select("#__dummy__");
+        var divWidth = +div.style("width");
 
-    //     // Change width by a pixel down, then one up
-    //     // then remove it. These manipulations force
-    //     // resize, which should recompute all sizes
-    //     // correctly
-    //     div.style("width", () => "" + (divWidth - 1) + "px")
-    //         .style("width", () => "" + (divWidth + 1) + "px")
-    //         .remove();
+        // Change width by a pixel down, then one up
+        // then remove it. These manipulations force
+        // resize, which should recompute all sizes
+        // correctly
+        div.style("width", () => "" + (divWidth - 1) + "px")
+            .style("width", () => "" + (divWidth + 1) + "px")
+            .remove();
 
-    // }
+    }
 
     dispatch.on("processChart", function () {
         Process();
