@@ -1392,7 +1392,7 @@ function Visualization(fileName) {
     var dispatch = d3.dispatch("processChart");
     var button = document.getElementById("button1");
 
-    button.addEventListener("click", Process);
+    // button.addEventListener("click", Process);
 
     // // Process one element that needs processing, but only if this function
     // // is not processing something at this time
@@ -1500,7 +1500,7 @@ function Visualization(fileName) {
     // Start the load
     Process();
 
-    window.onclick = () => {
+    button.onclick = () => {
         // HTML is loaded, we can start
 
         // Create the container in element that has #vis
