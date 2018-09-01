@@ -1,2 +1,2 @@
 ﻿Title
-<p class="stationed">This is...</p><b class="moving"><span> Ancestry <br /> Religion <br /> Culture <br /> <span class="final">The Jewish American Identity</span></b> <p class=subMtitle>Exploring The Millennial Generation</p>
+<p class="subtitle">Use the arrows to explore the Jewish American Identity in the Modern Day</p>

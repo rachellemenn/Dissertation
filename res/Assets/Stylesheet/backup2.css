@@ -122,6 +122,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     position: fixed;
   } */
 
+  p {
+    margin-top: 10px;
+  }
+
   #vis .title {
      font-size: 120px;
      text-anchor: middle; 
