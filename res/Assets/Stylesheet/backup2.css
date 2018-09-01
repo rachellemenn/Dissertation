@@ -313,12 +313,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   } */
 
   #button1 {
-    background:#1AAB8A;
-    color:#fff;
+    background:#ECE8E8;
+    color:#000086;
     border:none;
     position:relative;
     height:60px;
-    font-size:1.6em;
+    font-size:4em;
     padding:0 2em;
     cursor:pointer;
     transition:800ms ease all;
@@ -326,8 +326,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   }
 
   button1:hover{
-    background:#fff;
-    color:#1AAB8A;
+    background:#ECE8E8;
+    color:#000086;
   }
 
   button1:before,button1:after{
@@ -337,7 +337,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     right:0;
     height:2px;
     width:0;
-    background: #1AAB8A;
+    background: #ECE8E8;
     transition:400ms ease all;
   }
 
@@ -354,12 +354,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   }
 
   #button2 {
-  background:#1AAB8A;
-  color:#fff;
+  background:#ECE8E8;
+  color:#000086;
   border:none;
   position:relative;
   height:60px;
-  font-size:1.6em;
+  font-size:4em;
   padding:0 2em;
   cursor:pointer;
   transition:800ms ease all;
@@ -367,8 +367,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   }
 
   button2:hover{
-    background:#fff;
-    color:#1AAB8A;
+    background:#ECE8E8;
+    color:#000086;
   }
 
   button2:before,button2:after{
@@ -378,7 +378,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     right:0;
     height:2px;
     width:0;
-    background: #1AAB8A;
+    background: #ECE8E8;
     transition:400ms ease all;
   }
 
