@@ -238,7 +238,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     z-index: -1;
   } */
   .quote{
-    font-family: "Source Code Pro", monospace;
+    font-family: "Molengo", sans-serif;
     font-size: 20px;
     text-align: center;
     display: inline-block;
@@ -248,6 +248,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     box-shadow: 0 -6px 0 rgba(15,87,226);
     align-content: center;
     margin-top: 40px;
+    margin-right: 50px;
   }
 
   .MainTitle .stationed {
