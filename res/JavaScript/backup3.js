@@ -398,19 +398,19 @@ function Visualization(fileName) {
             .attr("fill", function (d, i) {
                 return colors[i];
             });
-            svg.selectAll(".text")
-            .data(items)
-            .enter()
-            .append("text")
-            .attr("class", "label")
-            .attr("x", (function (d) { return x(d.name) + x.bandwidth() / 2; }))
-            .attr("y", function (d) { return y(d.value) + 1; })
-            .attr("dy", ".75em")
-            .text(function (d) { return [d.value]; })
-            .style("font", "25px Lekton, sans-serif")
-            .style("fill", "#ECE8E8")
-            // .style("fill")
-            .style("margin-top", "60px");
+            // svg.selectAll(".text")
+            // .data(items)
+            // .enter()
+            // .append("text")
+            // .attr("class", "label")
+            // .attr("x", (function (d) { return x(d.name) + x.bandwidth() / 2; }))
+            // .attr("y", function (d) { return y(d.value) + 1; })
+            // .attr("dy", ".75em")
+            // .text(function (d) { return [d.value]; })
+            // .style("font", "25px Lekton, sans-serif")
+            // .style("fill", "#ECE8E8")
+            // // .style("fill")
+            // .style("margin-top", "60px");
     }
 
     // this.DrawBubble = function (data) {
