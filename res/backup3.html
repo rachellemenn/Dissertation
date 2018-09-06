@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lan="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-store">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <link rel="stylesheet" type ="text/css" href="Assets/Stylesheet/backup3.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Gruppo|Nanum+Myeong|Goudy+Bookletter+1911|Chathura|Inconsolata|Source+Code+Pro|Lekton|Molengo" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- <script src="http://d3js.org/d3.v4.min.js"></script> -->
+    <script src="../d3/D3v4/d3.js"></script>
+    <script src="../d3/Venn/venn.js"></script>
+    <script src ="JavaScript/scroller.js"></script>
+    <script src="JavaScript/backup3.js"></script>
+</head>
+<body>
+    <!-- <div class="title-container">
+            <div id="diss-title"> Jewish American Millennials</div>
+            <div id="free-space">
+            </div> -->
+    <!-- </div>  -->
+    <div class= "container">
+        <div id = 'graphic'>
+            <table>
+                <tr>
+                    <td>
+                        <div id = 'sections'>
+                            <div><input type="button" id="button2" value="&#8592;"/></div>
+                            <section class = "step">
+                                <!-- <div class="title">Title Page</div> -->
+                                <p class="stationed">This is...</p>
+                                <b class="moving"><span> Ancestry <br /> Religion <br /> Culture <br /> <span class="final">The Jewish American Identity</span></b>
+                            </section>
+                            <section class = "step">
+                                <div class= "title">Introduction – Jews In America</div>
+                                <!-- Viz 1 -->
+                                <p> The United States of America was founded on the principle of freedom and, by extension, 
+                                    freedom of religion. However, the country’s Christian origins have remained a constant 
+                                    dominant in the religious makeup of the United States. Today, the Abrahamic monotheistic 
+                                    religions remain the most prominent with about 70 percent of religious citizens identifying 
+                                    as Christian, 1.9 percent identifying as Jewish and 0.9 percent identifying as Muslim <!--(source) -->. 
+                                    While the world history of these three religions has often intertwined in messy and unpleasant ways, 
+                                    their history within the United States has been slightly different. Though religious freedom has not 
+                                    always been total or constant in America — particularly for Judaism, Islam 
+                                    and non-Protestant Christian denominations — it is perhaps one of the few places in the world these 
+                                    religions have managed relatively successful coexistence <!--(source) -->. Immigrants from around the 
+                                    world, particularly those fleeing persecution, have found solace in the melting pot community of the 
+                                    United States. Such an environment has spurred trends of detachment amongst second and 
+                                    third generation children of immigrants from the experiences their families and ancestors 
+                                    faced outside of the United States <!--(source) -->. </p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class="title">quote</div>  -->
+                                <p><blockquote></blockquote></p>
+                                <!-- QUOTE 1 -->  
+                            </section>
+                            <section class = "step">
+                                <!-- <div class="title">Section 1.2</div> -->
+                                <!-- Viz 1, zoom in animation on Jewish bubble-->
+                                <p>Though Jews compose just under 2 percent of the overall United States population, 
+                                    it is the largest Jewish community in the world, second to Israel <!--(source)-->. 
+                                    The perception of America as an asylum for persecuted groups served as the basis for 
+                                    much of the immigration to the United States <!--(source)-->. Heavy periods of Jewish 
+                                    immigration often occurred in parallel to particularly poor conditions in different areas 
+                                    of the globe. Jews have been present in the United States since the 1700s when <div data-tooltip="Sephardic Jews">Sephardic Jewish</div> 
+                                    immigrants arrived in staggered groups. However, the major influxes of Jewish immigrants, 
+                                    in the 1800s, and again in the early 20th century <!--(source)-->, mainly consisted of <div data-tooltip="Ashkenazi Jews">Ashkenazi 
+                                    Jews</div> prompted by bouts of anti-Semitism across Eastern Europe <!--(source)-->. Even with the 
+                                    obvious growth of the Jewish American community, the absence of an explicit definition of a Jewish 
+                                    identity has posed a unique difficulty in collating census data over the 
+                                    last century <!--(source)-->.</p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class ="title">Section 1.3</div> -->
+                                <!-- Viz 2 -->
+                                <p>As for many groups of immigrants, New York served as a hub for Jewish immigrants. The New York 
+                                    Community expanded across the northeast of the United States and has a very dense Jewish population.
+                                    Today, the northeast, and New York in particular, hosts the largest Jewish community in the world 
+                                    after Tel Aviv. Over the years, Jews have spread across the United States, though remain 
+                                    congregated around large metropolitan areas. Other notable Jewish American communities include 
+                                    Florida down south and LA on the west coast. Jewish populations remain coastal with very few large 
+                                    Jewish populations in the Midwest. There are several practical reasons for these concentrations of 
+                                    Jewish communities. In addition to better education and employment opportunities, metropolitan areas 
+                                    simplify cultural and religious lifestyle requirements. Proximity to a <div data-tooltip="Synagogue">synagogue</div>, within 
+                                    walking distance, is vital for more <div data-tooltip="Jewish religion: Denominations">observant Jews</div>,
+                                    particularly during the <div data-tooltip="Jewish Holidays">holidays</div>. 
+                                    Furthermore, the larger a community, the more accessible <div data-tooltip="Kosher">kosher food</div> 
+                                    (in stores and restaurants) becomes – even at establishments run by non-Jews. In areas less 
+                                    populated with Jews, lack of access to these amenities makes it difficult for those with more
+                                    observant lifestyles to live comfortably. Furthermore, living around other Jews solidifies a 
+                                    Jewish identity and increases dating and marriage opportunities. New York City is commonly a setting 
+                                    for the dating scene amongst more religious Jews from around the world. <!--(source)-->. 
+                                    Despite this, smaller Jewish communities across the United States are growing, due to <div data-tooltip="Hasidic">Hasidic</div> 
+                                    Jews sending missionaries to areas with no congregation to build an official community
+                                    <!--(source)-->. However, no other areas are on par with the 
+                                    communities in New York, Miami and LA. </p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class= "title">Section 1.4</div> -->
+                                <!--Viz 3  -->
+                                <p>The evolution of the Jewish American identity has been shaped by generational differences in 
+                                    experiences and social conditions. Jewish American culture particularly flourished with the 
+                                    generation of immigrants that arrived at the beginning of the <div data-tooltip="Jews in the 20th century">20th century</div>. 
+                                    This group of immigrants became part of the working class as factory workers, seamstresses 
+                                    and small business owners <!--(source)-->, of establishments such as the <div data-tooltip="Jewish stereotypes – Jewish Deli">Jewish deli</div>, 
+                                    which created the foundation for some of the most well-known Jewish-American cultural 
+                                    stereotypes. However, assimilation through education <!--(source)-->  allowed Jews to move up in the
+                                    American class system and resulted in future generations of Jews becoming particularly dominant in 
+                                    upper-class professions and some of the top earners in the United States <!--(source)-->. During this 
+                                    time, many Jewish American leaders encouraged newcomers to embrace Judaism as an ethnic and cultural 
+                                    identity rather than emphasise the religious. But by the mid-20th century, religious participation 
+                                    increased as more Jews achieved a comfortable position in American society, economically and socially
+                                    <!--(source)-->. Throughout the last century, specific elements of a Jewish American identity have 
+                                    fluctuated. Of most concern to leaders within the American, and wider, Jewish community are the 
+                                    rising popularity of interfaith marriages and the increasing disconnect between Jewish Americans 
+                                    and Israel. </p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class="title">quote</div> -->
+                                <p><blockquote></blockquote></p>
+                                <!-- QUOTE 2 -->
+                            </section>
+                            <section class = "step">
+                                <div class="title">Section 2: Introduction – Jewish Identity</div>
+                                <!-- Viz 4 -->
+                                <p>Procuring an accurate count of Jews is complex partly because Judaism has such a broad definition. 
+                                    In the most rudimental terms, a Jewish identity is composed of religion, ancestry and culture 
+                                    <!--(source)-->. Abraham, the first of the three <div data-tooltip="Jewish Religion: Patriarchs">patriarchs</div> of Judaism, was the 
+                                    first Jew and the ancestor to the entire Jewish nation. Therefore, all Jews are bound by an ancestral 
+                                    tie. Judaism states that the biological connection is passed from the mother and recognises anyone 
+                                    with a Jewish mother as a Jew, regardless of their religious beliefs. Abraham became a Jew because he 
+                                    rejected the pagan religion of his time and devoted himself to God. Subsequently, Judaism wholly stems
+                                    from a belief in God, religious scripture and <div data-tooltip="Jewish Religion: Halakhic Law">halakhic law</div>, both God-mandated and rabbinic. 
+                                    Despite the firm presence of both religion and ancestry in the core of Jewish culture, 
+                                    Jewish culture is also the manifestation of shared beliefs, traditions, history, 
+                                    experiences and circumstance. </p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class ="title">Section 2.2</div> -->
+                                <!--Viz 6  -->
+                                <p>The three pillars of a Jewish identity — culture, religion and ancestry — are constant, but vary 
+                                    in hierarchy and specific elements within every individual. Whilst Jewish microcultures directly 
+                                    impact an identity; certain personality traits, mannerisms, beliefs and lifestyle choices have 
+                                    become quite consistent across nationalities, denominations and generations. For instance, whether 
+                                    there is a personal connection to Israel, the potential for a connection is an imperative element 
+                                    of a Jewish identity. Furthermore, the collective history of tragedy and oppression is directly 
+                                    reflected in a Jewish identity, a concept exhibited in Jewish humour which often takes the form 
+                                    of self-deprecating, complaining anecdotes with subtle humorous undertones. This is exemplified 
+                                    in an old Jewish joke which articulates that in Jewish tradition, a foetus is not considered 
+                                    viable until after it graduates from medical school. This reflects the high demands of parents 
+                                    (specifically <div data-tooltip="Jewish stereotypes:  Overbearing Mothers">overbearing mothers</div>), but also touches on the Jewish mentality of education 
+                                    as a means of survival. The joke also encapsulates some of the <div data-tooltip="Jewish stereotypes: Specific to America">Jewish American 
+                                    stereotypes</div> that have become a norm in pop culture.</p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class= "title">Section 2.3</div> -->
+                                <!-- Viz 7 -->
+                                <p>He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me? " he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather. Drops of rain could be heard hitting the pane, which made him feel quite sad. "How about if I sleep a little bit longer and forget all this nonsense", he thought, but that was something he was unable to do because he was used to sleeping on his right, and in his present state couldn't get into that position. However hard he threw himself onto his right, he always rolled back to where he was. He must have tried it a hundred.</p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class="title">Section 2.4</div> -->
+                                <!-- Viz 6 again-->
+                                <p>Doing business like this takes much more effort than doing your own business at home, and on top of that there's the curse of travelling, worries about making train connections, bad and irregular food, contact with different people all the time so that you can never get to know anyone or become friendly with them. It can all go to Hell! " He felt a slight itch up on his belly; pushed himself slowly up on his back towards the headboard so that he could lift his head better; found where the itch was, and saw that it was covered with lots of little white spots which he didn't know what to make of; and when he tried to feel the place with one of his legs he drew it quickly back because as soon as he touched it he was overcome by a cold shudder. He slid back into his former position. "Getting up early all the time", he thought, "it makes you stupid. You've got to get enough sleep. Other travelling salesmen live a life of luxury. For instance, whenever I go back to the guest house during the morning to copy out the contract, these gentlemen are always still sitting there eating their breakfasts. I ought to just try that with my boss; I'd get kicked out on the spot. But who knows, maybe that would be the best thing for me. If I didn't have my parents to think about I'd have given in my notice a long time ago, I'd have gone up to the boss and told him just what I think.</p>
+                            </section>
+                            <section class ="step">
+                                <!-- <div class="title">quote</div> -->
+                                <p><blockquote></blockquote></p>
+                                <!-- QUOTE 3 -->
+                            </section>
+                            <section class = "step">
+                                <!-- <div class ="title">Section 2.5</div> -->
+                                <!-- Viz 5 -->
+                                <p>First of all though, I've got to get up, my train leaves at five. " And he looked over at the alarm clock, ticking on the chest of drawers. "God in Heaven! " he thought. It was half past six and the hands were quietly moving forwards, it was even later than half past, more like quarter to seven. Had the alarm clock not rung? He could see from the bed that it had been set for four o'clock as it should have been; it certainly must have rung. Yes, but was it possible to quietly sleep through that furniture-rattling noise? True, he had not slept peacefully, but probably all the more deeply because of that. What should he do now? The next train went at seven; if he were to catch that he would have to rush like mad and the collection of samples was still not packed, and he did not at all feel particularly fresh and lively. And even if he did catch the train he would not avoid his boss's anger as the office assistant would have been there to see the five o'clock train go, he would have put in his report about Gregor's not being there a long time ago. The office assistant was the boss's man, spineless, and with no understanding. What about if he reported sick? But that would be extremely strained and suspicious as in fifteen years of service Gregor had never once yet been ill. His boss would certainly come round with the doctor from the medical insurance company.</p>
+                            </section>
+                            <section class ="step">
+                                <!-- <div class="title">quote</div> -->
+                                <p><blockquote></blockquote></p>
+                                <!-- QUOTE 4 -->
+                            </section>
+                            <section class ="step">
+                                <div class= "title">Section 3: Modern Day Jewish Americans – Background </div>
+                                <!-- Viz 8 -->
+                                <p>He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me? " he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather. Drops of rain could be heard hitting the pane, which made him feel quite sad. "How about if I sleep a little bit longer and forget all this nonsense", he thought, but that was something he was unable to do because he was used to sleeping on his right, and in his present state couldn't get into that position. However hard he threw himself onto his right, he always rolled back to where he was. He must have tried it a hundred.</p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class="title">Section 3.2</div> -->
+                                <!-- Viz 9 -->
+                                <p>Whilst Jewish American Millennials are comparatively less religious than previous generations 
+                                    <!--(source)-->, this is not exclusive to Judaism. Data shows wider patterns of rejecting religion 
+                                    across the entire millennial generation. NYU professor <!--(source: in a Pew Research interview)-->  
+                                    explains that millennials are being raised differently to previous generations, with more 
+                                    encouragement towards a mentality of independence and self-thinking <!--(source)-->. 
+                                    To an extent, this is applicable to Jewish American millennials — the freedom of thought 
+                                    and religion provided by both parents and government <!--(source)-->. 
+                                    Furthermore, by denouncing religion, millennials are not necessarily rejecting God, but 
+                                    traditional institutions. Data demonstrates that millennials are much less trusting of 
+                                    any formal institutions, including the government, universities and religious establishments. 
+                                    It does not seem particularly common amongst millennial Jewish Americans to totally disassociate 
+                                    themselves with Judaism <!--(source)-->. Rather, because Judaism is much more than a synagogue 
+                                    and a <div data-tooltip="Jewish Religion: Rabbi">rabbi</div>, millennials can still maintain their Judaism without having to commit to a 
+                                    traditional religious institution. </p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class="title">quote</div> -->
+                                <p><blockquote></blockquote></p>
+                                <!-- QUOTE 5 -->
+                            </section>
+                            <section class = "step">
+                                <!-- <div class ="title">Section 3.3</div> -->
+                                <!-- Viz 10 -->
+                                <p>Geography significantly impacts identity <!--(source)-->.  American-born Jews have had the luxury of 
+                                    growing up without fear of persecution whilst Soviet-born Jews grew up in an environment that 
+                                    forced them to hide their Jewish ethnicity and, in many cases, their religious beliefs. 
+                                    Whilst the communist regime enforced atheism, Jews were always singled out as an independent 
+                                    ethnicity. Anti-Semitism in the USSR was not based on religion, but rather highlighted the 
+                                    ancestral and cultural aspects. It was noted in passports and a quota on Jewish employees 
+                                    and students was enforced by companies and universities respectively <!--(source)-->. 
+                                    So, despite a ban on religion, Jews were unable to forget that they were Jewish. 
+                                    Though some Jews from the Soviet Union renounced Judaism completely, many chose to focus 
+                                    on their Jewish ethnicity and culture. This both strengthened and secularised many traditions 
+                                    which manifested in the production of art, music, literature as well as collective values 
+                                    with an emphasis on marrying Jews and receiving an education. Whilst there is a larger 
+                                    portion of Jewish millennials with American-born parents, there is still a significant 
+                                    portion with immigrant parents. Family is a vital influence in the development of an 
+                                    identity, but whether the mentality of Soviet-born parents impacts how their 
+                                    American-raised children perceive their Jewish identity is unclear <!--(source)-->. 
+                                    In her article discussing the Pew Survey, Megan <!--(source)--> 
+                                    expresses how the influence of immigrant parents impacts the child, 
+                                    but that impact fades over time.</p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class= "title">Section 3.4</div> -->
+                                <!-- Viz 11 -->
+                                <p>The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me? " he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather. Drops of rain could be heard hitting the pane, which made him feel quite sad. "How about if I sleep a little bit longer and forget all this nonsense", he thought, but that was something he was unable to do because he was used to sleeping on his right, and in his present state couldn't get into that position. However hard he threw himself onto his right, he always rolled back to where he was. He must have tried it a hundred times, shut his eyes so that he wouldn't have to look at the floundering legs, and only stopped when he began to feel a mild, dull pain there that he had never felt before.</p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class="title">Section 3.5</div> -->
+                                <!-- Viz 11.1 -->
+                                <p>" He felt a slight itch up on his belly; pushed himself slowly up on his back towards the headboard so that he could lift his head better; found where the itch was, and saw that it was covered with lots of little white spots which he didn't know what to make of; and when he tried to feel the place with one of his legs he drew it quickly back because as soon as he touched it he was overcome by a cold shudder. He slid back into his former position. "Getting up early all the time", he thought, "it makes you stupid. You've got to get enough sleep. Other travelling salesmen live a life of luxury. For instance, whenever I go back to the guest house during the morning to copy out the contract, these gentlemen are always still sitting there eating their breakfasts. I ought to just try that with my boss; I'd get kicked out on the spot. But who knows, maybe that would be the best thing for me. If I didn't have my parents to think about I'd have given in my notice a long time ago, I'd have gone up to the boss and told him just what I think, tell him everything I would, let him know just what I feel. He'd fall right off his desk! And it's a funny sort of business to be sitting up there at your desk, talking down at your subordinates from up there, especially when you have to go right up close because the boss is hard of hearing. Well, there's still some hope; once I've got the money?</p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class ="title">quote</div> -->
+                                <p><blockquote></blockquote></p>
+                                <!-- QUOTE 6 -->
+                            </section>
+                            <section class = "step">
+                                <div class ="title">Section 4: Modern Day Jewish Americans – Identity </div>
+                                <!-- Viz 12.2 -->
+                                <p>He could see from the bed that it had been set for four o'clock as it should have been; it certainly must have rung. Yes, but was it possible to quietly sleep through that furniture-rattling noise? True, he had not slept peacefully, but probably all the more deeply because of that. What should he do now? The next train went at seven; if he were to catch that he would have to rush like mad and the collection of samples was still not packed, and he did not at all feel particularly fresh and lively. And even if he did catch the train he would not avoid his boss's anger as the office assistant would have been there to see the five o'clock train go, he would have put in his report about Gregor's not being there a long time ago. The office assistant was the boss's man, spineless, and with no understanding. What about if he reported sick? But that would be extremely strained and suspicious as in fifteen years of service Gregor had never once yet been ill. His boss would certainly come round with the doctor from the medical insurance company, accuse his parents of having a lazy son, and accept the doctor's recommendation not to make any claim as the doctor believed that no-one was ever ill but that many were workshy. And what's more, would he have been entirely wrong in this case? Gregor did in fact, apart from excessive sleepiness after sleeping for so long, feel completely well.</p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class= "title">Section 4.2</div> -->
+                                <!-- Viz 12.1 -->
+                                <p>Jews have idealised Israel as a utopian homeland where the Jewish people could finally come 
+                                    together as one. It has served as both a religious and a cultural symbol of hope to those 
+                                    forced into oppressive regimes throughout the Jewish diaspora <!--(source)-->. However, 
+                                    since its <div data-tooltip="Jewish Holidays: Israeli Independence Day">inception</div> in 1948,
+                                    Israel has been in constant <div data-tooltip="Modern Judaism: Israel-Arab Conflict">conflict</div> with the 
+                                    Palestinians and its neighbouring countries. The constant threat to Israel’s survival 
+                                    has created a divide amongst Jews, particularly in the United States. Many immigrants 
+                                    came to the States with assimilation as a priority. When they found themselves in a 
+                                    country that provided everything the idea of Israel represented, the necessity of 
+                                    a Jewish state became less imperative. Though many maintained loyalties to an Israeli 
+                                    state, the same sentiments were not necessarily passed down to future generations 
+                                    <!--(source)-->. Furthermore, Jews in other parts of the world, as well as immigrants 
+                                    in the present day, have a connection to Israel that is much more defined than that 
+                                    of Jewish Americans <!--(source)-->. In the late 90s a programme called <div data-tooltip="Jewish culture: Birthright">Birthright</div> 
+                                    was founded to rekindle the millennial generation’s connection to Israel and, though the 
+                                    programme is internationally operated, its popularity is focused in the United States.</p>
+                            </section>
+                            <section class ="step">
+                                <!-- <div class ="title">quote</div> -->
+                                <p><blockquote></blockquote></p>
+                                <!--QUOTE 7 -->
+                            </section>
+                            <section class = "step">
+                                <!-- <div class="title">Section 4.3</div> -->
+                                <!-- Viz 12.3 -->
+                                <p>He slid back into his former position. "Getting up early all the time", he thought, "it makes you stupid. You've got to get enough sleep. Other travelling salesmen live a life of luxury. For instance, whenever I go back to the guest house during the morning to copy out the contract, these gentlemen are always still sitting there eating their breakfasts. I ought to just try that with my boss; I'd get kicked out on the spot. But who knows, maybe that would be the best thing for me. If I didn't have my parents to think about I'd have given in my notice a long time ago, I'd have gone up to the boss and told him just what I think, tell him everything I would, let him know just what I feel. He'd fall right off his desk! And it's a funny sort of business to be sitting up there at your desk, talking down at your subordinates from up there, especially when you have to go right up close because the boss is hard of hearing. Well, there's still some hope; once I've got the money together to pay off my parents' debt to him - another five or six years I suppose - that's definitely what I'll do. That's when I'll make the big change. First of all though, I've got to get up, my train leaves at five. " And he looked over at the alarm clock, ticking on the chest of drawers. "God in Heaven! " he thought. It was half past six and the hands were quietly moving forwards, it was even later than half past.</p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class ="title">Section 4.4</div> -->
+                                <!--Viz 12 -->
+                                <p>Though Jewish Americans have always had a weaker connection to Israel compared to Jews 
+                                    from around the world, older generations seem to have a stronger loyalty to the Jewish 
+                                    state than those that grew up with an established state in existence. And since its inception, 
+                                    the connection between Jewish Americans and Israel has weakened even more. Jewish-American 
+                                    community leaders have been concerned over the ever-growing separation, often blaming the 
+                                    diverging political ideology of Jewish Americans as well as the accepting, rather than 
+                                    oppressive, nature of the American community experienced by second and third generation 
+                                    Jewish Americans <!--(source)-->. Millennials have lived through a particularly turbulent 
+                                    time during the <div data-keyword="Modern Judaism: Israel-Arab Conflict">Israeli-Arab conflict</div>. Whilst programmes such as Birthright have been 
+                                    relatively successful <!--(source)--> in strengthening the connection, it also seems 
+                                    to blur the distinction between Israel as a Jewish nation and the Israeli government 
+                                    <!--(source)-->. Recently there has been an increase in Jewish activist groups 
+                                    <!--(source)--> in defence of Palestinians <!--(source)--> in an active attempt to make 
+                                    a distinction between Netanyahu’s administration and the concept of Israel as a Jewish homeland.</p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class ="title">quote</div> -->
+                                <p><blockquote></blockquote></p>
+                                <!-- QUOTE 8 -->
+                            </section>
+                            <section class = "step">
+                                <!-- <div class= "title">Section 4.5</div> -->
+                                <!-- No Viz -->
+                                <p>Drops of rain could be heard hitting the pane, which made him feel quite sad. "How about if I sleep a little bit longer and forget all this nonsense", he thought, but that was something he was unable to do because he was used to sleeping on his right, and in his present state couldn't get into that position. However hard he threw himself onto his right, he always rolled back to where he was. He must have tried it a hundred times, shut his eyes so that he wouldn't have to look at the floundering legs, and only stopped when he began to feel a mild, dull pain there that he had never felt before. "Oh, God", he thought, "what a strenuous career it is that I've chosen! Travelling day in and day out. Doing business like this takes much more effort than doing your own business at home, and on top of that there's the curse of travelling, worries about making train connections, bad and irregular food, contact with different people all the time so that you can never get to know anyone or become friendly with them. It can all go to Hell! " He felt a slight itch up on his belly; pushed himself slowly up on his back towards the headboard so that he could lift his head better; found where the itch was, and saw that it was covered with lots of little white spots which he didn't know what to make of; and when he tried to feel the place with one of his legs he drew it quickly back because as soon.</p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class="title">Section 4.6</div> -->
+                                <!-- Viz 13 -->
+                                <p>When Jewish children come of age, they become bar (boy) or bat (girl) mitzvah at ages 13 and 12 
+                                    respectively. This signifies that they are now responsible for their moral, religious and 
+                                    communal <div data-tooltip="Jewish Religion: Jewish duties">Jewish duties</div>. In earlier times this also indicated they were eligible for marriage. 
+                                    Whilst the details of the ceremony vary between denominations (boys are required to read from 
+                                    the <div data-tooltip="Jewish Religion: Torah">Torah</div>, girls only can in reform synagogues), the event usually consists of both ceremony 
+                                    and celebration. A subsequent celebration has been documented as an essential part of the bar 
+                                    mitzvah proceedings, as well as a monetary gift <!--(source)-->. Jewish Americans have 
+                                    developed a stereotype for throwing exceptionally lavish parties. The overarching emphasis on 
+                                    the celebration rather than the ceremony demonstrates how removed the proceedings have become 
+                                    from any religious context. Regardless, significantly more religious Jews have had a bar 
+                                    or bat mitzvah than non-religious Jews.</p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class ="title">Section 4.7</div> -->
+                                <!--Viz 13.3  -->
+                                <p>His boss would certainly come round with the doctor from the medical insurance company, accuse his parents of having a lazy son, and accept the doctor's recommendation not to make any claim as the doctor believed that no-one was ever ill but that many were workshy. And what's more, would he have been entirely wrong in this case? Gregor did in fact, apart from excessive sleepiness after sleeping for so long, feel completely well and even felt much hungrier than usual. One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me? " he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright.</p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class= "title">Section 4.8</div> -->
+                                <!-- 13.2 -->
+                                <p><div data-tooltip="Jewish Holidays:  Shabbat">Shabbat</div> takes place Friday night to Saturday night. Shabbat candles, one of 
+                                    several traditions associated with the holiday, are lit and blessed at sunset and is 
+                                    followed by a meal which includes singing, eating and some more prayers. Shabbat 
+                                    dinner on Friday nights often doubles as a family dinner and Shabbat traditions 
+                                    can be a cultural act, though it often has more religious connotations <!--(source)-->. 
+                                    As such, following this tradition is much more common amongst religious Jews. However, 
+                                    the secularisation of Shabbat is common and is often seen in pop culture 
+                                    (the UK show ‘Friday Night Dinner’ centres on Shabbat but features a secular family). 
+                                    Though the basic principle of Shabbat is a day of rest, the secular forms of Shabbat 
+                                    often strip away most religious significance and focus on just the meal. </p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class="title">Section 4.9</div> -->
+                                <!-- Viz 13.1 -->
+                                <p><div data-tooltip="Jewish holidays: Yom Kippur">Yom Kippur</div> is one of the most sombre holidays on the Jewish calendar and is one 
+                                    of the few that does not encourage celebration. The whole day is usually spent praying 
+                                    at the synagogue and a 25-hour fast is imposed to place the focus on atoning sins. 
+                                    Despite being one of the more physically straining traditions, there is a significant number 
+                                    of non-religious fast observers, though more Jews by religion fast. To evaluate the true 
+                                    secularisation of the tradition, it would be beneficial to determine how many of the fasters 
+                                    also attend synagogue during Yom Kippur. Regardless, the data indicates that fasting has 
+                                    become a cultural tradition as much as a religious one.</p>
+                            </section>
+                            <section class ="step">
+                                <!-- <div class ="title">quote</div> -->
+                                <p><blockquote></blockquote></p>
+                                <!-- QUOTE 9 -->
+                            </section>
+                            <section class = "step">
+                                <!-- <div class ="title">Section 4.10</div> -->
+                                <!-- Nothing -->
+                                <p>The vast majority of Jewish holidays and traditions are rooted in religion or <div data-tooltip="Jewish Religion: Halakhic Law">halakha</div>. 
+                                    Whilst specific traditions may vary between ethnicities, <div data-tooltip="Jewish religion: Denominations">denominations</div> and sects, 
+                                    the general meaning and history of each holiday and tradition remains the same. The way 
+                                    Jews may connect to their Judaism is significantly influenced by where and how they grew up. 
+                                    Not just their families, but the Jewish community around them. Growing up around other 
+                                    Jews and participating in Jewish-related events outside the synagogue could encourage 
+                                    a connection to Judaism without religious affiliation. Since a Jewish identity ranges 
+                                    such a wide spectrum, fostering Jewish communities often extends beyond a traditional 
+                                    religious institution. Community has always been integral to Judaism – whether the 
+                                    product of shared beliefs or shared experiences – and Jewish history indicates that 
+                                    community is imperative to survival through oppression and tragedy <!--(source)-->. </p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class= "title">Section 4.11</div> -->
+                                <!--Viz 15  -->
+                                <p>Programmes with the intent to bring both estranged and connected Jews closer to Judaism 
+                                    also try to bring Jews closer to each other. Often, the religious weight of a synagogue 
+                                    hinders its success in reaching out to all Jews, so other <div data-tooltip="Jewish Culture: Organisations">Jewish organisations</div> take on 
+                                    the cause. Whilst many programmes are created through congregations, such as Sunday 
+                                    school or certain youth groups, many are products of third-party organisations. 
+                                    There are different types of Jewish organisations that encompass participation in 
+                                    Jewish activities beyond religious services. Jewish education is provided through 
+                                    Sunday school or <div data-tooltip="Jewish Culture: Full Time Jewish Education">full-time Jewish school</div> — whilst some combine Jewish studies with 
+                                    traditional academic subjects, stricter versions referred to as Yeshiva (for boys) 
+                                    and Seminary (for girls) focus only on religious and Jewish studies. There are also 
+                                    many youth groups such as NFTY and NCSY which are operated by independent organisations 
+                                    seeking to connect Jewish youth to their heritage and with each other. Programmes such 
+                                    as summer camps and Birthright operate with the same intent. Stress on religion and 
+                                    degree of observance vary from organisation to organisations. Some, such as 
+                                    <div data-tooltip="Jewish culture: Birthright">Birthright</div>, provide a multitude of different options for the programme, 
+                                    depending on level of observance <!--(source)-->. Though the visualisation indicates that Jews by 
+                                    religion more commonly participate in external programmes, it is important to remember 
+                                    that Jews by religion does not indicate denominational distinctions and even very 
+                                    non-observant Jews can identify as religious.</p>
+                            </section>
+                            <section class ="step">
+                                <!-- <div class ="title">quote</div> -->
+                                <p><blockquote></blockquote></p>
+                                <!-- QUOTE 10 -->
+                            </section>
+                            <section class = "step">
+                                <!-- <div class="title">Section 4.12</div> -->
+                                <!-- Viz 15.3 -->
+                                <p>Though there is a slight decline in the participation of Jewish programmes for Generation X, 
+                                    there is little difference between participation numbers across generations. The data is only 
+                                    indicative of whether Jewish Americans have ever participated in Jewish organisations, rather 
+                                    than if they do in the present. Since most programmes are aimed at a specific age range, the chances 
+                                    that a Jewish American participated in such a programme are high. Sunday school and full-time Jewish 
+                                    schools encourage a Jewish education whilst Jewish youth groups and camps connect Jews to 
+                                    each other <!--(source)-->. What is changing with the current generation is the variety of options 
+                                    available to youth as well as continued opportunities provided, as they age. New programmes experienced 
+                                    by the millennial generation include the infamous Matzo Ball event in New York City <!--(source)--> and 
+                                    <div data-tooltip="Jewish culture: Birthright">Birthright</div> which is only valid for Jews under 26. Opportunities for adults are expanding, including 
+                                    synagogue-organised events and dating events and external apps, akin to that of JDate or JSwipe <!--(source)-->, 
+                                    are gaining momentum. Whether or not the participation is as high as with youth groups, the fact that more 
+                                    options are available already separates millennials from previous generations. Sociologically, youth are 
+                                    more impressionable, so the likelihood that maintaining a Jewish identity is much higher if a Jew grows up 
+                                    around any semblance of a Jewish community <!--source)-->. </p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class ="title">Section 4.13</div> -->
+                                <!-- Viz 15.1 -->
+                                <p>It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather. Drops of rain could be heard hitting the pane, which made him feel quite sad. "How about if I sleep a little bit longer and forget all this nonsense", he thought, but that was something he was unable to do because he was used to sleeping on his right, and in his present state couldn't get into that position. However hard he threw himself onto his right, he always rolled back to where he was. He must have tried it a hundred times, shut his eyes so that he wouldn't have to look at the floundering legs, and only stopped when he began to feel a mild, dull pain there that he had never felt before. "Oh, God", he thought, "what a strenuous career it is that I've chosen! Travelling day in and day out. Doing business like this takes much more effort than doing your own business at home, and on top of that there's the curse of travelling.</p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class= "title">Section 4.14</div> -->
+                                <!--Viz 15.2  -->
+                                <p>Doing business like this takes much more effort than doing your own business at home, and on top of that there's the curse of travelling, worries about making train connections, bad and irregular food, contact with different people all the time so that you can never get to know anyone or become friendly with them. It can all go to Hell! " He felt a slight itch up on his belly; pushed himself slowly up on his back towards the headboard so that he could lift his head better; found where the itch was, and saw that it was covered with lots of little white spots which he didn't know what to make of; and when he tried to feel the place with one of his legs he drew it quickly back because as soon as he touched it he was overcome by a cold shudder. He slid back into his former position. "Getting up early all the time", he thought, "it makes you stupid. You've got to get enough sleep. Other travelling salesmen live a life of luxury. For instance, whenever I go back to the guest house during the morning to copy out the contract, these gentlemen are always still sitting there eating their breakfasts. I ought to just try that with my boss; I'd get kicked out on the spot. But who knows, maybe that would be the best thing for me. If I didn't have my parents to think about I'd have given in my notice a long time ago, I'd have gone up to the boss and told him just what I think, tell him everything.</p>
+                            </section>
+                            <section class ="step">
+                                <!-- <div class ="title">quote</div> -->
+                                <p><blockquote></blockquote></p>
+                                <!-- QUOTE 11 -->
+                            </section>
+                            <section class = "step">
+                                <!-- <div class="title">Section 4.15</div> -->
+                                <!-- Viz 14 -->
+                                <p>The <div data-tooltip="Jewish Religion: Torah">Torah</div> only expressly forbids interfaith marriage between Jews and Canaanites for fear that any resulting 
+                                    children would adopt the Canaanite faith. Rabbinical law extrapolated this to all non-Jews, forbidding any 
+                                    interfaith marriage at all <!--(source)-->. The extremity to which this is upheld varies by <div data-tooltip="Jewish religion: Denominations">denomination</div>. 
+                                    Though community acceptance varies by sect, more reform and reconstructionist rabbis will recognise and 
+                                    even agree to perform an interfaith marriage ceremony whilst orthodox rabbis will not. However, potential 
+                                    non-Jewish spouses that undergo an orthodox-approved conversion process will be recognised as Jewish and 
+                                    the marriage as valid. If the spouse converts after a marriage, they must re-marry in an orthodox ceremony 
+                                    for the marriage to be deemed valid <!--(source)-->. Though orthodox rabbis may not recognise an interfaith marriage, 
+                                    if the mother is Jewish children from that union will be recognised as Jewish. Preserving the Jewish race faith is 
+                                    important, and a non-Jewish spouse risks the loss of both in their Jewish counterpart and future children. 
+                                    Another reason why rabbis discourage interfaith marriage is because, other than faith, Judaism is based on a set of 
+                                    moral and ethical values which are not guaranteed in a non-Jewish spouse. Marrying outside the faith puts the couple 
+                                    on shaky foundation and has a higher chance in resulting in an unsuccessful marriage, though measuring the comparative 
+                                    success is difficult <!--(source)-->. In the same vein, rabbis will encourage anyone planning to convert for a marriage
+                                    to be completely certain that the conversion would happen regardless. Converting for a person rather than for the 
+                                    religion risks the same issues as marrying a non-Jew.</p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class="title">Section 4.16</div> -->
+                                <!-- Viz 14.1 -->
+                                <p>It was half past six and the hands were quietly moving forwards, it was even later than half past, more like quarter to seven. Had the alarm clock not rung? He could see from the bed that it had been set for four o'clock as it should have been; it certainly must have rung. Yes, but was it possible to quietly sleep through that furniture-rattling noise? True, he had not slept peacefully, but probably all the more deeply because of that. What should he do now? The next train went at seven; if he were to catch that he would have to rush like mad and the collection of samples was still not packed, and he did not at all feel particularly fresh and lively. And even if he did catch the train he would not avoid his boss's anger as the office assistant would have been there to see the five o'clock train go, he would have put in his report about Gregor's not being there a long time ago. The office assistant was the boss's man, spineless, and with no understanding. What about if he reported sick? But that would be extremely strained and suspicious as in fifteen years of service Gregor had never once yet been ill. His boss would certainly come round with the doctor from the medical insurance company, accuse his parents of having a lazy son, and accept the doctor's recommendation not to make any claim as the doctor believed that no-one was ever ill but that many were workshy. And what's more.</p>
+                                </section>
+                            <section class ="step">
+                                <!-- <div class ="title">quote</div> -->
+                                <p><blockquote></blockquote></p>
+                                <!-- QUOTE 12 -->
+                            </section>
+                            <section class = "step">
+                                <!-- <div class="title">Section 4.17</div> -->
+                                <!-- Viz 16.1 -->
+                                <p>Determining whether a child is raised Jewish is an ambiguous task. Just as with identity, the definition for raising 
+                                    Jewish children is on a spectrum. Technically, if the mother is Jewish, the child is born a Jew. However, depending 
+                                    on what the parent considers to be religious or cultural, the definition of how a child is raised varies. Attending 
+                                    <div data-tooltip="Synagogue">synagogue</div> or Sunday School does not automatically equate to a religious upbringing <!--(source)-->.   
+                                    <br><br>Sociological studies have attempted to determine how children of immigrants differ from those with parents born 
+                                    in the same country. Children of Soviet-born parents can create their Jewish identity, a freedom their parents lacked, 
+                                    but growing up with that awareness emphasises the luxury of living in such an environment. Whereas children of American-born 
+                                    parents are not necessarily exposed to this difference directly. What this data likely shows are Jewish parents who either 
+                                    do not raise their children Jewish or raise them in a different denomination. This most likely stems from a personal 
+                                    reassessment of Jewish identity or an interfaith marriage <!--(source)-->. </p>
+                            </section>
+                            <section class = "step">
+                                <!-- <div class="title">Section 4.18</div> -->
+                                <!-- Viz 16 -->
+                                <p>Whether or not children of interfaith marriages are ancestrally Jewish, their upbringing will vary from family to family. 
+                                    Dual faith upbringing is common with interfaith marriages. From this, a micro-culture is created with concepts like 
+                                    <div data-tooltip="Jewish Culture: Chrismukkah">Chrismukkah</div>. Chrismukkah accurately represents children of interfaith marriages who try to combine cultural aspects 
+                                    from both sides of their family.  In marriages with conversions, children tend to be brought up <!--(source)--> as
+                                    Jewish — culturally, ancestrally and religiously. Most marriages with conversions are done by religious Jews, so religion 
+                                    is an integral part of raising the child <!--(source)-->. Alternatively, many Jewish parents in interfaith marriages might 
+                                    define themselves as Jewish, but not raise their children Jewish. If it is the mother that is Jewish, the child will be 
+                                    ancestrally Jewish, but not recognise that to its full extent due to the lack of religious and cultural Judaism in their 
+                                    lives. Data suggests <!--(source)-->  there is a trend of interfaith-marriage children who grow up 
+                                    and rediscover their Judaism later in life <!--(source)-->.</p>
+                            </section>
+                            <section class ="step">
+                                <div class ="title">Section 5: Conclusion</div>
+                                <p>It was half past six and the hands were quietly moving forwards, it was even later than half past, more like quarter to seven. Had the alarm clock not rung? He could see from the bed that it had been set for four o'clock as it should have been; it certainly must have rung. Yes, but was it possible to quietly sleep through that furniture-rattling noise? True, he had not slept peacefully, but probably all the more deeply because of that. What should he do now? The next train went at seven; if he were to catch that he would have to rush like mad and the collection of samples was still not packed, and he did not at all feel particularly fresh and lively. And even if he did catch the train he would not avoid his boss's anger as the office assistant would have been there to see the five o'clock train go, he would have put in his report about Gregor's not being there a long time ago. The office assistant was the boss's man, spineless, and with no understanding. What about if he reported sick? But that would be extremely strained and suspicious as in fifteen years of service Gregor had never once yet been ill. His boss would certainly come round with the doctor from the medical insurance company, accuse his parents of having a lazy son, and accept the doctor's recommendation not to make any claim as the doctor believed that no-one was ever ill but that many were workshy. And what's more.</p>
+                                <!-- Viz 4 again? -->
+                            </section>
+                            <section class ="step">
+                                <!-- <div class ="title">quote</div> -->
+                                <p><blockquote></blockquote></p>
+                                <!-- QUOTE 13 -->
+                            </section>
+                        </div>
+                    </td>
+                    <td>
+                        <div id = 'vis'>
+                            <div> <input type="button" id="button1" value="&#8594;"></div>
+                            <div id='svgTitle'></div>
+                            <div id='svgContainer'></div>
+                        </div>
+            
+                    </td>
+                </tr>
+            </table>    
+            <!-- <div class="content"></div> -->
+            <div id = "extra-space">
+            </div>
+            <div></div>
+        </div>
+    </div>
+    <div hidden>
+        <div data-keyword="Sephardic Jews">
+            Sephardi is one of the predominant Jewish sub-ethnicities. Sephardic Jews are
+            originally from regions that form modern day Spain and Portugal, but were expelled
+            during the Spanish Inquisition, often to areas with no other Jewish communities
+            such as West Asia and North Africa. Today, Sephardic Jews also refers to Jewish
+            communities from these parts of the world. Sephardic Jews have their own
+            rabbinical council which has resulted in slightly different laws and variations of
+            Jewish traditions. Sephardic Jews established some of the first Jewish communities
+            in the United States, dating back to pre-colonial times. There was no mass
+            immigration of Sephardic Jews, like those from Eastern Europe. Rather they trickled
+            in. Today, the United States has the third largest Sephardic Jewish community in the
+            world.
+        </div>
+        <div data-keyword="Ashkenazi Jews">
+            Ashkenazi Jews form the second main Jewish sub-ethnicity alongside Sephardic
+            Jews. Originally, they settled in parts of Germany and France, but since moved
+            eastward and today, refers to Jews from the majority of Europe. Despite suffering
+            from consistent anti-Semitism and oppression, Ashkenazi Jews played a significant
+            role in the development of European culture and science. Ashkenazi Jews created
+            the Yiddish language, a mix of German and Hebrew, from which many words have
+            become commonplace, not just amongst Jews, but in colloquial English (i.e.
+            schmuck). Huge influxes of Ashkenazi Jews came to America at various points, the
+            most influential of which were the immigrants at the beginning of the 20th century.
+        </div>
+        <div data-keyword="Jewish religion: Denominations">
+            Judaism is split into four main religious movements – Orthodox, Conservative,
+            Reconstructionist and Reform (the survey used as a basis for this project grouped
+            the reconstructionist and reform movements together). The movements differ
+            primarily on levels of observance and the interpretations of religious scripture and
+            Jewish laws. Each denomination is further divided into different sects. Within the
+            orthodox movement, there are many different sects all with very specific
+            interpretations and complexities associated with each particular one. For instance,
+            observant Jews, specifically orthodox, employ a dress code, keep kosher and
+            observe Shabbat – but these might take different forms depending on the sect.
+        </div>
+        <div data-keyword="Synagogue">
+            A synagogue is the Jewish house of assembly used for prayer, study of the Torah and
+            for community gatherings. A synagogue is not imperative for prayer. Jewish law
+            dictates that a minyan, ten men, need to be present, anywhere, in order to conduct
+            group prayers. Though most praying can be done individually, a minyan is required
+            to read the Torah and for certain holidays. The minimal traditional expectations of a
+            synagogue include: a bimah (a platform from which the Torah is read and a rabbi
+            conducts prayer) and an arc containing the Torah. Traditionally, both the bimah and
+            the arc are situated so that the congregation faces east, towards Israel, during
+            prayer. Whether Jerusalem is actually east is a point of argument.</div>
+        <div data-keyword="Jewish Holidays">
+            The Hebrew phrase ‘Yom Tov’ can refer to all Jewish holidays but is usually used to
+            refer specifically to the holidays, or periods of time, during which all the activities
+            prohibited on Shabbat are prohibited as well.</div>
+        <div data-keyword="Kosher">
+            Keeping kosher refers to following the Jewish dietary requirements as outlined by
+            the Torah and accompanying rabbinical law. Kashrut only allows certain animals to
+            be consumed (the most well-known items include pork and shellfish) and killed in a
+            specific way. It is also forbidden to mix dairy with meat. Fish, eggs and all other food
+            items are considered ‘pareve’, meaning neither dairy or meat. Kosher kitchens have
+            separate dishes and cooking utensils for dairy and meat. If possible, separate sinks
+            and counters are used or even two kitchens. In more modern times, the definition of
+            kosher has extended to rabbi supervision for the preparation of processed or
+            packaged foods, and regular inspections of any kosher establishments. The degree
+            of strictness varies between sub-ethnicities, denominations and individual
+            denominational sects.</div>
+        <div data-keyword="Hasidic">
+            Hasidic Jews arose as a religious group in Ukraine during the 18th century. Hassidism
+            originated from a rabbi called the Bal Shem Tov and focuses on religion, observance
+            and mysticism. Hassidic Jews have since branched out into multiple sects that
+            disagree on the recognised customs.</div>
+        <div data-keyword="Jews in the 20th century">
+            The majority of the early 20th century Jewish immigrants were Ashkenazi Jews from
+            Eastern Europe. Ashkenazi Jewish rabbinical law, languages and traditions laid the
+            foundation for modern-day Jewish American culture.</div>
+        <div data-keyword="Jewish stereotypes – Jewish Deli">
+            The Jewish Deli is mostly associated with Jews of New York City. Immigrants who
+            came to the United States from Europe opened up kosher delis that served Jewish
+            variations of German and Eastern European food. Due to further popularisation by
+            future generations of American-born Jews, Jewish deli food holds a firm presence in
+            Jewish American culture.</div>
+        <div data-keyword="Jewish Religion: Patriarchs">
+            The Torah outlines three fathers and four mothers of Judaism. Abraham, the first
+            Jew and his wife Sarah. The second father of Judaism is their son Isaac (Yitzchak) and
+            his wife Rebekah (Rivkah). Yitzchak and Rivkah had twins, one of these twins, Jacob
+            (Yaakov), is the third father of Judaism along with this wives Rachel and Leah.</div>
+        <div data-keyword="Jewish Religion: Halakhic Law">
+            Halakhic Law refers to both God-mandated law as well as rabbinical law. As with
+            most religious scripture, there are various interpretations of the material. While
+            some is universal across Judaism, the technicalities of others were (and continue to
+            be) argued amongst Jewish leaders. Some is between sects and others between
+            ethnic group of Jews. For instance, Ashkenazi and Sephardic Jews differ on which
+            non-grains (i.e. rice, beans, non-grain seeds) are allowed during Passover. More
+            sect-specific examples include whether women can wear trousers or whether using
+            electricity counts as working on Shabbat. Disagreement on technicalities laid
+            foundations for different branches of Judaism. Rabbinic law remains the main
+            difference between sects of Judaism.</div>
+        <div data-keyword="Jewish stereotypes:  Overbearing Mothers">
+            One of the more common pop culture stereotypes of Jewish culture is the caricature
+            of overbearing mothers. Whilst this trope is quite consistent throughout cultures,
+            specifically amongst immigrant mothers (source), Jewish mothers remain unique in
+            that this mentality seems to have preserved over generations (source). Many Jewish
+            anecdotes centre on the stereotype of overbearing Jewish mothers (and their
+            persisting proffering of chicken soup).</div>
+        <div data-keyword="Jewish culture: Inquisitive Minds">
+            One of the more integral Jewish traits is an inquisitive mind and learning through
+            discourse. It is embedded in the practice of studying Torah and is perpetuated
+            through Jewish culture.</div>
+        <div data-keyword="Jewish Religion: Torah">
+            The Torah refers to the first five books of the Old Testament and is read at religious
+            services throughout the year. It is not the only religious scripture in Judaism.</div>
+        <div data-keyword="Jewish stereotypes: specific to America">
+            The success of the Jewish American pursuit of the American Dream and the resulting
+            wealth bred new stereotypes that often appear in pop culture representation of
+            Jewish Americans. This includes Jewish Americans as lawyers, doctors and
+            Hollywood success stories. With these came the Jewish American Princess trope of
+            spoiled girls wholly dependent on their fathers. These emphasise the lifestyle many
+            Jewish families have.</div>
+        <div data-keyword="Jewish Ancestry: The Jewish diaspora">
+            The Jewish diaspora refers to the exile of the Jewish people from the ancestral
+            homeland (Israel) and the subsequent dissipation across the globe. The diaspora is
+            often furthered by the oppressive countries in which many Jewish communities
+            resided. The Jewish diaspora is well documented in both religious scripture as well
+            as global history.</div>
+        <div data-keyword="Jewish Culture: Ethnic groups of Jews">
+            Subsects of Jewish culture were created as a result of Jewish tradition mixing with
+            the culture of the country in which those Jews resided. Some examples of such
+            subsects of Jewish culture include: Bukharan (Central and West Asia), Eastern
+            European (with a subsect specific to those from the Soviet Union), Persian and,
+            recently, Israeli Jews.</div>
+        <div data-keyword="Jewish Religion: Rabbi">
+            A rabbi is someone knowledgeable in religious practices and laws. In more reform
+            synagogues, women can be rabbis, however more often, rabbis are men. Rabbinical
+            qualifications are considered equal to a bachelor�s degree and are earned by
+            attending Yeshiva as well as rabbinical school. Though not always, many rabbis tend
+            to specialise in certain areas of Judaism. Rabbis are hired by Jewish communities,
+            though certified rabbis are not required to work as religious leaders. Unlike
+            members of clergy in other religions, rabbis are not just community leaders � they
+            are also teachers, judges and a source of advice and comfort.</div>
+        <div data-keyword="Jewish holidays: Passover">
+            Passover is a holiday that celebrates the Jewish people�s escape from slavery in
+            Egypt. It tells the story of how Moses became a leader, freed the Jews and helped
+            them evade re-capture by the Egyptians. The holiday lasts seven days in Israel and
+            eight days everywhere else (in the past, there was difficulty determining Israeli time
+            from other parts of the world). No leavened bread is consumed during Passover;
+            instead, Jews eat Matzah, an unleavened bread. This commemorates the part of the
+            story when Jews were forced to run carrying unleavened dough on their shoulders
+            which baked in the sun. Today, matzah is commercially produced into a cracker-like
+            bread and consumed in lieu of any bread or grain.</div>
+        <div data-keyword="Jewish Holidays: Passover Seder">
+            In Hebrew, Seder means order which is the best way to describe this Passover
+            tradition. A Seder is held the first two of the eight nights (or, in Israel, the first of the
+            seven nights) of Passover and consists of telling the story through passages of text,
+            song, food and activities.</div>
+        <div data-keyword="Jewish Ancestry: Israel as the Promised Land">
+            In the Torah, God first promises Israel to the Jewish people through Abraham.
+            Throughout the Torah, this promise is referenced, and many stories feature patterns
+            of the Jews trying to return to the promised land and then retreating into exile
+            again. This reflects world history as Jews often attempted to return to the
+            Palestinian area but were unsuccessful until 1948.</div>
+        <div data-keyword="Modern Judaism: Israel-Arab Conflict"></div>
+        <div data-keyword="Jewish Religion: Messiah">
+            Mashiach (Messiah) is a core principle in Judaism. It is believed that once he arrives,
+            all Jews will live in Israel and there will be world peace. Jews do not believe that
+            Mashiach has arrived yet. learn more.</div>
+        <div data-keyword="Jewish Holidays: Israeli Independence Day">
+            Yom Haatzmaut, or Israeli Independence Day, is celebrated every year on the 9th of
+            May and signifies the day Israel became a country in 1948. Yom Haatzmaut is
+            different from most other Jewish holidays because it is not a religiously-mandated
+            holiday or based on any religious scripture. It signifies the importance Israel plays in
+            Jewish culture and how interwoven the religion, culture and ancestry are within
+            Judaism.</div>
+        <div data-keyword="Jewish culture: Birthright">
+            Taglit-Birthright is an organisation that was developed in the late 90s. It is funded by
+            Jews from around the world and its aim is to provide Jews between the age of 13-26
+            the opportunity to visit Israel for free. The organisation provides different
+            programmes that include options for all denominations as well as activity-specific
+            programmes (i.e. religious history, food, culture or outdoors). The programme has
+            been criticised recently for excluding a trip to the Gaza strip as well as information
+            regarding relations between Israel and Palestine from its itinerary (source).</div>
+        <div data-keyword="Jewish Culture: Tikkun Olam">
+            Tikkun Olam is a Jewish concept that encompasses the personal and social
+            responsibility of a Jew to behave morally and uphold Jewish values. A subsect of this
+            concept is performing mitzvot – 613 good deeds listed in the Torah. Though some
+            outline religious obligations, the majority formulate a behavioural value system.</div>
+        <div data-keyword="Jewish Religion: Jewish duties">
+            Jewish duties include following halakhic law, observing religious and cultural
+            traditions and performing mitzvot. It is expected of every Jew once they become an
+            adult (bar/bat mitzvah). The specifics vary by denomination and level of observance.</div>
+        <div data-keyword="Jewish Religion: Exodus">
+            Exodus is the second book in the Torah. It outlines the Moses-led escape of the
+            Jewish People from slavery in Egypt and their 40-year journey through the desert to
+            Israel. Included in Exodus is the receival of the Ten Commandments as well as the
+            oral version of the Torah and is considered the day the Hebrews officially became
+            the Jewish nation. This story is celebrated during the Jewish holiday of Passover.</div>
+        <div data-keyword="Jewish Holidays: Haggadah">
+            The Haggadah is the guidebook for the Passover Seder. It provides instructions for
+            the order, the story of Passover, the meaning behind each item, as well as songs and
+            anecdotes. To understand the vast spectrum of religious and secular interpretations
+            of Seders, see this reform version of the Haggadah and this more religious version.</div>
+        <div data-keyword="Jewish Holidays:  Shabbat">
+            Shabbat represents God’s day of rest in the Torah’s creation story. Since the Jewish
+            calendar week begins on Sunday, the Jewish Shabbat is Saturday every week (unlike
+            the Christian Sabbath which falls on Sunday). Shabbat begins on Friday night and
+            incorporates several traditions that vary depending on the level of observance. At a
+            primitive level, two candles are lit on Friday night to welcome the holiday, songs are
+            sung and blessings are made over the wine and challah (traditional Shabbat bread).
+            The next day, synagogue is often attended. More religious Jews do not work on
+            Sabbath. ‘Work’ in the context of Jewish holidays includes no use of electricity or
+            cars.</div>
+        <div data-keyword="Jewish holidays: Start Times">
+            In Judaism, a day begins at sunset the day before. Therefore, all Jewish holidays
+            begin the evening before its official day.</div>
+        <div data-keyword="Jewish holidays: Yom Kippur">
+            Yom Kippur is the day of Atonement and one of the four high holidays.
+            Traditionally, a Jew will attend synagogue all day and fast for 25 hours so as
+            to focus on atoning for their sins. Additionally, a shofar (a religious horn) is
+            sounded during the day. Though all are viewed as essential parts of the
+            holiday’s traditions, listening to the shofar is the only aspect that is
+            considered a divine mitzvah and a requirement.</div>
+        <div data-keyword="Jewish Culture: Organisations">
+            <p>Other than the synagogue, there is a variety of popular Jewish American
+                organisations. Sunday school is commonly run by synagogues – similar to
+                Christian Sunday schools. it provides Jewish children with education on the
+                Torah and Jewish holidays. Frequently, Jewish Sunday schools will also teach
+                some Hebrew.</p>
+            <p>Youth Organisations such as NFTY, NCSY and CTeen provide events centred
+                around both Jewish holidays and non-specific events, to bring Jewish Youth
+                together through Judaism. The level of observance varies between
+                organisations.</p>
+            <p>Jewish summer camps are often run by the same organisations. Though they
+                vary between day camps and sleepaway camps — many have developed a
+                stereotype of their own as being particularly lavish.</p>
+            <p>Birthright is an organisation that is sponsored by Jews around the world to
+                provide any Jews between 13-26 years old the opportunity for a free trip to
+                Israel. The purpose is to reconnect estranged Jews to their homeland as well
+                as to each other.</p>
+            <p>The Jewish Community Center (JCC) is common in many Jewish communities
+                across America and serves a similar function to a YMCA.</p>
+        </div>
+        <div data-keyword="Jewish Culture: Full Time Jewish Education">
+            Full-time Jewish schools provide Jewish Studies as part of the mandatory
+            curriculum. Stricter Jews will send their children to schools that are
+            exclusively in Jewish and Hebrew studies. Yeshiva refers to such schools for
+            boys (and is usually a feeder school to rabbinic studies). Seminary is the
+            female equivalent. Level of observance varies between different yeshivas
+            and seminaries.</div>
+        <div data-keyword="Jewish Culture: Chrismukkah">
+            A term that refers to a combination of Christmas and Chanukah. The term
+            gained mainstream popularity through Seth Cohen, a main character on the
+            TV show The O.C.. The term is generally used by children raised in an
+            interfaith household.</div>
+    </div>
+</body>
