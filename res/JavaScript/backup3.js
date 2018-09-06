@@ -398,110 +398,123 @@ function Visualization(fileName) {
             .attr("fill", function (d, i) {
                 return colors[i];
             });
+            svg.selectAll(".text")
+            .data(items)
+            .enter()
+            .append("text")
+            .attr("class", "label")
+            .attr("x", (function (d) { return x(d.name) + x.bandwidth() / 2; }))
+            .attr("y", function (d) { return y(d.value) + 1; })
+            .attr("dy", ".75em")
+            .text(function (d) { return [d.value]; })
+            .style("font", "25px Lekton, sans-serif")
+            .style("fill", "#ECE8E8")
+            // .style("fill")
+            .style("margin-top", "60px");
     }
 
-    this.DrawBubble = function (data) {
-        function loadData(fileName) {
-            return d3.csv(fileName);
-        }
+    // this.DrawBubble = function (data) {
+    //     function loadData(fileName) {
+    //         return d3.csv(fileName);
+    //     }
 
-        var diameter = 600;
-        var color = [
-            "#00e0ff", "#0f57e2", "#0000ff", "#000086",
-        ];
+    //     var diameter = 600;
+    //     var color = [
+    //         "#00e0ff", "#0f57e2", "#0000ff", "#000086",
+    //     ];
 
-        var bubble = d3.pack()
-            .size([diameter, diameter])
-            .padding(1.5);
+    //     var bubble = d3.pack()
+    //         .size([diameter, diameter])
+    //         .padding(1.5);
 
-        var svg = d3.select("body")
-            .append("svg")
-            .attr("width", diameter)
-            .attr("height", diameter)
-            .attr("class", "bubble");
+    //     var svg = d3.select("body")
+    //         .append("svg")
+    //         .attr("width", diameter)
+    //         .attr("height", diameter)
+    //         .attr("class", "bubble");
 
-        var dataPromise = loadData('Viz15.csv');
-        dataPromise.then(function (data) {
-            data.forEach(function (d) {
-                d.value = parseFloat(d.value);
-                console.log(data)
-            });
+    //     var dataPromise = loadData('Viz15.csv');
+    //     dataPromise.then(function (data) {
+    //         data.forEach(function (d) {
+    //             d.value = parseFloat(d.value);
+    //             console.log(data)
+    //         });
 
-            var stratData = d3.stratify()
-            var nodes = stratData(data)
-                .sum(function (d) {
-                    return d.Value;
-                });
-            //     .parentId(function(d) {return d["Religion"];})
-            //     .id(function(d){return d.religion;});
-            // var root = stratData(data);
-            // console.log(root);
-            // root          
+    //         var stratData = d3.stratify()
+    //         var nodes = stratData(data)
+    //             .sum(function (d) {
+    //                 return d.Value;
+    //             });
+    //         //     .parentId(function(d) {return d["Religion"];})
+    //         //     .id(function(d){return d.religion;});
+    //         // var root = stratData(data);
+    //         // console.log(root);
+    //         // root          
 
-            // .sort(function(a, b) { return b.Value - a.Value });
+    //         // .sort(function(a, b) { return b.Value - a.Value });
 
-            // var nodes = root.descendants();
-            // console.log(nodes);
+    //         // var nodes = root.descendants();
+    //         // console.log(nodes);
 
-            // layout(root);
+    //         // layout(root);
 
-            // var nodes = d3.stratify()
-            //     .sum(function(d) { return d.Count; });
+    //         // var nodes = d3.stratify()
+    //         //     .sum(function(d) { return d.Count; });
 
-            var node = svg.selectAll(".node")
-                .data(bubble(nodes).descendants())
-                .enter()
-                .filter(function (d) {
-                    return !d.children
-                })
-                .append("g")
-                .attr("class", "node")
-                .attr("transform", function (d) {
-                    return "translate(" + d.x + "," + d.y + ")";
-                });
+    //         var node = svg.selectAll(".node")
+    //             .data(bubble(nodes).descendants())
+    //             .enter()
+    //             .filter(function (d) {
+    //                 return !d.children
+    //             })
+    //             .append("g")
+    //             .attr("class", "node")
+    //             .attr("transform", function (d) {
+    //                 return "translate(" + d.x + "," + d.y + ")";
+    //             });
 
-            node.append("title")
-                .text(function (d) {
-                    return d.Religion + ": " + d.Value;
-                });
+    //         node.append("title")
+    //             .text(function (d) {
+    //                 return d.Religion + ": " + d.Value;
+    //             });
 
-            node.append("circle")
-                .attr("r", function (d) {
-                    return d.r;
-                })
-                .style("fill", function (d, i) {
-                    return color(i);
-                });
+    //         node.append("circle")
+    //             .attr("r", function (d) {
+    //                 return d.r;
+    //             })
+    //             .style("fill", function (d, i) {
+    //                 return color(i);
+    //             });
 
-            node.append("text")
-                .attr("dy", ".2em")
-                .style("text-anchor", "middle")
-                .text(function (d) {
-                    return d.data.Religion.substring(0, d.r / 3);
-                })
-                .attr("font-family", "sans-serif")
-                .attr("font-size", function (d) {
-                    return d.r / 5;
-                })
-                .attr("fill", "white");
+    //         node.append("text")
+    //             .attr("dy", ".2em")
+    //             .style("text-anchor", "middle")
+    //             .text(function (d) {
+    //                 return d.data.Religion.substring(0, d.r / 3);
+    //             })
+    //             .attr("font-family", "sans-serif")
+    //             .attr("font-size", function (d) {
+    //                 return d.r / 5;
+    //             })
+    //             .attr("fill", "white");
 
-            node.append("text")
-                .attr("dy", "1.3em")
-                .style("text-anchor", "middle")
-                .text(function (d) {
-                    return d.data.Count;
-                })
-                .attr("font-family", "Gill Sans", "Gill Sans MT")
-                .attr("font-size", function (d) {
-                    return d.r / 5;
-                })
-                .attr("fill", "white");
+    //         node.append("text")
+    //             .attr("dy", "1.3em")
+    //             .style("text-anchor", "middle")
+    //             .text(function (d) {
+    //                 return d.data.Count;
+    //             })
+    //             .attr("font-family", "Gill Sans", "Gill Sans MT")
+    //             .attr("font-size", function (d) {
+    //                 return d.r / 5;
+    //             })
+    //             .attr("fill", "white");
 
-            d3.select(self.frameElement)
-                .style("height", diameter + "px");
+    //         d3.select(self.frameElement)
+    //             .style("height", diameter + "px");
 
-        });
-    }
+    //     });
+    // }
 
     this.Viz4 = function (data) {
         var first = data.columns[0];

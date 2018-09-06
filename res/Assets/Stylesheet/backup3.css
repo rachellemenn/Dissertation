@@ -218,7 +218,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     white-space: nowrap;
     top: 0;
     left: 0;
-    animation: move 5s;
+    animation: move 5s linear 1 0s;
     animation-iteration-count: once; 
     animation-delay: 1s;
     animation-fill-mode: forwards;
