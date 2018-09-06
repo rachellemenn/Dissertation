@@ -1,2 +1,2 @@
 ﻿Quote
-"<p>If you've ever been to<div data-tooltip="V33"> a Yeshiva</div>, you'd know that arguing is a core Jewish principle.</p> <br /> <p>The constant drive to learn and debate has pushed Jews on the whole to push further and reach the top echelons of society.</p>"
+"<p>If you've ever been to a Yeshiva, you'd know that arguing is a core Jewish principle.</p> <br /> <p>The constant drive to learn and debate has pushed Jews on the whole to push further and reach the top echelons of society.</p>"
