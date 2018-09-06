@@ -406,9 +406,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   /* Tooltip text */
   .keyword .tooltip {
     visibility: hidden;
-    width:3200%;
-    background-color: /*#555*/rgba(0,224,255,0.8);
-    color: #363D4F;
+    width:300%;
+    background-color: /*#555*/rgba(15,87,226,0.8);
+    color: #ECE8E8;
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
@@ -444,3 +444,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     visibility: visible;
     opacity: 1;
   } 
+
+  .keyword .tooltip a{
+    border-bottom: 1px dotted #363D4F;
+
+  }
