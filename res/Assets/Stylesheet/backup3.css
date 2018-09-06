@@ -339,7 +339,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   .keyword {
     position: relative;
     display: inline-block;
-    background-color: rgba(0,224,255,0.2);
+    background-color: rgba(15,87,226,0.2);
     /* border-bottom: 1px dotted black; If you want dots under the hoverable text */
   }
 
