@@ -399,19 +399,21 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   .keyword {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+    background-color: rgba(0,224,255,0.2);
+    /* border-bottom: 1px dotted black; If you want dots under the hoverable text */
   }
 
   /* Tooltip text */
   .keyword .tooltip {
     visibility: hidden;
-    width: 200%;
-    background-color: /*#555*/rgba(15,87,226,0.8);
-    color: #fff;
+    width:3200%;
+    background-color: /*#555*/rgba(0,224,255,0.8);
+    color: #363D4F;
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
-    font-size: 50%;
+    font-size: 0.75em;
+    text-anchor: middle;
 
     /* Position the tooltip text */
     position: absolute;
