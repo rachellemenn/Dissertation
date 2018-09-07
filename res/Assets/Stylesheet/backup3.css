@@ -209,7 +209,23 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     margin-top: 60px;
     margin-right: 60px;
   }
-  span {
+
+  .TheTitle {
+    font-family: "Molengo", sans-serif;
+     font-size: 25px;
+     opacity: 0;
+     animation: fadeIn 3s;
+     animation-delay: 7s;
+     animation-fill-mode: forwards;
+     margin-top: 100px;
+  } 
+
+@keyframes fadeIn {
+  from {Opacity: 0; }
+  to {Opacity: 1;}
+} 
+
+  /* span .first {
     font-family: "Molengo", sans-serif;
     font-size: 40px;
     display: inline-block;
@@ -218,18 +234,27 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     white-space: nowrap;
     top: 0;
     left: 0;
+    opacity: 0;
+    animation: fadeIn 3s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards; */
+    /* margin-top: 100px;
     animation: move 5s linear 1 0s;
     animation-iteration-count: once; 
     animation-delay: 1s;
-    animation-fill-mode: forwards;
-  }
+    animation-fill-mode: forwards; */
+  /* } */
+  /* @keyframes fadeIn {
+    from {Opacity: 0; }
+    to {Opacity: 1;}
+  } */ 
   
-  @keyframes move {
+  /* @keyframes move {
   0%  { top: 0px; }
   80% { top: -50px; }
   80% { top: -100px; }
   85% { top: -150px; }
-  }
+  } */
 
   /* .subMtitle {
     font-family: "Molengo", sans-serif;
