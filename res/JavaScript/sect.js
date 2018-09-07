@@ -1379,7 +1379,6 @@ function Visualization(fileName) {
     });
 
     // Start the load
-    indexToDraw = 0;
     Process();
 
     window.onload = () => {
@@ -1421,6 +1420,7 @@ function Visualization(fileName) {
             dispatch.call("processChart", this);
         });
 
+        indexToDraw = 0;
         dispatch.call("processChart", this);
         // Above draws the right-hand side
     }
