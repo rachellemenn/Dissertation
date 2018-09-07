@@ -1171,7 +1171,7 @@ function Visualization(fileName) {
         /*  0 */
         new Loader("Assets/Data/Title.txt", this.LoadMainTitle),
         /*  1 */
-        new Loader("Assets/Data/Viz1.csv", this.DrawCircleHierarchy, "Religious Makeup of the USA"),
+        new Loader("Assets/Data/Viz1.csv", this.DrawCircleHierarchy, "Religious Makeup of the USA (Viz 1)"),
         /*  2 */
         new Loader("Assets/Data/Quote1.txt", this.LoadQuotes), 
         /*  3 */
@@ -1179,25 +1179,25 @@ function Visualization(fileName) {
         /*  4 */
         new Loader("Assets/Data/Viz2.csv", this.DrawBar),
         /*  5 */
-        new Loader("Assets/Data/Vizual3.csv", this.DrawPie, "Generational Breakdown of Jewish Americans"),
+        new Loader("Assets/Data/Vizual3.csv", this.DrawPie, "Generational Breakdown of Jewish Americans (Viz 3)"),
         /*  6 */
         new Loader("Assets/Data/Quote2.txt", this.LoadQuotes),
         /*  7 */
-        new Loader("Assets/Data/Viz4final.csv", this.Viz4, "Components of a Jewish Identity"),
+        new Loader("Assets/Data/Viz4final.csv", this.Viz4, "Components of a Jewish Identity (Viz 4)"),
         /*  8 */
-        new Loader("Assets/Data/Viz6.csv", this.Viz6, "Components of a Jewish Identity: Specifics"),
+        new Loader("Assets/Data/Viz6.csv", this.Viz6, "Components of a Jewish Identity: Specifics (Viz 5)"),
         /*  9 */
-        new Loader("Assets/Data/Viz7.csv", this.Viz7, "Components of a Jewish Identity: Education"),
+        new Loader("Assets/Data/Viz7.csv", this.Viz7, "Components of a Jewish Identity: Education (Viz 6) "),
         /* 10 */
-        new Loader("Assets/Data/Viz6.csv", this.Viz6, "Components of a Jewish Identity"),
+        new Loader("Assets/Data/Viz6.csv", this.Viz6, "Components of a Jewish Identity (Viz 5)"),
         /* 11 */
         new Loader("Assets/Data/Quote3.txt", this.LoadQuotes),
         /* 12 */
-        new Loader("Assets/Data/Viz5.csv", this.DrawPie, "Identifying as Jewish By Religion and Jewish Not By Religion"),
+        new Loader("Assets/Data/Viz5.csv", this.DrawPie, "Identifying as Jewish By Religion and Jewish Not By Religion (Viz 7)"),
         /* 13 */
         new Loader("Assets/Data/Quote4.txt", this.LoadQuotes),
         /* 14 */
-        new Loader("Assets/Data/Viz8.csv", this.DrawDonutsMultiple, "Generational Breakdown of Jewish Americans: By Identity"),
+        new Loader("Assets/Data/Viz8.csv", this.DrawDonutsMultiple, "Generational Breakdown of Jewish Americans: By Identity (Viz 8)"),
         /* 15 */
         null, //new Loader("Assets/Data/Viz9.csv", this.Viz8),
         /* 16 */
@@ -1379,6 +1379,7 @@ function Visualization(fileName) {
     });
 
     // Start the load
+    indexToDraw = 0;
     Process();
 
     window.onload = () => {
