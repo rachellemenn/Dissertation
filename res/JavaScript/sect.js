@@ -969,7 +969,7 @@ function Visualization(fileName) {
         /*  3 */
         new Loader("Assets/Data/Viz1.csv", this.DrawCircleHierarchy,"Religious Makeup of the USA"),
         /*  4 */
-        new Loader("Assets/Data/Viz2.csv", this.DrawBar),
+        new Loader("Assets/Data/Viz2final.csv", this.DrawBar, "Geographical Distribution by Region"),
         /*  5 */
         new Loader("Assets/Data/Vizual3.csv", this.DrawPie, "Generational Breakdown of Jewish Americans"),
         /*  6 */
