@@ -76,18 +76,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
       line-height: 1.3em;
       color: #363D4F;
   }
-  
+
   p {
     margin-top: 20px;
-  }
-
-  /* instructions on the home screen */
-  .subtitle {
-    font-size: 30px;
-    font-family:"Lekton", sans-serif;
-    line-height: 30px;
-    color: #363D4F;
-    margin-top: 100px;
   }
 
   #sections .title{
@@ -192,6 +183,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     margin-right: 50px;
   }
 
+  /* home screen */
+
   /* title */
   .stationed {
     font-family: "Molengo", sans-serif;
@@ -200,7 +193,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   } 
   .moving {
     font-family: "Molengo", sans-serif;
-    background-color: rgba(15,87,226,0.2);
+    color: rgba(15,87,226,0.2);
     float: right;
     font-size: 40px;
     opacity: 0;
@@ -209,6 +202,15 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     animation-fill-mode: forwards;
     margin-top: 50px;
   } 
+
+  /* instructions on the right home screen */
+  .subtitle {
+    font-size: 30px;
+    font-family:"Molengo", sans-serif;
+    line-height: 30px;
+    color: #363D4F;
+    margin-top: 100px;
+  }
 
 @keyframes fadeIn {
   from {Opacity: 0; }
