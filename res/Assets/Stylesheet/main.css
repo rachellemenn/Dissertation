@@ -221,7 +221,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-size: 40px;
     opacity: 0;
     animation: fadeIn 3s;
-    animation-delay: 7s;
+    animation-delay: 3s;
     animation-fill-mode: forwards;
     margin-top: 100px;
   } 
