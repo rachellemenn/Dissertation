@@ -1005,11 +1005,11 @@ function Visualization(fileName) {
         /* 21 */
         new Loader("Assets/Data/Viz.12.2.csv", this.DrawDonutsMultiple, "Jewish Americans And Israel: By Nationality"),
         /* 22 */
-        new Loader("Assets/Data/Viz12.3.csv", this.DrawDonutsMultiple, "Jewish Americans And Israel: By Generation"),
+        new Loader("Assets/Data/Viz.12.3.csv", this.DrawDonutsMultiple, "Jewish Americans And Israel: By Generation"),
         /* 23 */
         new Loader("Assets/Data/Quote7.txt", this.LoadQuotes),
         /* 24 */
-        new Loader("Assets/Data/Viz.12.1.csv", this.DrawDonutsMultiple, "Jewish Americans and Israel: By Ideology"),
+        new Loader("Assets/Data/Viz12.1.csv", this.DrawDonutsMultiple, "Jewish Americans and Israel: By Ideology"),
         /* 25 */
         new Loader("Assets/Data/Viz12.csv", this.DrawDonutsMultiple, "Jewish Americans and Israel: By Religion"),
         /* 26 */
