@@ -191,9 +191,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-size: 40px;
     margin-top: 100px;
   } 
-  .moving {
+  .moving1 {
     font-family: "Molengo", sans-serif;
-    color: rgba(15,87,226,0.2);
+    color: rgba(15,87,226,0.8);
     float: right;
     font-size: 40px;
     opacity: 0;
@@ -202,6 +202,18 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     animation-fill-mode: forwards;
     margin-top: 50px;
   } 
+  .moving2 {
+    font-family: "Molengo", sans-serif;
+    color: rgba(15,87,226,0.8);
+    float: right;
+    font-size: 40px;
+    opacity: 0;
+    animation: fadeIn 6s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    margin-top: 50px;
+  } 
+
 
   /* instructions on the right home screen */
   .subtitle {
