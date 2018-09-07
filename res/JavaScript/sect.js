@@ -1171,7 +1171,7 @@ function Visualization(fileName) {
         /*  0 */
         new Loader("Assets/Data/Title.txt", this.LoadMainTitle),
         /*  1 */
-        new Loader("Assets/Data/Viz1.csv", this.DrawCircleHierarchy, "Religious Makeup of the USA (Viz 1)"),
+        new Loader("Assets/Data/Viz1.csv", this.DrawCircleHierarchy, "Religious Makeup of the USA"),
         /*  2 */
         new Loader("Assets/Data/Quote1.txt", this.LoadQuotes), 
         /*  3 */
@@ -1179,25 +1179,25 @@ function Visualization(fileName) {
         /*  4 */
         new Loader("Assets/Data/Viz2.csv", this.DrawBar),
         /*  5 */
-        new Loader("Assets/Data/Vizual3.csv", this.DrawPie, "Generational Breakdown of Jewish Americans (Viz 3)"),
+        new Loader("Assets/Data/Vizual3.csv", this.DrawPie, "Generational Breakdown of Jewish Americans"),
         /*  6 */
         new Loader("Assets/Data/Quote2.txt", this.LoadQuotes),
         /*  7 */
-        new Loader("Assets/Data/Viz4final.csv", this.Viz4, "Components of a Jewish Identity (Viz 4)"),
+        new Loader("Assets/Data/Viz4final.csv", this.Viz4, "Components of a Jewish Identity"),
         /*  8 */
-        new Loader("Assets/Data/Viz6.csv", this.Viz6, "Components of a Jewish Identity: Specifics (Viz 5)"),
+        new Loader("Assets/Data/Viz6.csv", this.Viz6, "Components of a Jewish Identity: Specifics"),
         /*  9 */
-        new Loader("Assets/Data/Viz7.csv", this.Viz7, "Components of a Jewish Identity: Education (Viz 6) "),
+        new Loader("Assets/Data/Viz7.csv", this.Viz7, "Components of a Jewish Identity: Education"),
         /* 10 */
-        new Loader("Assets/Data/Viz6.csv", this.Viz6, "Components of a Jewish Identity (Viz 5)"),
+        new Loader("Assets/Data/Viz6.csv", this.Viz6, "Components of a Jewish Identity"),
         /* 11 */
         new Loader("Assets/Data/Quote3.txt", this.LoadQuotes),
         /* 12 */
-        new Loader("Assets/Data/Viz5.csv", this.DrawPie, "Identifying as Jewish By Religion and Jewish Not By Religion (Viz 7)"),
+        new Loader("Assets/Data/Viz5.csv", this.DrawPie, "Identifying as Jewish By Religion and Jewish Not By Religion"),
         /* 13 */
         new Loader("Assets/Data/Quote4.txt", this.LoadQuotes),
         /* 14 */
-        new Loader("Assets/Data/Viz8.csv", this.DrawDonutsMultiple, "Generational Breakdown of Jewish Americans: By Identity (Viz 8)"),
+        new Loader("Assets/Data/Viz8.csv", this.DrawDonutsMultiple, "Generational Breakdown of Jewish Americans: By Identity"),
         /* 15 */
         null, //new Loader("Assets/Data/Viz9.csv", this.Viz8),
         /* 16 */
@@ -1386,6 +1386,8 @@ function Visualization(fileName) {
         // HTML is loaded, we can start
         SetOpacityAndFixDom([0]);
         SetupTooltips();
+        dispatch.call("processChart", this);
+        // above draws the right-hand side
 
         // Create the container in element that has #vis
         container = d3.select("#svgContainer")
