@@ -223,6 +223,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     color: #363D4F;
     margin-top: 100px;
     margin-right: 20px;
+    animation: fadeIn 3s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
   }
 
 @keyframes fadeIn {

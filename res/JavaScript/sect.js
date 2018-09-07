@@ -1075,8 +1075,8 @@ function Visualization(fileName) {
                 // Check if need to redraw something
                 if (indexToDraw != -1 && indexToDraw != lastDrawnIndex) {
                     if (loaders[indexToDraw] == null) {
-                        SetOpacityAndFixDom([indexToDraw,
-                            lastDrawnIndex == -1 ? indexToDraw + 1 : lastDrawnIndex
+                        SetOpacityAndFixDom([indexToDraw
+                            // lastDrawnIndex == -1 ? indexToDraw + 1 : lastDrawnIndex
                         ]);
                         //indexToDraw = lastDrawnIndex;
                     } else {
