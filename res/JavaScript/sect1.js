@@ -1375,10 +1375,21 @@ function Visualization(fileName) {
     }
 
     var offset = 0;
-    var sectionsStyle;
-    var graphicStyle;
+
+    var sectionWidth = 0;
+    var sectionPaddingBottom = 0;
+    var sectionMarginRight = 0;
+
+    var graphicPaddingTop = 0;
+
     var stepMarginBottom;
-    var visStyle;
+
+    var visWidth = 0;
+    var visHeight = 0;
+    var visTop = 0;
+    var visMarginLeft = 0;
+    var visMarginTop = 0;
+    var visMarginBottom = 0;
 
     function InitComputeSizes()
     {
@@ -1388,16 +1399,26 @@ function Visualization(fileName) {
         offset = r.bottom;
 
         e = document.getElementById('sections');
-        sectionsStyle = getComputedStyle(e);
+        var cStyle = getComputedStyle(e);
+        sectionWidth = parseInt(cStyle.width, 10);
+        sectionPaddingBottom = parseInt(cStyle.paddingBottom);
+        sectionMarginRight = parseInt(cStyle.marginRight);
 
         e = document.getElementById('graphic');
-        graphicStyle = getComputedStyle(e);
+        cStyle = getComputedStyle(e);
+        graphicPaddingTop = parseInt(cStyle.paddingTop);
 
         var steps = document.querySelectorAll('.step');
         stepMarginBottom = parseInt(getComputedStyle(steps[0]).marginBottom);
 
-        var e = document.getElementById('vis');
-        visStyle = getComputedStyle(e);
+        e = document.getElementById('vis');
+        cStyle = getComputedStyle(e);
+        visWidth = parseInt(cStyle.width, 10);
+        visHeight = parseInt(cStyle.height, 10);
+        visTop = parseInt(cStyle.top, 10);
+        visMarginLeft = parseInt(cStyle.marginLeft, 10);
+        visMarginTop = parseInt(cStyle.marginTop, 10);
+        visMarginBottom = parseInt(cStyle.marginBottom, 10);
     }
 
     function ComputeSizes()
@@ -1414,20 +1435,16 @@ function Visualization(fileName) {
         console.log("ratio " + ratio);
 
         var e = document.getElementById('sections');
-        console.log("computedstyle", sectionsStyle);
-        console.log("sections width was " + sectionsStyle.width + ", paddingBottom was " + sectionsStyle.paddingBottom);
-        var v = Math.floor(parseInt(sectionsStyle.width, 10) * ratio).toString() + "px";
-        console.log("Numeric width " + parseInt(sectionsStyle.width, 10) + ", floor " + Math.floor(parseInt(sectionsStyle.width, 10) * ratio) +  ", Computed width " + v);
-        e.style.width = Math.floor(parseInt(sectionsStyle.width, 10) * ratio).toString() + "px";
-        e.style.paddingBottom = Math.floor(parseInt(sectionsStyle.paddingBottom) * ratio).toString() + "px";
-        e.style.marginRight = Math.floor(parseInt(sectionsStyle.marginRight) * ratio).toString() + "px";
+        e.style.width = Math.floor(sectionWidth * ratio).toString() + "px";
+        e.style.paddingBottom = Math.floor(sectionPaddingBottom * ratio).toString() + "px";
+        e.style.marginRight = Math.floor(sectionMarginRight * ratio).toString() + "px";
         e.style.top = offset.toString() + "px";
         var cStyle = getComputedStyle(e);
         console.log("sections cwidth now " + cStyle.width + ", cpaddingBottom now " + cStyle.paddingBottom);
         console.log("sections width now " + e.style.width + ", paddingBottom now " + e.style.paddingBottom);
 
         e = document.getElementById('graphic');
-        e.style.paddingTop = Math.floor(parseInt(graphicStyle.paddingTop) * ratio).toString() + "px";
+        e.style.paddingTop = Math.floor(graphicPaddingTop * ratio).toString() + "px";
 
         var steps = document.querySelectorAll('.step');
     
@@ -1436,12 +1453,12 @@ function Visualization(fileName) {
         });
     
         var e = document.getElementById('vis');
-        e.style.width = Math.floor(parseInt(visStyle.width, 10) * ratio).toString() + "px";
-        e.style.height = Math.floor(parseInt(visStyle.height, 10) * ratio).toString() + "px";
-        e.style.top = (Math.floor(parseInt(visStyle.top) * ratio) + offset).toString() + "px";
-        e.style.marginLeft = Math.floor(parseInt(visStyle.marginLeft) * ratio).toString() + "px";
-        e.style.marginTop = Math.floor(parseInt(visStyle.marginTop) * ratio).toString() + "px";
-        e.style.marginBottom = Math.floor(parseInt(visStyle.marginBottom) * ratio).toString() + "px";
+        e.style.width = Math.floor(visWidth * ratio).toString() + "px";
+        e.style.height = Math.floor(visHeight * ratio).toString() + "px";
+        e.style.top = (Math.floor(visTop * ratio) + offset).toString() + "px";
+        e.style.marginLeft = Math.floor(visMarginLeft * ratio).toString() + "px";
+        e.style.marginTop = Math.floor(visMarginTop * ratio).toString() + "px";
+        e.style.marginBottom = Math.floor(visMarginBottom * ratio).toString() + "px";
        
         width = Math.floor(600 * ratio);
         height = Math.floor(520 * ratio);
@@ -1504,6 +1521,7 @@ function Visualization(fileName) {
         // Above recomputes sizes and draws the right-hand side
 
         InitComputeSizes();
+        ComputeSizes();
         window.addEventListener('resize', ComputeSizes, true);
         //window.onresize = ComputeSizes();
     }
