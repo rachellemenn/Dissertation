@@ -1,2 +1,2 @@
 ﻿Title
-"<p class="subtitle">Use the arrows to explore through stories, quotes from Jewish American millennials and visualisations</p>"
+"<p class='subtitle's>Use the arrows to explore through stories, quotes from Jewish American millennials and visualisations</p>"
