@@ -80,6 +80,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-family:"Lekton", sans-serif;
     line-height: 30px;
     color: #363D4F;
+    margin-top: 100px;
   }
 
   #sections .title{
@@ -94,6 +95,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
       height: 300px;
   }
 
+  /* sets up vis div */
   #vis {
       display: inline-block;
       position: fixed;
@@ -110,15 +112,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
       border-color: black; */
   }
 
-  p {
-    margin-top: 10px;
-  }
-
-  /* #vis .title {
-     font-size: 120px;
-     text-anchor: middle; 
-  } */
-
   .VizTitle {
     font-family: "Molengo", sans-serif;
     color: #363D4F;
@@ -130,6 +123,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     text-anchor: middle;
     text-align: center;
 
+  }
+
+  p {
+    margin-top: 20px;
   }
 
   #sections blockquote {
@@ -191,25 +188,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     margin-right: 50px;
   }
 
-  /* .MainTitle .stationed {
-    height: 50px;
-    float: left;
-    margin-right: 0.3em;
-    font-family: "Molengo", sans-serif;
-    font-size: 40px;
-    text-align: center;
-    margin-top: 40px;
-  } */
-  /* .MainTitle .moving {
-    float: left;
-    overflow: hidden;
-    position: relative;
-    height: 50px; */
-    /* text-align: center; */
-    /* margin-top: 60px;
-    margin-right: 60px;
-  } */
-
   .stationed {
     font-family: "Molengo", sans-serif;
     font-size: 40px;
@@ -217,14 +195,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   } 
   .moving {
     font-family: "Molengo", sans-serif;
-    color: rgba(15,87,226);
+    background-color: rgba(15,87,226,0.2);
     float: right;
     font-size: 40px;
     opacity: 0;
     animation: fadeIn 3s;
     animation-delay: 1s;
     animation-fill-mode: forwards;
-    margin-top: 100px;
+    margin-top: 50px;
   } 
 
 @keyframes fadeIn {
@@ -232,59 +210,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   to {Opacity: 1;}
 } 
 
-  /* span .first {
-    font-family: "Molengo", sans-serif;
-    font-size: 40px;
-    display: inline-block;
-    color: rgba(15,87,226);
-    position: relative;
-    white-space: nowrap;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    animation: fadeIn 3s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards; */
-    /* margin-top: 100px;
-    animation: move 5s linear 1 0s;
-    animation-iteration-count: once; 
-    animation-delay: 1s;
-    animation-fill-mode: forwards; */
-  /* } */
-  /* @keyframes fadeIn {
-    from {Opacity: 0; }
-    to {Opacity: 1;}
-  } */ 
-  
-  /* @keyframes move {
-  0%  { top: 0px; }
-  80% { top: -50px; }
-  80% { top: -100px; }
-  85% { top: -150px; }
-  } */
-
-  /* .subMtitle {
-    font-family: "Molengo", sans-serif;
-     font-size: 25px;
-     opacity: 0;
-     animation: fadeIn 3s;
-     animation-delay: 7s;
-     animation-fill-mode: forwards;
-     margin-top: 100px;
-  } 
-
-@keyframes fadeIn {
-  from {Opacity: 0; }
-  to {Opacity: 1;}
-} */
-
-
-  /* .step img {
-    height: 660;
-    width: 400;
-    margin-bottom: 200px;
-  } */
-
+  /* arrow formatting */
   #button1 {
     background:#ECE8E8;
     color:#000086;
@@ -372,7 +298,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     position: relative;
     display: inline-block;
     background-color: rgba(15,87,226,0.2);
-    /* border-bottom: 1px dotted black; If you want dots under the hoverable text */
   }
 
   /* Tooltip text */
