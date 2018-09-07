@@ -1386,8 +1386,6 @@ function Visualization(fileName) {
         // HTML is loaded, we can start
         SetOpacityAndFixDom([0]);
         SetupTooltips();
-        dispatch.call("processChart", this);
-        // above draws the right-hand side
 
         // Create the container in element that has #vis
         container = d3.select("#svgContainer")
@@ -1423,21 +1421,8 @@ function Visualization(fileName) {
             dispatch.call("processChart", this);
         });
 
-        /*// setup scroll functionality
-        scroll = scroller()
-            .container(d3.select('#graphic'));
-
-        // pass in .step selection as the steps
-        scroll(d3.selectAll('.step'));
-
-        // setup event handling
-        scroll.on('active', (index) => {
-            console.log("Active on index " + index);
-
-            // activate current section
-            indexToDraw = index;
-            dispatch.call("processChart", this);
-        });*/
+        dispatch.call("processChart", this);
+        // Above draws the right-hand side
     }
 }
 
