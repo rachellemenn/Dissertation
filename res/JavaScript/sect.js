@@ -123,10 +123,6 @@ function Loader(fileName, callbackFunction, context) {
 
 }
 
-// A class to load viz title
-// function LoadTitle(callbackContent) {
-//     var callbackContent = document.getElementById("content");
-// }
 
 // A class to view vizualizations
 function Visualization(fileName) {
@@ -339,16 +335,6 @@ function Visualization(fileName) {
             .style("fill", "#ECE8E8")
             // .style("fill")
             .style("margin-top", "60px");
-
-        // svg.selectAll(".text")
-        //     .data(data)
-        //     .enter()
-        //     .append("text")
-        //     .attr("class", "label")
-        //     .attr("x", (function (d) { return x(d.name) + x.scaleBand() / 2; }))
-        //     .attr("y", function (d) { return y(d.value) + 1; })
-        //     .attr("dy", ".75em")
-        //     .text(function (d) { return d.value; });
     }
 
     this.DrawPie = function (data) {
@@ -359,17 +345,6 @@ function Visualization(fileName) {
             console.log("Nothing to draw");
             return;
         }
-
-        //var gx = svg.append('gx')
-        //    .attr("transform", "translate(" + (width / 2) + "," + (height / 2) + ")");
-
-        // function Draw() {
-        //     var canvas = document.querySelector("canvas"),
-        //         context = canvas.getContext("2d");
-
-        //     var width = canvas.width,
-        //         height = canvas.height,
-        //         radius = Math.min(width, height) / 2;
 
         var colors = [
             "#00e0ff", "#0f57e2", "#0000ff", "#000086",
@@ -398,123 +373,7 @@ function Visualization(fileName) {
             .attr("fill", function (d, i) {
                 return colors[i];
             });
-            // svg.selectAll(".text")
-            // .data(items)
-            // .enter()
-            // .append("text")
-            // .attr("class", "label")
-            // .attr("x", (function (d) { return x(d.name) + x.bandwidth() / 2; }))
-            // .attr("y", function (d) { return y(d.value) + 1; })
-            // .attr("dy", ".75em")
-            // .text(function (d) { return [d.value]; })
-            // .style("font", "25px Lekton, sans-serif")
-            // .style("fill", "#ECE8E8")
-            // // .style("fill")
-            // .style("margin-top", "60px");
     }
-
-    // this.DrawBubble = function (data) {
-    //     function loadData(fileName) {
-    //         return d3.csv(fileName);
-    //     }
-
-    //     var diameter = 600;
-    //     var color = [
-    //         "#00e0ff", "#0f57e2", "#0000ff", "#000086",
-    //     ];
-
-    //     var bubble = d3.pack()
-    //         .size([diameter, diameter])
-    //         .padding(1.5);
-
-    //     var svg = d3.select("body")
-    //         .append("svg")
-    //         .attr("width", diameter)
-    //         .attr("height", diameter)
-    //         .attr("class", "bubble");
-
-    //     var dataPromise = loadData('Viz15.csv');
-    //     dataPromise.then(function (data) {
-    //         data.forEach(function (d) {
-    //             d.value = parseFloat(d.value);
-    //             console.log(data)
-    //         });
-
-    //         var stratData = d3.stratify()
-    //         var nodes = stratData(data)
-    //             .sum(function (d) {
-    //                 return d.Value;
-    //             });
-    //         //     .parentId(function(d) {return d["Religion"];})
-    //         //     .id(function(d){return d.religion;});
-    //         // var root = stratData(data);
-    //         // console.log(root);
-    //         // root          
-
-    //         // .sort(function(a, b) { return b.Value - a.Value });
-
-    //         // var nodes = root.descendants();
-    //         // console.log(nodes);
-
-    //         // layout(root);
-
-    //         // var nodes = d3.stratify()
-    //         //     .sum(function(d) { return d.Count; });
-
-    //         var node = svg.selectAll(".node")
-    //             .data(bubble(nodes).descendants())
-    //             .enter()
-    //             .filter(function (d) {
-    //                 return !d.children
-    //             })
-    //             .append("g")
-    //             .attr("class", "node")
-    //             .attr("transform", function (d) {
-    //                 return "translate(" + d.x + "," + d.y + ")";
-    //             });
-
-    //         node.append("title")
-    //             .text(function (d) {
-    //                 return d.Religion + ": " + d.Value;
-    //             });
-
-    //         node.append("circle")
-    //             .attr("r", function (d) {
-    //                 return d.r;
-    //             })
-    //             .style("fill", function (d, i) {
-    //                 return color(i);
-    //             });
-
-    //         node.append("text")
-    //             .attr("dy", ".2em")
-    //             .style("text-anchor", "middle")
-    //             .text(function (d) {
-    //                 return d.data.Religion.substring(0, d.r / 3);
-    //             })
-    //             .attr("font-family", "sans-serif")
-    //             .attr("font-size", function (d) {
-    //                 return d.r / 5;
-    //             })
-    //             .attr("fill", "white");
-
-    //         node.append("text")
-    //             .attr("dy", "1.3em")
-    //             .style("text-anchor", "middle")
-    //             .text(function (d) {
-    //                 return d.data.Count;
-    //             })
-    //             .attr("font-family", "Gill Sans", "Gill Sans MT")
-    //             .attr("font-size", function (d) {
-    //                 return d.r / 5;
-    //             })
-    //             .attr("fill", "white");
-
-    //         d3.select(self.frameElement)
-    //             .style("height", diameter + "px");
-
-    //     });
-    // }
 
     this.Viz4 = function (data) {
         var first = data.columns[0];
@@ -579,10 +438,6 @@ function Visualization(fileName) {
 
         var chart = venn.VennDiagram().colours(colors);
         svg.datum(fullSets).call(chart);
-        // svg.selectAll("#svgContainer .venn-circle path")
-            ;//.style("fill-opacity", .8);
-
-        //svg.selectAll("#svgContainer text").style("fill", "green");
     }
 
     this.Viz6 = function (data) {
@@ -901,9 +756,6 @@ function Visualization(fileName) {
             })
             .enter().append("g");
 
-        /*.data((d) => {
-            pie(d.values)
-        })*/
         // Fill the arc
         console.log('filling arcs');
         g.append("path").attr("d", arc)
@@ -1019,14 +871,6 @@ function Visualization(fileName) {
         var stack = d3.stack()
             .offset(d3.stackOffsetExpand);
 
-        // var dataPromise = loadData('Viz10.csv');
-        // dataPromise.then(function(data){
-        //     console.log(data);
-        //     data.forEach(function(d){
-        //         d.Value = parseFloat(d.Value);
-        //     });
-        //     console.log("data", data);
-
         x.domain(data.map(function (d) { return d.National; }));
         x1.domain(data.map(function (d) { return d.Religious; }))
             .rangeRound([0, x.bandwidth()])
@@ -1038,9 +882,6 @@ function Visualization(fileName) {
         var groupData = d3.nest()
             .key(function (d) { return d.Religious; })
             .entries(data);
-        //.map(function(d){ return d.value; });
-
-        //   console.log("groupData", groupData)
 
         var stackData = stack
             .keys(keys)(groupData)
@@ -1105,55 +946,6 @@ function Visualization(fileName) {
             .attr("fill", "#000")
             .style("font", "10px sans-serif")
             .text(function (d) { return d.key; });
-    }
-
-    this.Viz11 = function (data) {
-
-    }
-
-    this.Viz111 = function (data) {
-
-    }
-
-    this.Viz13 = function (data) {
-
-    }
-
-    this.Viz133 = function (data) {
-
-    }
-
-    this.Viz132 = function (data) {
-
-    }
-
-    this.Viz131 = function (data) {
-
-    }
-
-    this.Viz15 = function (data) {
-        // bubble chart for 15.3.csv and 15.csv
-    }
-
-    this.Viz151 = function (data) {
-        //donut chart for 15.1.csv and 15.2.csv
-    }
-
-
-    this.Viz14 = function (data) {
-
-    }
-
-    this.Viz141 = function (data) {
-
-    }
-
-    this.Viz161 = function (data) {
-
-    }
-
-    this.Viz16 = function (data) {
-
     }
 
     this.LoadQuotes = function (data) {
@@ -1345,32 +1137,6 @@ function Visualization(fileName) {
         .style('display', function (d, i) {
             return indexList.indexOf(i) == -1? 'none' : 'block';
         });
-/*        // Set opacity for all elements of class step
-        d3.selectAll('.step')
-            .style('opacity', function (d, i) {
-                return indexList.indexOf(i) == -1 ? 0.1 : 1;
-            });
-
-        // Add an empty div to the end of the
-        // element with id #sections (the one
-        // containing all sections)
-        var div = d3.select("#graphic")
-            .append("div")
-            .style("width", "100%")
-            .attr("id", "__dummy__");
-
-        // Get the element and find its computed width
-        div = d3.select("#__dummy__");
-        var divWidth = +div.style("width");
-
-        // Change width by a pixel down, then one up
-        // then remove it. These manipulations force
-        // resize, which should recompute all sizes
-        // correctly
-        div.style("width", () => "" + (divWidth - 1) + "px")
-            .style("width", () => "" + (divWidth + 1) + "px")
-            .remove();
-*/
 
     }
 
